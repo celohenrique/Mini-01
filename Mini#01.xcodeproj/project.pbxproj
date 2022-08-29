@@ -34,13 +34,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		955677C428BD5BC900336EA5 /* Teste */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Teste;
-			sourceTree = "<group>";
-		};
 		B9F3B57C28BD3A9000EB2170 = {
 			isa = PBXGroup;
 			children = (
@@ -60,7 +53,6 @@
 		B9F3B58728BD3A9100EB2170 /* Mini#01 */ = {
 			isa = PBXGroup;
 			children = (
-				955677C428BD5BC900336EA5 /* Teste */,
 				B9F3B59628BD3A9F00EB2170 /* Model */,
 				B9F3B59728BD3AA500EB2170 /* View */,
 				B9F3B59828BD3AAA00EB2170 /* ViewModel */,

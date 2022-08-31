@@ -13,7 +13,15 @@ struct ToolBar: View {
             VStack {
                 
             }
-            .navigationTitle("Sounds")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Ruidos")
+                        .font(.system(size: 32))
+                       // .font(.largeTitle.bold())
+                     
+                }
+            }
         }
     }
 }

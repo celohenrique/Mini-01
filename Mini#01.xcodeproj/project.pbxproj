@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A448267228C1352C00EE27B5 /* ruidosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A448267128C1352C00EE27B5 /* ruidosModel.swift */; };
+		A448267428C1359B00EE27B5 /* RuidoBranco.swift in Sources */ = {isa = PBXBuildFile; fileRef = A448267328C1359B00EE27B5 /* RuidoBranco.swift */; };
 		B9F3B58928BD3A9100EB2170 /* Mini_01App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3B58828BD3A9100EB2170 /* Mini_01App.swift */; };
 		B9F3B58B28BD3A9100EB2170 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3B58A28BD3A9100EB2170 /* ContentView.swift */; };
 		B9F3B58D28BD3A9200EB2170 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9F3B58C28BD3A9200EB2170 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A448267128C1352C00EE27B5 /* ruidosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ruidosModel.swift; sourceTree = "<group>"; };
+		A448267328C1359B00EE27B5 /* RuidoBranco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuidoBranco.swift; sourceTree = "<group>"; };
 		B9F3B58528BD3A9100EB2170 /* Mini#01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini#01.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9F3B58828BD3A9100EB2170 /* Mini_01App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mini_01App.swift; sourceTree = "<group>"; };
 		B9F3B58A28BD3A9100EB2170 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +77,7 @@
 		B9F3B59628BD3A9F00EB2170 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A448267128C1352C00EE27B5 /* ruidosModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -106,6 +111,7 @@
 			children = (
 				B9F3B58A28BD3A9100EB2170 /* ContentView.swift */,
 				B9F3B59A28BD448400EB2170 /* ToolBar.swift */,
+				A448267328C1359B00EE27B5 /* RuidoBranco.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -183,6 +189,8 @@
 				B9F3B59B28BD448400EB2170 /* ToolBar.swift in Sources */,
 				B9F3B58B28BD3A9100EB2170 /* ContentView.swift in Sources */,
 				B9F3B58928BD3A9100EB2170 /* Mini_01App.swift in Sources */,
+				A448267228C1352C00EE27B5 /* ruidosModel.swift in Sources */,
+				A448267428C1359B00EE27B5 /* RuidoBranco.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

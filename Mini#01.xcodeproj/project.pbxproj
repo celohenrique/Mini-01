@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A448267228C1352C00EE27B5 /* ruidosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A448267128C1352C00EE27B5 /* ruidosModel.swift */; };
-		A448267428C1359B00EE27B5 /* RuidoBranco.swift in Sources */ = {isa = PBXBuildFile; fileRef = A448267328C1359B00EE27B5 /* RuidoBranco.swift */; };
+		A448267428C1359B00EE27B5 /* TelaInicial.swift in Sources */ = {isa = PBXBuildFile; fileRef = A448267328C1359B00EE27B5 /* TelaInicial.swift */; };
+		A4D2202328CFABE600BAC9EE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D2202228CFABE600BAC9EE /* ViewModel.swift */; };
+		A4D2202628CFACFA00BAC9EE /* SegundaTela.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D2202528CFACFA00BAC9EE /* SegundaTela.swift */; };
 		B9F3B58928BD3A9100EB2170 /* Mini_01App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3B58828BD3A9100EB2170 /* Mini_01App.swift */; };
 		B9F3B58B28BD3A9100EB2170 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3B58A28BD3A9100EB2170 /* ContentView.swift */; };
 		B9F3B58D28BD3A9200EB2170 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9F3B58C28BD3A9200EB2170 /* Assets.xcassets */; };
@@ -18,7 +20,9 @@
 
 /* Begin PBXFileReference section */
 		A448267128C1352C00EE27B5 /* ruidosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ruidosModel.swift; sourceTree = "<group>"; };
-		A448267328C1359B00EE27B5 /* RuidoBranco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuidoBranco.swift; sourceTree = "<group>"; };
+		A448267328C1359B00EE27B5 /* TelaInicial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaInicial.swift; sourceTree = "<group>"; };
+		A4D2202228CFABE600BAC9EE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		A4D2202528CFACFA00BAC9EE /* SegundaTela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegundaTela.swift; sourceTree = "<group>"; };
 		B9F3B58528BD3A9100EB2170 /* Mini#01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini#01.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9F3B58828BD3A9100EB2170 /* Mini_01App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mini_01App.swift; sourceTree = "<group>"; };
 		B9F3B58A28BD3A9100EB2170 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +42,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A4D2202428CFAC2800BAC9EE /* SegundaTela */ = {
+			isa = PBXGroup;
+			children = (
+				A4D2202528CFACFA00BAC9EE /* SegundaTela.swift */,
+			);
+			path = SegundaTela;
+			sourceTree = "<group>";
+		};
 		B9F3B57C28BD3A9000EB2170 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +97,7 @@
 		B9F3B59728BD3AA500EB2170 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A4D2202428CFAC2800BAC9EE /* SegundaTela */,
 				B9F3B59C28BD580900EB2170 /* Home */,
 			);
 			path = View;
@@ -94,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				B9F3B58828BD3A9100EB2170 /* Mini_01App.swift */,
+				A4D2202228CFABE600BAC9EE /* ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -111,7 +125,7 @@
 			children = (
 				B9F3B58A28BD3A9100EB2170 /* ContentView.swift */,
 				B9F3B59A28BD448400EB2170 /* ToolBar.swift */,
-				A448267328C1359B00EE27B5 /* RuidoBranco.swift */,
+				A448267328C1359B00EE27B5 /* TelaInicial.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -188,9 +202,11 @@
 			files = (
 				B9F3B59B28BD448400EB2170 /* ToolBar.swift in Sources */,
 				B9F3B58B28BD3A9100EB2170 /* ContentView.swift in Sources */,
+				A4D2202628CFACFA00BAC9EE /* SegundaTela.swift in Sources */,
 				B9F3B58928BD3A9100EB2170 /* Mini_01App.swift in Sources */,
 				A448267228C1352C00EE27B5 /* ruidosModel.swift in Sources */,
-				A448267428C1359B00EE27B5 /* RuidoBranco.swift in Sources */,
+				A4D2202328CFABE600BAC9EE /* ViewModel.swift in Sources */,
+				A448267428C1359B00EE27B5 /* TelaInicial.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

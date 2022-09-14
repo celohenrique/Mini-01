@@ -11,6 +11,8 @@
 		A448267428C1359B00EE27B5 /* TelaInicial.swift in Sources */ = {isa = PBXBuildFile; fileRef = A448267328C1359B00EE27B5 /* TelaInicial.swift */; };
 		A4D2202328CFABE600BAC9EE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D2202228CFABE600BAC9EE /* ViewModel.swift */; };
 		A4D2202628CFACFA00BAC9EE /* SegundaTela.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D2202528CFACFA00BAC9EE /* SegundaTela.swift */; };
+		B9EED67128D255DF00ED4237 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EED67028D255DF00ED4237 /* Sensor.swift */; };
+		B9EED67328D2597F00ED4237 /* PickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EED67228D2597F00ED4237 /* PickerScreen.swift */; };
 		B9F3B58928BD3A9100EB2170 /* Mini_01App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3B58828BD3A9100EB2170 /* Mini_01App.swift */; };
 		B9F3B58B28BD3A9100EB2170 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3B58A28BD3A9100EB2170 /* ContentView.swift */; };
 		B9F3B58D28BD3A9200EB2170 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9F3B58C28BD3A9200EB2170 /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 		A448267328C1359B00EE27B5 /* TelaInicial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaInicial.swift; sourceTree = "<group>"; };
 		A4D2202228CFABE600BAC9EE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		A4D2202528CFACFA00BAC9EE /* SegundaTela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegundaTela.swift; sourceTree = "<group>"; };
+		B9EED67028D255DF00ED4237 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
+		B9EED67228D2597F00ED4237 /* PickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerScreen.swift; sourceTree = "<group>"; };
 		B9F3B58528BD3A9100EB2170 /* Mini#01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini#01.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9F3B58828BD3A9100EB2170 /* Mini_01App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mini_01App.swift; sourceTree = "<group>"; };
 		B9F3B58A28BD3A9100EB2170 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +50,7 @@
 			isa = PBXGroup;
 			children = (
 				A4D2202528CFACFA00BAC9EE /* SegundaTela.swift */,
+				B9EED67228D2597F00ED4237 /* PickerScreen.swift */,
 			);
 			path = SegundaTela;
 			sourceTree = "<group>";
@@ -90,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				A448267128C1352C00EE27B5 /* ruidosModel.swift */,
+				B9EED67028D255DF00ED4237 /* Sensor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,7 +207,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9F3B59B28BD448400EB2170 /* ToolBar.swift in Sources */,
+				B9EED67128D255DF00ED4237 /* Sensor.swift in Sources */,
 				B9F3B58B28BD3A9100EB2170 /* ContentView.swift in Sources */,
+				B9EED67328D2597F00ED4237 /* PickerScreen.swift in Sources */,
 				A4D2202628CFACFA00BAC9EE /* SegundaTela.swift in Sources */,
 				B9F3B58928BD3A9100EB2170 /* Mini_01App.swift in Sources */,
 				A448267228C1352C00EE27B5 /* ruidosModel.swift in Sources */,
@@ -341,6 +349,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mini-01-Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Necessario uso de mic";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -370,6 +379,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mini-01-Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Necessario uso de mic";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

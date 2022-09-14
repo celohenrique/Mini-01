@@ -30,6 +30,8 @@ struct CircleButton: ButtonStyle{
 
 struct SegundaTela: View {
     
+    @State var ruidos: Ruidos
+    
     @State var hourSelection = 0
     @State var minuteSelection = 0
     
@@ -90,6 +92,13 @@ struct SegundaTela: View {
                         // .frame(width: 75, height: 75)
                     }
                     .buttonStyle(CircleButton())
+                }
+                VStack {
+                    Text(ruidos.nome)
+                        .font(.title)
+                    Spacer()
+                        .frame(height: 500)
+                        
                 }
             }
         }

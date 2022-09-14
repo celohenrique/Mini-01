@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import Foundation
+import AVFoundation
+
 
 
 struct ContentView: View {
@@ -23,8 +26,6 @@ struct ContentView: View {
         
         }
 }
-
-
 
 
  //MARK: - Preview da view

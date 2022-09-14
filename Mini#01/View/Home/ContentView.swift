@@ -6,16 +6,19 @@
 //
 
 import SwiftUI
+import Foundation
+import AVFoundation
+
 
 
 struct ContentView: View {
-    var toolBarMain = ToolBar()
+    
     var body: some View {
-        toolBarMain
+        ToolBar()
+        
     }
+    
 }
-
-
 
 
  //MARK: - Preview da view

@@ -16,13 +16,13 @@ struct ToolBar: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Text("Ruidos")
+                    Text("Ruiiiudos")
                         .font(.system(size: 32))
-                       // .font(.largeTitle.bold())
-                     
                 }
             }
+            
         }
     }
+    
 }
 

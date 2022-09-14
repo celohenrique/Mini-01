@@ -36,6 +36,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B96347FF28BFDF7C004163AC /* NoisyDetector */ = {
+			isa = PBXGroup;
+			children = (
+				B96347FD28BE927D004163AC /* NoisyDetector.swift */,
+			);
+			path = NoisyDetector;
+			sourceTree = "<group>";
+		};
 		B9F3B57C28BD3A9000EB2170 = {
 			isa = PBXGroup;
 			children = (
@@ -75,7 +83,7 @@
 		B9F3B59628BD3A9F00EB2170 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B96347FD28BE927D004163AC /* NoisyDetector.swift */,
+				B96347FF28BFDF7C004163AC /* NoisyDetector */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -320,7 +328,7 @@
 				DEVELOPMENT_TEAM = 942Y8B46B9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "Mini-01-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -349,7 +357,7 @@
 				DEVELOPMENT_TEAM = 942Y8B46B9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "Mini-01-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

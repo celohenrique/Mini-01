@@ -26,6 +26,8 @@ struct SegundaTela: View {
             Spacer()
                 .frame(height: 10)
             PickerScreen()
+            Spacer()
+                .frame(height: 40)
                 
             
         }

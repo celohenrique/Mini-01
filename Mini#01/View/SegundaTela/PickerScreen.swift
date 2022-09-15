@@ -46,7 +46,7 @@ struct PickerScreen: View {
         if timerOnOff {
 
             GeometryReader{ geometry in
-                VStack(alignment: .center,spacing: 100){
+                VStack(alignment: .center,spacing: 125){
                     HStack(alignment: .center){
                         
                         Picker(selection: self.$hourSelection, label: Text("")){
@@ -79,7 +79,7 @@ struct PickerScreen: View {
                         
                         .frame(width: 100, height: 100)
                         .foregroundColor(Color(red: 228/255, green: 228/255, blue: 228/255))
-                        // .frame(width: 75, height: 75)
+                         .frame(width: 75, height: 75)
                         
                         Button(action:{
                             
@@ -91,11 +91,12 @@ struct PickerScreen: View {
                         }
                         .frame(width: 100, height: 100)
                         .foregroundColor(Color(red: 105/255, green: 152/255, blue: 117/255))
-                        // .frame(width: 75, height: 75)
+                         .frame(width: 75, height: 75)
                     }
                     .buttonStyle(CircleButton())
                 }
             }
+            .padding(.horizontal)
         }
         else {
             

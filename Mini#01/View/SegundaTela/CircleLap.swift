@@ -68,7 +68,7 @@ struct CircleLap: View {
                 
             }.frame(width: 248, height: 248)
             
-            HStack(spacing:170){
+            HStack(spacing:155){
                 
                 Button(action: {
                     timerOnOff = true

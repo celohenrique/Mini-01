@@ -1,11 +1,12 @@
 //
-//  PickerScreen.swift
-//  Mini#01
+//  ContentView.swift
+//  testTimer2
 //
-//  Created by Marcelo Araujo on 14/09/22.
+//  Created by Marcelo Araujo on 12/09/22.
 //
 
 import SwiftUI
+
 
 struct CircleButton: ButtonStyle{
     
@@ -28,22 +29,21 @@ struct CircleButton: ButtonStyle{
     }
 }
 
-
-
-
 struct PickerScreen: View {
-    
     
     @State var hourSelection = 0
     @State var minuteSelection = 0
     
-   @State var timerOnOff = true //usei para mudar do picker para o countdown
+    @State var timerOnOff = true
     @State var isPlaying = true
 
+    
     var hours = [Int](0..<24)
     var minutes = [Int](0..<60)
+   
     
     var body: some View {
+        if timerOnOff {
 
             GeometryReader{ geometry in
                 VStack(alignment: .center,spacing: 100){
@@ -95,13 +95,21 @@ struct PickerScreen: View {
                     }
                     .buttonStyle(CircleButton())
                 }
-                
             }
         }
-}
+        else {
+            
+            CircleLap(hourSelection: $hourSelection, minuteSelection: $minuteSelection, timerOnOff: $timerOnOff, isPlaying: $isPlaying)
+ 
+           
+        }
+        
+            
+            
+        }
+    }
 
-
-//MARK: - Extensions
+   
 extension UIPickerView {
     open override var intrinsicContentSize: CGSize {
         return CGSize(width: UIView.noIntrinsicMetric, height: super.intrinsicContentSize.height)
@@ -109,8 +117,9 @@ extension UIPickerView {
     }
 }
 
-struct PickerScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        PickerScreen()
-    }
-}
+
+//        struct ContentView_Previews: PreviewProvider {
+//            static var previews: some View {
+//                ContentView()
+//            }
+//        }

@@ -26,71 +26,96 @@ struct ruidosIcon: View{
 
 struct TelaInicial: View {
     
-    @State var ruidos = [Ruidos(imagem: "0", nome: "Ventilador", id: 0),
-                         Ruidos(imagem: "1", nome: "Shushing", id: 1),
-                         Ruidos(imagem: "2", nome: "Secador", id: 2),
-                         Ruidos(imagem: "3", nome: "Ar-Condicionado", id: 3),
-                         Ruidos(imagem: "4", nome: "Ondas", id: 4)]
-    
+
     var body: some View {
         
         NavigationView{
             
             
-            VStack(spacing: 50){
+            ZStack {
                 
-                Text("Sounds")
-                    .font(.largeTitle)
-                
-                
-                
-                VStack(spacing: 40){
+                VStack(spacing: 50){
                     
-                    HStack(spacing: 10){
-                        
-                        ForEach(linha1, id: \.self){ item in
-                            NavigationLink(destination: SegundaTela(ruidos: item)){
-                                ruidosIcon(ruidos: item)
-                            }
+                    
+                    HStack{
+                        Text("Sons")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                        Spacer()
+    
+                    }
+                    .padding(.leading)
+                    .toolbar(){
+                        ToolbarItem(placement: .automatic){
+                            NavigationLink(destination: ToolBar(), label: {
+                                Image(systemName: "mic.fill")
+                                    .padding(.top, 20)
+                                    
+                            })
                         }
                     }
-                    
-                    HStack(spacing: 10){
                         
-                        ForEach(linha2, id: \.self){ item in
-                            NavigationLink(destination: SegundaTela(ruidos: item)){
-                                ruidosIcon(ruidos: item)
+                        HStack(spacing: 20){
+                            
+                            ForEach(linha1, id: \.self){ item in
+                                NavigationLink(destination: SegundaTela(ruidos: item)){
+                                    ruidosIcon(ruidos: item)
+                                }
                             }
                         }
-                    }
-                    
-                    HStack(spacing: 10){
                         
-                        ForEach(linha3, id: \.self){ item in
-                            NavigationLink(destination: SegundaTela(ruidos: item)){
-                                ruidosIcon(ruidos: item)
+                        HStack(spacing: 20){
+                            
+                            ForEach(linha2, id: \.self){ item in
+                                NavigationLink(destination: SegundaTela(ruidos: item)){
+                                    ruidosIcon(ruidos: item)
+                                }
                             }
                         }
-                    }
-                    
-                    HStack(spacing: 10){
                         
-                        ForEach(linha4, id: \.self){ item in
-                            NavigationLink(destination: SegundaTela(ruidos: item)){
-                                ruidosIcon(ruidos: item)
+                        HStack(spacing: 20){
+                            
+                            ForEach(linha3, id: \.self){ item in
+                                NavigationLink(destination: SegundaTela(ruidos: item)){
+                                    ruidosIcon(ruidos: item)
+                                }
                             }
                         }
+                        
+                        HStack(spacing: 20){
+                            
+                            ForEach(linha4, id: \.self){ item in
+                                NavigationLink(destination: SegundaTela(ruidos: item)){
+                                    ruidosIcon(ruidos: item)
+                                }
+                            }
+                        }
+                        Spacer()
+                            .frame(height: 80)
                     }
-                    Spacer()
-                        .frame(height: 70)
-                }
             }
-            .padding()
+//                .toolbar{
+//                    ToolbarItem(placement: .navigationBarTrailing){
+//                        NavigationLink(destination: ToolBar(), label: {
+//                            Image(systemName: "mic.fill")
+//                        })
+//                    }
+//
+//                    ToolbarItem(placement: .navigationBarLeading){
+//                        navigationTitle("TESTE")
+//
+//
+//
+//
+//                    }
+//                }
+        }.ignoresSafeArea(.all)
+        
+        
+        
             
             
         }
-        
-    }
 }
 
 struct RuidoBranco_Previews: PreviewProvider {

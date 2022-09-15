@@ -12,16 +12,21 @@ import SwiftUI
 struct SegundaTela: View {
     
     @State var ruidos: Ruidos
+    
     var body: some View{
     ZStack{
         
         //colocar background
         
-        VStack {
+        VStack(spacing: 50) {
+            Spacer()
+                .frame(height: 10)
             Text(ruidos.nome)
                 .font(.title)
             Spacer()
-                .frame(height: 500)
+                .frame(height: 10)
+            PickerScreen()
+                
             
         }
     }
@@ -29,7 +34,7 @@ struct SegundaTela: View {
 }
 
 
-
+//
 //        struct SegundaTela_Previews: PreviewProvider {
 //            static var previews: some View {
 //                SegundaTela()

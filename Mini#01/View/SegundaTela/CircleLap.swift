@@ -21,17 +21,17 @@ struct CircleLap: View {
     
     var body : some View{
         
-        VStack(spacing: 25){
+        VStack(spacing: 70){
             ZStack{
                 
-                Circle()
-                    .stroke(Color(red: 142/255, green: 142/255, blue: 147/255), style: StrokeStyle(lineWidth: 5, lineCap: .round))
-                
-                Circle()
-                    .trim(from: 0, to: 0.5)
-                    .stroke(Color(red: 253/255, green: 148/255, blue: 38/255), style: StrokeStyle(lineWidth: 5, lineCap: .round))
-                    .rotationEffect(.degrees(-90))
-                    .animation(.easeInOut)//change that for a not deprecated one
+//                Circle()
+//                    .stroke(Color(red: 142/255, green: 142/255, blue: 147/255), style: StrokeStyle(lineWidth: 5, lineCap: .round))
+//
+//                Circle()
+//                    .trim(from: 0, to: 0.5)
+//                    .stroke(Color(red: 253/255, green: 148/255, blue: 38/255), style: StrokeStyle(lineWidth: 5, lineCap: .round))
+//                    .rotationEffect(.degrees(-90))
+//                    .animation(.easeInOut)//change that for a not deprecated one
                 
                 Text((hourSelection < 10 ? "0\(hourSelection):\(minuteSelection)" : "\(hourSelection):\(minuteSelection)"))
                     .padding()
@@ -66,9 +66,9 @@ struct CircleLap: View {
                     //                         .padding()
                 }
                 
-            }.frame(width: 248, height: 248)
+            }.padding(.horizontal).frame(width: 248, height: 248)
             
-            HStack(spacing:155){
+            HStack(spacing:170){
                 
                 Button(action: {
                     timerOnOff = true
@@ -77,7 +77,7 @@ struct CircleLap: View {
                     Text("Cancel")
                 }
                 
-                .frame(width: 100, height: 100)
+                .frame(width: 80, height: 80)
                 .foregroundColor(Color(red: 217/255, green: 217/255, blue: 217/255))
                 // .frame(width: 75, height: 75)
                 
@@ -95,7 +95,7 @@ struct CircleLap: View {
                     Text("\(isPlaying ? "Pause" : "Play")")
                         .foregroundColor(isPlaying ? Color(red: 253/255, green: 148/255, blue: 38/255) : Color(red: 61/255, green: 197/255, blue: 94/255))
                 }
-                .frame(width: 100, height: 100)
+                .frame(width: 80, height: 80)
                 .foregroundColor(isPlaying ? .orange.opacity(0.6) : Color(red: 105/255, green: 152/255, blue: 117/255))
                 // .frame(width: 75, height: 75)
             }.buttonStyle(CircleButton())

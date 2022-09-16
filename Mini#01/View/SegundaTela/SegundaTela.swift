@@ -18,16 +18,16 @@ struct SegundaTela: View {
         
         //colocar background
         
-        VStack(spacing: 50) {
+        VStack(spacing: 20) {
             Spacer()
-                .frame(height: 10)
+                .frame(height: 100)
             Text(ruidos.nome)
                 .font(.title)
             Spacer()
-                .frame(height: 10)
+                .frame(height: 70)
             PickerScreen()
             Spacer()
-                .frame(height: 40)
+                .frame(height: 70)
                 
             
         }

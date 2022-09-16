@@ -18,7 +18,7 @@ struct ruidosIcon: View{
         VStack{
             Image("\(ruidos.imagem)")
                 .resizable()
-                .frame(width: 112, height: 112)
+                .frame(width: 110, height: 110)
         }
         
     }

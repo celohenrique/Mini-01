@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		957EB9D028D6A3EF00C8080A /* coracao.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 957EB9CF28D6A3EF00C8080A /* coracao.mp3 */; };
+		957EB9D228D6A3FA00C8080A /* secador.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 957EB9D128D6A3FA00C8080A /* secador.mp3 */; };
+		95877D1028D4FDE00084FB1C /* CircleLap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95877D0F28D4FDE00084FB1C /* CircleLap.swift */; };
+		95877D1228D514060084FB1C /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95877D1128D514060084FB1C /* AudioManager.swift */; };
+		95877D1528D551970084FB1C /* chuva.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 95877D1428D551970084FB1C /* chuva.mp3 */; };
 		A448267228C1352C00EE27B5 /* ruidosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A448267128C1352C00EE27B5 /* ruidosModel.swift */; };
 		A448267428C1359B00EE27B5 /* TelaInicial.swift in Sources */ = {isa = PBXBuildFile; fileRef = A448267328C1359B00EE27B5 /* TelaInicial.swift */; };
 		A4D2202328CFABE600BAC9EE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D2202228CFABE600BAC9EE /* ViewModel.swift */; };
@@ -21,6 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		957EB9CF28D6A3EF00C8080A /* coracao.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coracao.mp3; sourceTree = "<group>"; };
+		957EB9D128D6A3FA00C8080A /* secador.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = secador.mp3; sourceTree = "<group>"; };
+		95877D0F28D4FDE00084FB1C /* CircleLap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLap.swift; sourceTree = "<group>"; };
+		95877D1128D514060084FB1C /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		95877D1428D551970084FB1C /* chuva.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chuva.mp3; sourceTree = "<group>"; };
 		A448267128C1352C00EE27B5 /* ruidosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ruidosModel.swift; sourceTree = "<group>"; };
 		A448267328C1359B00EE27B5 /* TelaInicial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaInicial.swift; sourceTree = "<group>"; };
 		A4D2202228CFABE600BAC9EE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -46,11 +56,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95877D1328D551660084FB1C /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				95877D1428D551970084FB1C /* chuva.mp3 */,
+				957EB9CF28D6A3EF00C8080A /* coracao.mp3 */,
+				957EB9D128D6A3FA00C8080A /* secador.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		A4D2202428CFAC2800BAC9EE /* SegundaTela */ = {
 			isa = PBXGroup;
 			children = (
 				A4D2202528CFACFA00BAC9EE /* SegundaTela.swift */,
 				B9EED67228D2597F00ED4237 /* PickerScreen.swift */,
+				95877D0F28D4FDE00084FB1C /* CircleLap.swift */,
 			);
 			path = SegundaTela;
 			sourceTree = "<group>";
@@ -114,6 +135,7 @@
 			children = (
 				B9F3B58828BD3A9100EB2170 /* Mini_01App.swift */,
 				A4D2202228CFABE600BAC9EE /* ViewModel.swift */,
+				95877D1128D514060084FB1C /* AudioManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -121,6 +143,7 @@
 		B9F3B59928BD3B3400EB2170 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				95877D1328D551660084FB1C /* Sounds */,
 				B9F3B58C28BD3A9200EB2170 /* Assets.xcassets */,
 			);
 			path = Utils;
@@ -194,7 +217,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95877D1528D551970084FB1C /* chuva.mp3 in Resources */,
+				957EB9D028D6A3EF00C8080A /* coracao.mp3 in Resources */,
 				B9F3B59028BD3A9200EB2170 /* Preview Assets.xcassets in Resources */,
+				957EB9D228D6A3FA00C8080A /* secador.mp3 in Resources */,
 				B9F3B58D28BD3A9200EB2170 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +241,8 @@
 				A448267228C1352C00EE27B5 /* ruidosModel.swift in Sources */,
 				A4D2202328CFABE600BAC9EE /* ViewModel.swift in Sources */,
 				A448267428C1359B00EE27B5 /* TelaInicial.swift in Sources */,
+				95877D1228D514060084FB1C /* AudioManager.swift in Sources */,
+				95877D1028D4FDE00084FB1C /* CircleLap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

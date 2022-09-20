@@ -12,21 +12,26 @@ import SwiftUI
 struct SegundaTela: View {
     
     @State var ruidos: Ruidos
+    
     var body: some View{
-    ZStack{
         
-        //colocar background
-        
-        VStack {
-            Text(ruidos.nome)
-                .font(.title)
-            Spacer()
-                .frame(height: 500)
+        ZStack{
             
+            //colocar background
+            
+            VStack {
+                Text(ruidos.nome)
+                    .font(.title)
+                //            Spacer()
+                //                .frame(height: 500)
+                PickerScreen(ruidos: self.ruidos)
+            } 
         }
+        
     }
-    }
+        
 }
+
 
 
 

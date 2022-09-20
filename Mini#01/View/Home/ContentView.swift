@@ -17,13 +17,9 @@ struct ContentView: View {
     var body: some View {
         
         VStack{
-            
             TelaInicial()
-            
         }
         .padding(.all)
-        
-        
         }
 }
 

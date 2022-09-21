@@ -21,7 +21,6 @@ struct ContentView: View {
             TelaInicial()
             
         }
-        .padding(.all)
         
         
         }

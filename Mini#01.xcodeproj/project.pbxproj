@@ -10,6 +10,7 @@
 		A417EFD628D3ADB2009A4721 /* CircleLap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A417EFD528D3ADB2009A4721 /* CircleLap.swift */; };
 		A448267228C1352C00EE27B5 /* ruidosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A448267128C1352C00EE27B5 /* ruidosModel.swift */; };
 		A448267428C1359B00EE27B5 /* TelaInicial.swift in Sources */ = {isa = PBXBuildFile; fileRef = A448267328C1359B00EE27B5 /* TelaInicial.swift */; };
+		A46F125228DB74190043961E /* HalfASheet in Frameworks */ = {isa = PBXBuildFile; productRef = A46F125128DB74190043961E /* HalfASheet */; };
 		A4D2202328CFABE600BAC9EE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D2202228CFABE600BAC9EE /* ViewModel.swift */; };
 		A4D2202628CFACFA00BAC9EE /* SegundaTela.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D2202528CFACFA00BAC9EE /* SegundaTela.swift */; };
 		B9EED67128D255DF00ED4237 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EED67028D255DF00ED4237 /* Sensor.swift */; };
@@ -42,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A46F125228DB74190043961E /* HalfASheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +157,9 @@
 			dependencies = (
 			);
 			name = "Mini#01";
+			packageProductDependencies = (
+				A46F125128DB74190043961E /* HalfASheet */,
+			);
 			productName = "Mini#01";
 			productReference = B9F3B58528BD3A9100EB2170 /* Mini#01.app */;
 			productType = "com.apple.product-type.application";
@@ -183,6 +188,9 @@
 				Base,
 			);
 			mainGroup = B9F3B57C28BD3A9000EB2170;
+			packageReferences = (
+				A46F125028DB74190043961E /* XCRemoteSwiftPackageReference "HalfASheet" */,
+			);
 			productRefGroup = B9F3B58628BD3A9100EB2170 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -423,6 +431,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A46F125028DB74190043961E /* XCRemoteSwiftPackageReference "HalfASheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/franklynw/HalfASheet.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A46F125128DB74190043961E /* HalfASheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A46F125028DB74190043961E /* XCRemoteSwiftPackageReference "HalfASheet" */;
+			productName = HalfASheet;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B9F3B57D28BD3A9000EB2170 /* Project object */;
 }

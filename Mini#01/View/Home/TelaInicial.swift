@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import HalfASheet
 
 
 
@@ -17,8 +18,11 @@ struct ruidosIcon: View{
         
         VStack{
             Image("\(ruidos.imagem)")
-                .resizable()
-                .frame(width: 110, height: 110)
+            Spacer()
+                .frame(height: 15)
+            Text(ruidos.nome)
+                .fontWeight(.bold)
+                .foregroundColor(Color.white)
         }
         
     }
@@ -26,96 +30,79 @@ struct ruidosIcon: View{
 
 struct TelaInicial: View {
     
-
+    let columns = [
+        GridItem(spacing: 20),
+        GridItem(spacing: 20),
+        GridItem(spacing: 20)
+    ]
+    
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        
+    }
+    
+    @State var showSheet: Bool = false
+    @State var toggleIsOn: Bool = false
+    
     var body: some View {
         
         NavigationView{
-            
-            
-            ZStack {
+            ZStack{
+                Image("Fundo")
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
                 
-                VStack(spacing: 50){
+                
+                VStack{
                     
+                    LazyVGrid(columns: columns, alignment: .center, spacing: 60){
+                        
+                        ForEach(ruidos, id: \.self){ item in
+                            NavigationLink(destination: SegundaTela(ruidos: item)){
+                                ruidosIcon(ruidos: item)
+                            }
+                        }
+                    }
+                    .padding(.all)
                     
-                    HStack{
-                        Text("Sons")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
+                }.toolbar(){
+                    ToolbarItem(placement: .automatic){
+                        Image(systemName: "mic.fill")
+                            .foregroundColor(Color.white)
+                            .onTapGesture {
+                                showSheet.toggle()
+                            }
+                    }
+                    
+                }
+                .navigationBarTitle("Sons")
+                
+                HalfASheet(isPresented: $showSheet){
+                    VStack{
+                        Toggle(isOn: $toggleIsOn, label: {
+                            Text("Sensor de Barulho")
+                                .font(.title2)
+                        })
                         Spacer()
-    
-                    }
-                    .padding(.leading)
-                    .toolbar(){
-                        ToolbarItem(placement: .automatic){
-                            NavigationLink(destination: ToolBar(), label: {
-                                Image(systemName: "mic.fill")
-                                    .padding(.top, 20)
-                                    
-                            })
-                        }
-                    }
-                        
-                        HStack(spacing: 20){
-                            
-                            ForEach(linha1, id: \.self){ item in
-                                NavigationLink(destination: SegundaTela(ruidos: item)){
-                                    ruidosIcon(ruidos: item)
-                                }
-                            }
-                        }
-                        
-                        HStack(spacing: 20){
-                            
-                            ForEach(linha2, id: \.self){ item in
-                                NavigationLink(destination: SegundaTela(ruidos: item)){
-                                    ruidosIcon(ruidos: item)
-                                }
-                            }
-                        }
-                        
-                        HStack(spacing: 20){
-                            
-                            ForEach(linha3, id: \.self){ item in
-                                NavigationLink(destination: SegundaTela(ruidos: item)){
-                                    ruidosIcon(ruidos: item)
-                                }
-                            }
-                        }
-                        
-                        HStack(spacing: 20){
-                            
-                            ForEach(linha4, id: \.self){ item in
-                                NavigationLink(destination: SegundaTela(ruidos: item)){
-                                    ruidosIcon(ruidos: item)
-                                }
-                            }
-                        }
+                            .frame(height: 20)
+                        Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.")
                         Spacer()
-                            .frame(height: 80)
+                            .frame(height: 100)
                     }
+                    
+                }.height(.proportional(0.55))
             }
-//                .toolbar{
-//                    ToolbarItem(placement: .navigationBarTrailing){
-//                        NavigationLink(destination: ToolBar(), label: {
-//                            Image(systemName: "mic.fill")
-//                        })
-//                    }
-//
-//                    ToolbarItem(placement: .navigationBarLeading){
-//                        navigationTitle("TESTE")
-//
-//
-//
-//
-//                    }
-//                }
-        }.ignoresSafeArea(.all)
-        
-        
-        
-            
             
         }
+    }
+    
+    struct RuidoBranco_Previews: PreviewProvider {
+        static var previews: some View {
+            TelaInicial()
+        }
+    }
+    
 }
 
 struct RuidoBranco_Previews: PreviewProvider {

@@ -1,12 +1,10 @@
 //
-//  ContentView.swift
-//  testTimer2
+//  PickerScreen.swift
+//  provaConeceitoMini1
 //
-//  Created by Marcelo Araujo on 12/09/22.
+//  Created by Gustavo Assis on 15/09/22.
 //
-
 import SwiftUI
-
 
 struct CircleButton: ButtonStyle{
     
@@ -20,8 +18,8 @@ struct CircleButton: ButtonStyle{
             )
             .overlay(
                 Circle()
-                    .stroke(lineWidth: 2)
-                    .foregroundColor(.white)
+                    .stroke(lineWidth: 1)
+                    .foregroundColor(Color(red: 30/255, green: 14/255, blue: 51/255))
                     .padding(4))
             .overlay(
                 configuration.label
@@ -29,23 +27,26 @@ struct CircleButton: ButtonStyle{
     }
 }
 
+
+
+
 struct PickerScreen: View {
     
     @State var hourSelection = 0
     @State var minuteSelection = 0
     
-    @State var timerOnOff = true
+    @State var timerOnOff = true //usei para mudar do picker para o countdown
     @State var isPlaying = true
     
+    @State var ruidos: Ruidos
     
     var hours = [Int](0..<24)
     var minutes = [Int](0..<60)
     
-    
     var body: some View {
+        
         if timerOnOff {
-            
-            VStack(alignment: .center,spacing: 110){
+            VStack(alignment: .center,spacing: 100){
                 HStack(alignment: .center){
                     
                     Picker(selection: self.$hourSelection, label: Text("")){
@@ -67,49 +68,46 @@ struct PickerScreen: View {
                     .frame(width: 150, height: 150, alignment: .center)
                     // .compositingGroup()
                     //.clipped()
-                    
                 }
-                HStack(spacing:170){
+                
+                // MARK: - Botoes
+                HStack(alignment: .center){
                     
-                    Button(action: {}){ //action here
-                        
-                        Text("Cancel")
-                    }
-                    
-                    .frame(width: 80, height: 80)
-                    .foregroundColor(Color(red: 228/255, green: 228/255, blue: 228/255))
-                    .frame(width: 75, height: 75)
+//                    Button(action: {}){ //action here
+//                        Text("Cancel")
+//                    }
+//
+//                    .frame(width: 100, height: 100)
+//                    .foregroundColor(Color(red: 228/255, green: 228/255, blue: 228/255))
+                    // .frame(width: 75, height: 75)
                     
                     Button(action:{
+                        if hourSelection == 0 && minuteSelection == 0 {
+                            return
+                        } else {
+                            timerOnOff = false //Start button action
+                        }
                         
-                        timerOnOff = false //Start button action
                         
                     }){
                         Text("Start")
-                            .foregroundColor(Color(red: 61/255, green: 197/255, blue: 94/255))
+                            .foregroundColor(Color(red: 30/255, green: 14/255, blue: 51/255))
                     }
-                    .frame(width: 80, height: 80)
-                    .foregroundColor(Color(red: 105/255, green: 152/255, blue: 117/255))
-                    .frame(width: 75, height: 75)
+                    .frame(width: 100, height: 100)
+                    .foregroundColor(Color(red: 255/255, green: 255/255, blue: 255/255))
+
+                    // .frame(width: 75, height: 75)
                 }
                 .buttonStyle(CircleButton())
             }
+        } else{
+            CircleLap(hourSelection: $hourSelection, minuteSelection: $minuteSelection, timerOnOff: $timerOnOff, isPlaying: $isPlaying, ruidos: self.ruidos)
         }
-        
-        
-        else {
-            
-            CircleLap(hourSelection: $hourSelection, minuteSelection: $minuteSelection, timerOnOff: $timerOnOff, isPlaying: $isPlaying)
-            
-            
-        }
-        
-        
-        
     }
 }
 
 
+//MARK: - Extensions
 extension UIPickerView {
     open override var intrinsicContentSize: CGSize {
         return CGSize(width: UIView.noIntrinsicMetric, height: super.intrinsicContentSize.height)
@@ -117,9 +115,10 @@ extension UIPickerView {
     }
 }
 
+//struct PickerScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PickerScreen()
+//    }
+//}
 
-//        struct ContentView_Previews: PreviewProvider {
-//            static var previews: some View {
-//                ContentView()
-//            }
-//        }
+

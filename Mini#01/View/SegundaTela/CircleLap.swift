@@ -1,111 +1,136 @@
 //
 //  CircleLap.swift
-//  testTimer2
+//  Mini#01
 //
-//  Created by Marcelo Araujo on 14/09/22.
+//  Created by Gustavo Assis on 16/09/22.
 //
+
 
 import SwiftUI
-
 struct CircleLap: View {
     
     // let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect() should we implent that for logic?
-    let timer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
+    @State var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     @Binding var hourSelection: Int
     @Binding var minuteSelection: Int
+    @State var seconds: Int = 0
     @Binding var timerOnOff: Bool
     @Binding var isPlaying: Bool
     
-    @State  var secondSelection = 0
+    var isPreview: Bool = false
+    @State var ruidos: Ruidos
+    //    @State  var secondSelection = 0
+    
+    func convertSelection() -> Int{
+        
+        let hora1 = hourSelection * 3600
+        let minuto1 = minuteSelection * 60
+        let second = seconds
+        let total1 = hora1 + minuto1 + second
+        
+        return total1
+    }
+    
+    func convertSecondsToTime(timeInSeconds: Int) -> String{
+        
+        let hours = timeInSeconds / 3600
+        let minutes = (timeInSeconds % 3600) / 60
+        let seconds = timeInSeconds % 60
+        return String(format: "%02i:%02i:%02i",
+                      hours,
+                      minutes,
+                      seconds)
+    }
     
     var body : some View{
         
-        VStack(spacing: 70){
-            ZStack{
-                
-//                Circle()
-//                    .stroke(Color(red: 142/255, green: 142/255, blue: 147/255), style: StrokeStyle(lineWidth: 5, lineCap: .round))
-//
-//                Circle()
-//                    .trim(from: 0, to: 0.5)
-//                    .stroke(Color(red: 253/255, green: 148/255, blue: 38/255), style: StrokeStyle(lineWidth: 5, lineCap: .round))
-//                    .rotationEffect(.degrees(-90))
-//                    .animation(.easeInOut)//change that for a not deprecated one
-                
-                Text((hourSelection < 10 ? "0\(hourSelection):\(minuteSelection)" : "\(hourSelection):\(minuteSelection)"))
-                    .padding()
-                    .font(.system(size: 48))
-                    .onReceive(timer) { _ in
-                        
-                        if minuteSelection > 0 {
-                            minuteSelection -= 1
-                        }
-                        else if minuteSelection == 0 {
-                            if hourSelection >= 1{
-                                minuteSelection = 59
-                                hourSelection -= 1
-                            }
-                            if hourSelection == 0{
-                                print("Timer Stopped")
-                                //                                timer.invalidate()
-                            }
-                        }
-                        //should we add Hstack or Vstack here?
-                        
-                        
-                        
-                    }
-                
-                HStack(spacing: 25){
-                    
-                    //maybe we can set the SF symble here not sure (systemImage)
-                    //                    Label("bell.fill", systemImage: "bell.fill")
-                    //                         .foregroundColor(.black)
-                    //                         .font(.custom("", size: 15))
-                    //                         .padding()
-                }
-                
-            }.padding(.horizontal).frame(width: 248, height: 248)
+        var timeRemaining = convertSelection()
+        
+        
+        
+        
+        VStack(spacing: 25){
+            //            ZStack{
+            //                Circle()
+            //                    .stroke(Color(red: 142/255, green: 142/255, blue: 147/255), style: StrokeStyle(lineWidth: 5, lineCap: .round))
+            //
+            //                Circle()
+            //                    .trim(from: 0, to: 0.5)
+            //                    .stroke(Color(red: 253/255, green: 148/255, blue: 38/255), style: StrokeStyle(lineWidth: 5, lineCap: .round))
+            //                    .rotationEffect(.degrees(-90))
+            //                    .animation(.easeInOut) //change that for a not deprecated one
             
-            HStack(spacing:170){
-                
-                Button(action: {
-                    timerOnOff = true
-                }){
+            Text(convertSecondsToTime(timeInSeconds: timeRemaining))
+            
+                .padding()
+                .font(.system(size: 48))
+                .onReceive(timer) { _ in
                     
-                    Text("Cancel")
-                }
-                
-                .frame(width: 80, height: 80)
-                .foregroundColor(Color(red: 217/255, green: 217/255, blue: 217/255))
-                // .frame(width: 75, height: 75)
-                
-                Button(action: {
-                    
-                    if isPlaying {
-                        isPlaying = false
-                    }
-                    else {
+                    if timeRemaining == 0 {
+                        timerOnOff = true
                         isPlaying = true
+                        player.stop()
                     }
                     
-                })
-                {
-                    Text("\(isPlaying ? "Pause" : "Play")")
-                        .foregroundColor(isPlaying ? Color(red: 253/255, green: 148/255, blue: 38/255) : Color(red: 61/255, green: 197/255, blue: 94/255))
+                    timeRemaining -= 1
+                    hourSelection = timeRemaining / 3600
+                    minuteSelection = (timeRemaining % 3600) / 60
+                    seconds = timeRemaining % 60
+                    
+                    
+                    //                            if hourSelection == 0 && minuteSelection == 0{
+                    //                                timerOnOff = true
+                    //                                player.stop()
+                    //
+                    //                            }
                 }
-                .frame(width: 80, height: 80)
-                .foregroundColor(isPlaying ? .orange.opacity(0.6) : Color(red: 105/255, green: 152/255, blue: 117/255))
-                // .frame(width: 75, height: 75)
-            }.buttonStyle(CircleButton())
-            
         }
         
+        //            }.frame(width: 248, height: 248)
         
+        HStack(spacing:130){
+            
+            Button(action: {
+                timerOnOff = true
+                isPlaying = true
+                player.stop()
+            }){
+                
+                Text("Cancel")
+            }
+            
+            .frame(width: 100, height: 100)
+            .foregroundColor(Color(red: 217/255, green: 217/255, blue: 217/255))
+            // .frame(width: 75, height: 75)
+            
+            Button(action: {
+                playPause()
+                if isPlaying {
+                    isPlaying = false
+                    self.timer.upstream.connect().cancel()
+                }
+                else {
+                    isPlaying = true
+                    self.timer = self.timer.upstream.autoconnect()
+                }
+            })
+            {
+                Text("\(isPlaying ? "Pause" : "Play")")
+                    .foregroundColor(Color(red: 28/255, green: 12/255, blue: 48/255))
+            }
+            .frame(width: 100, height: 100)
+            .foregroundColor(isPlaying ? Color(red: 170/255, green: 170/255, blue: 170/255) : Color(red: 255/255, green: 255/255, blue: 255/255) )
+            // .frame(width: 75, height: 75)
+        }.buttonStyle(CircleButton())
+        
+        .onAppear{
+            playSound(key: "\(ruidos.audio)")
+        }
     }
-    
 }
+
+
 
 
 //struct CircleLap_Previews: PreviewProvider {
@@ -113,3 +138,5 @@ struct CircleLap: View {
 //        CircleLap()
 //    }
 //}
+
+

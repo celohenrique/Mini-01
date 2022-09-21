@@ -11,6 +11,19 @@
 		A448267228C1352C00EE27B5 /* ruidosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A448267128C1352C00EE27B5 /* ruidosModel.swift */; };
 		A448267428C1359B00EE27B5 /* TelaInicial.swift in Sources */ = {isa = PBXBuildFile; fileRef = A448267328C1359B00EE27B5 /* TelaInicial.swift */; };
 		A46F125228DB74190043961E /* HalfASheet in Frameworks */ = {isa = PBXBuildFile; productRef = A46F125128DB74190043961E /* HalfASheet */; };
+		A47A52DA28DB8D1400C9934C /* tv.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47A52CF28DB8D1300C9934C /* tv.mp3 */; };
+		A47A52DB28DB8D1400C9934C /* chuva.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47A52D028DB8D1300C9934C /* chuva.mp3 */; };
+		A47A52DC28DB8D1400C9934C /* aspirador.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47A52D128DB8D1300C9934C /* aspirador.mp3 */; };
+		A47A52DD28DB8D1400C9934C /* coracao.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47A52D228DB8D1300C9934C /* coracao.mp3 */; };
+		A47A52DE28DB8D1400C9934C /* ronrom.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47A52D328DB8D1300C9934C /* ronrom.mp3 */; };
+		A47A52DF28DB8D1400C9934C /* mar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47A52D428DB8D1400C9934C /* mar.mp3 */; };
+		A47A52E028DB8D1400C9934C /* utero.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47A52D528DB8D1400C9934C /* utero.mp3 */; };
+		A47A52E128DB8D1400C9934C /* vento.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47A52D628DB8D1400C9934C /* vento.mp3 */; };
+		A47A52E228DB8D1400C9934C /* secador.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47A52D728DB8D1400C9934C /* secador.mp3 */; };
+		A47A52E328DB8D1400C9934C /* lagoa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47A52D828DB8D1400C9934C /* lagoa.mp3 */; };
+		A47A52E428DB8D1400C9934C /* lareira.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47A52D928DB8D1400C9934C /* lareira.mp3 */; };
+		A47A52E628DB8E2E00C9934C /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A52E528DB8E2E00C9934C /* AudioManager.swift */; };
+		A47A52EA28DB91C000C9934C /* shh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47A52E928DB91C000C9934C /* shh.mp3 */; };
 		A4D2202328CFABE600BAC9EE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D2202228CFABE600BAC9EE /* ViewModel.swift */; };
 		A4D2202628CFACFA00BAC9EE /* SegundaTela.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D2202528CFACFA00BAC9EE /* SegundaTela.swift */; };
 		B9EED67128D255DF00ED4237 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EED67028D255DF00ED4237 /* Sensor.swift */; };
@@ -26,6 +39,19 @@
 		A417EFD528D3ADB2009A4721 /* CircleLap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLap.swift; sourceTree = "<group>"; };
 		A448267128C1352C00EE27B5 /* ruidosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ruidosModel.swift; sourceTree = "<group>"; };
 		A448267328C1359B00EE27B5 /* TelaInicial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaInicial.swift; sourceTree = "<group>"; };
+		A47A52CF28DB8D1300C9934C /* tv.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tv.mp3; sourceTree = "<group>"; };
+		A47A52D028DB8D1300C9934C /* chuva.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chuva.mp3; sourceTree = "<group>"; };
+		A47A52D128DB8D1300C9934C /* aspirador.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = aspirador.mp3; sourceTree = "<group>"; };
+		A47A52D228DB8D1300C9934C /* coracao.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coracao.mp3; sourceTree = "<group>"; };
+		A47A52D328DB8D1300C9934C /* ronrom.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ronrom.mp3; sourceTree = "<group>"; };
+		A47A52D428DB8D1400C9934C /* mar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mar.mp3; sourceTree = "<group>"; };
+		A47A52D528DB8D1400C9934C /* utero.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = utero.mp3; sourceTree = "<group>"; };
+		A47A52D628DB8D1400C9934C /* vento.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = vento.mp3; sourceTree = "<group>"; };
+		A47A52D728DB8D1400C9934C /* secador.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = secador.mp3; sourceTree = "<group>"; };
+		A47A52D828DB8D1400C9934C /* lagoa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lagoa.mp3; sourceTree = "<group>"; };
+		A47A52D928DB8D1400C9934C /* lareira.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lareira.mp3; sourceTree = "<group>"; };
+		A47A52E528DB8E2E00C9934C /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		A47A52E928DB91C000C9934C /* shh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shh.mp3; sourceTree = "<group>"; };
 		A4D2202228CFABE600BAC9EE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		A4D2202528CFACFA00BAC9EE /* SegundaTela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegundaTela.swift; sourceTree = "<group>"; };
 		B9EED67028D255DF00ED4237 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
@@ -50,6 +76,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A47A52CE28DB8CF500C9934C /* Sons */ = {
+			isa = PBXGroup;
+			children = (
+				A47A52D128DB8D1300C9934C /* aspirador.mp3 */,
+				A47A52D028DB8D1300C9934C /* chuva.mp3 */,
+				A47A52D228DB8D1300C9934C /* coracao.mp3 */,
+				A47A52D828DB8D1400C9934C /* lagoa.mp3 */,
+				A47A52D928DB8D1400C9934C /* lareira.mp3 */,
+				A47A52D428DB8D1400C9934C /* mar.mp3 */,
+				A47A52D328DB8D1300C9934C /* ronrom.mp3 */,
+				A47A52D728DB8D1400C9934C /* secador.mp3 */,
+				A47A52CF28DB8D1300C9934C /* tv.mp3 */,
+				A47A52D528DB8D1400C9934C /* utero.mp3 */,
+				A47A52E928DB91C000C9934C /* shh.mp3 */,
+				A47A52D628DB8D1400C9934C /* vento.mp3 */,
+			);
+			path = Sons;
+			sourceTree = "<group>";
+		};
 		A4D2202428CFAC2800BAC9EE /* SegundaTela */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +164,7 @@
 			children = (
 				B9F3B58828BD3A9100EB2170 /* Mini_01App.swift */,
 				A4D2202228CFABE600BAC9EE /* ViewModel.swift */,
+				A47A52E528DB8E2E00C9934C /* AudioManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -126,6 +172,7 @@
 		B9F3B59928BD3B3400EB2170 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A47A52CE28DB8CF500C9934C /* Sons */,
 				B9F3B58C28BD3A9200EB2170 /* Assets.xcassets */,
 			);
 			path = Utils;
@@ -206,7 +253,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9F3B59028BD3A9200EB2170 /* Preview Assets.xcassets in Resources */,
+				A47A52DD28DB8D1400C9934C /* coracao.mp3 in Resources */,
+				A47A52DC28DB8D1400C9934C /* aspirador.mp3 in Resources */,
+				A47A52E128DB8D1400C9934C /* vento.mp3 in Resources */,
+				A47A52E228DB8D1400C9934C /* secador.mp3 in Resources */,
 				B9F3B58D28BD3A9200EB2170 /* Assets.xcassets in Resources */,
+				A47A52E428DB8D1400C9934C /* lareira.mp3 in Resources */,
+				A47A52DB28DB8D1400C9934C /* chuva.mp3 in Resources */,
+				A47A52EA28DB91C000C9934C /* shh.mp3 in Resources */,
+				A47A52DF28DB8D1400C9934C /* mar.mp3 in Resources */,
+				A47A52E028DB8D1400C9934C /* utero.mp3 in Resources */,
+				A47A52DA28DB8D1400C9934C /* tv.mp3 in Resources */,
+				A47A52DE28DB8D1400C9934C /* ronrom.mp3 in Resources */,
+				A47A52E328DB8D1400C9934C /* lagoa.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +285,7 @@
 				A448267228C1352C00EE27B5 /* ruidosModel.swift in Sources */,
 				A4D2202328CFABE600BAC9EE /* ViewModel.swift in Sources */,
 				A448267428C1359B00EE27B5 /* TelaInicial.swift in Sources */,
+				A47A52E628DB8E2E00C9934C /* AudioManager.swift in Sources */,
 				A417EFD628D3ADB2009A4721 /* CircleLap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

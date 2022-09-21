@@ -25,7 +25,7 @@ struct SegundaTela: View {
                 .font(.title)
             Spacer()
                 .frame(height: 70)
-            PickerScreen()
+            PickerScreen(ruidos: self.ruidos)
             Spacer()
                 .frame(height: 70)
                 

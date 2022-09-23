@@ -50,7 +50,7 @@ struct CircleLap: View {
         
         
         
-        VStack(spacing: 25){
+        VStack(spacing: 170){
             //            ZStack{
             //                Circle()
             //                    .stroke(Color(red: 142/255, green: 142/255, blue: 147/255), style: StrokeStyle(lineWidth: 5, lineCap: .round))
@@ -62,6 +62,7 @@ struct CircleLap: View {
             //                    .animation(.easeInOut) //change that for a not deprecated one
             
             Text(convertSecondsToTime(timeInSeconds: timeRemaining))
+                .foregroundColor(Color.white)
             
                 .padding()
                 .font(.system(size: 48))
@@ -85,48 +86,51 @@ struct CircleLap: View {
                     //
                     //                            }
                 }
+            
+            HStack(spacing:130){
+                
+                Button(action: {
+                    timerOnOff = true
+                    isPlaying = true
+                    player.stop()
+                }){
+                    
+                    Text("Cancel")
+                }
+                
+                .frame(width: 100, height: 100)
+                .foregroundColor(Color(red: 217/255, green: 217/255, blue: 217/255))
+                // .frame(width: 75, height: 75)
+                
+                Button(action: {
+                    playPause()
+                    if isPlaying {
+                        isPlaying = false
+                        self.timer.upstream.connect().cancel()
+                    }
+                    else {
+                        isPlaying = true
+                        self.timer = self.timer.upstream.autoconnect()
+                    }
+                })
+                {
+                    Text("\(isPlaying ? "Pause" : "Play")")
+                        .foregroundColor(Color(red: 28/255, green: 12/255, blue: 48/255))
+                }
+                .frame(width: 100, height: 100)
+                .foregroundColor(isPlaying ? Color(red: 170/255, green: 170/255, blue: 170/255) : Color(red: 255/255, green: 255/255, blue: 255/255) )
+                // .frame(width: 75, height: 75)
+            }.buttonStyle(CircleButton())
+            
+            .onAppear{
+                playSound(key: "\(ruidos.audio)")
+            }
+            
         }
         
         //            }.frame(width: 248, height: 248)
         
-        HStack(spacing:130){
-            
-            Button(action: {
-                timerOnOff = true
-                isPlaying = true
-                player.stop()
-            }){
-                
-                Text("Cancel")
-            }
-            
-            .frame(width: 100, height: 100)
-            .foregroundColor(Color(red: 217/255, green: 217/255, blue: 217/255))
-            // .frame(width: 75, height: 75)
-            
-            Button(action: {
-                playPause()
-                if isPlaying {
-                    isPlaying = false
-                    self.timer.upstream.connect().cancel()
-                }
-                else {
-                    isPlaying = true
-                    self.timer = self.timer.upstream.autoconnect()
-                }
-            })
-            {
-                Text("\(isPlaying ? "Pause" : "Play")")
-                    .foregroundColor(Color(red: 28/255, green: 12/255, blue: 48/255))
-            }
-            .frame(width: 100, height: 100)
-            .foregroundColor(isPlaying ? Color(red: 170/255, green: 170/255, blue: 170/255) : Color(red: 255/255, green: 255/255, blue: 255/255) )
-            // .frame(width: 75, height: 75)
-        }.buttonStyle(CircleButton())
         
-        .onAppear{
-            playSound(key: "\(ruidos.audio)")
-        }
     }
 }
 

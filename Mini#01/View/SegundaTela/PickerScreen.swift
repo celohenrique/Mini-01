@@ -51,7 +51,7 @@ struct PickerScreen: View {
                     
                     Picker(selection: self.$hourSelection, label: Text("")){
                         ForEach(0 ..< self.hours.count){ index in
-                            Text("\(self.hours[index]) hours").tag(index)
+                            Text("\(self.hours[index]) hours").font(.title).fontWeight(.medium).foregroundColor(Color.white).tag(index)
                         }
                     }
                     .pickerStyle(WheelPickerStyle())
@@ -61,7 +61,7 @@ struct PickerScreen: View {
                     
                     Picker(selection: self.$minuteSelection, label: Text("")){
                         ForEach(0 ..< self.minutes.count){ index in
-                            Text("\(self.minutes[index]) min").tag(index)
+                            Text("\(self.minutes[index]) min").font(.title).fontWeight(.medium).foregroundColor(Color.white).tag(index)
                         }
                     }
                     .pickerStyle(WheelPickerStyle())

@@ -16,18 +16,27 @@ struct SegundaTela: View {
     var body: some View{
     ZStack{
         
-        //colocar background
+        Image("Fundo")
+            .resizable()
+            .scaledToFill()
+            .edgesIgnoringSafeArea(.all)
+        
+        Image(ruidos.background)
+            .resizable(resizingMode: .stretch)
+            
         
         VStack(spacing: 20) {
             Spacer()
-                .frame(height: 100)
+                .frame(height: 160)
             Text(ruidos.nome)
-                .font(.title)
+                .font(.largeTitle)
+                .fontWeight(.medium)
+                .foregroundColor(Color.white)
             Spacer()
                 .frame(height: 70)
             PickerScreen(ruidos: self.ruidos)
             Spacer()
-                .frame(height: 70)
+//                .frame(height: 70)
                 
             
         }
@@ -36,7 +45,7 @@ struct SegundaTela: View {
 }
 
 
-//
+
 //        struct SegundaTela_Previews: PreviewProvider {
 //            static var previews: some View {
 //                SegundaTela()

@@ -5,7 +5,6 @@
 //  Created by Gustavo Assis on 16/09/22.
 //
 
-
 import SwiftUI
 struct CircleLap: View {
     

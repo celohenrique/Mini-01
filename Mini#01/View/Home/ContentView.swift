@@ -21,13 +21,11 @@ struct ContentView: View {
             TelaInicial()
             
         }
-        
-        
-        }
+    }
 }
 
 
- //MARK: - Preview da view
+//MARK: - Preview da view
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

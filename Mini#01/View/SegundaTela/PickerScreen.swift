@@ -27,18 +27,20 @@ struct CircleButton: ButtonStyle{
     }
 }
 
-
-
-
 struct PickerScreen: View {
     
+    @State var ruidos: Ruidos
     @State var hourSelection = 0
     @State var minuteSelection = 0
+    @Binding var timerOnOff : Bool //usei para mudar do picker para o countdown
+    @State var aux = true
     
-    @State var timerOnOff = true //usei para mudar do picker para o countdown
-    @State var isPlaying = true
+    @Binding var totalSegundos: Int
     
-    @State var ruidos: Ruidos
+    //@State var isPlaying = true
+    
+    @Binding var isPlaying: Bool
+    
     
     var hours = [Int](0..<24)
     var minutes = [Int](0..<60)
@@ -73,21 +75,14 @@ struct PickerScreen: View {
                 // MARK: - Botoes
                 HStack(alignment: .center){
                     
-//                    Button(action: {}){ //action here
-//                        Text("Cancel")
-//                    }
-//
-//                    .frame(width: 100, height: 100)
-//                    .foregroundColor(Color(red: 228/255, green: 228/255, blue: 228/255))
-                    // .frame(width: 75, height: 75)
-                    
                     Button(action:{
                         if hourSelection == 0 && minuteSelection == 0 {
                             return
                         } else {
-                            timerOnOff = false //Start button action
+                            timerOnOff = false
+                            isPlaying = true
+                            //Start button action
                         }
-                        
                         
                     }){
                         Text("Start")
@@ -95,16 +90,18 @@ struct PickerScreen: View {
                     }
                     .frame(width: 100, height: 100)
                     .foregroundColor(Color(red: 255/255, green: 255/255, blue: 255/255))
-
+                    
                     // .frame(width: 75, height: 75)
                 }
                 .buttonStyle(CircleButton())
             }
         } else{
-            CircleLap(hourSelection: $hourSelection, minuteSelection: $minuteSelection, timerOnOff: $timerOnOff, isPlaying: $isPlaying, ruidos: self.ruidos)
+            
+            CircleLap(ruidos: self.ruidos, hourSelection: $hourSelection, minuteSelection: $minuteSelection,  timerOnOff: $timerOnOff, isPlaying: $isPlaying, totalSegundos: $totalSegundos, aux: totalSegundos)
         }
     }
 }
+
 
 
 //MARK: - Extensions

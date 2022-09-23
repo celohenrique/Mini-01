@@ -8,14 +8,12 @@
 import SwiftUI
 import HalfASheet
 
-
-
 struct ruidosIcon: View{
     
     @State var ruidos: Ruidos
+
     
     var body: some View{
-        
         VStack{
             Image("\(ruidos.imagem)")
             Spacer()
@@ -24,11 +22,20 @@ struct ruidosIcon: View{
                 .fontWeight(.bold)
                 .foregroundColor(Color.white)
         }
-        
     }
 }
 
 struct TelaInicial: View {
+
+    @State var isPlaying: Bool = false //inicia falsa
+    @State var timerOnOff: Bool = true
+    @State var sensor = false
+    @State var showSheet: Bool = false
+    @State var toggleIsOn: Bool = false
+    @State var tempo: Int?
+    @ObservedObject private var mic = MicrophoneMonitor(ruidos: nil)
+    
+    @State var totalSegundos = 0
     
     let columns = [
         GridItem(spacing: 20),
@@ -38,14 +45,9 @@ struct TelaInicial: View {
     
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        
     }
     
-    @State var showSheet: Bool = false
-    @State var toggleIsOn: Bool = false
-    
     var body: some View {
-        
         NavigationView{
             ZStack{
                 Image("Fundo")
@@ -53,20 +55,19 @@ struct TelaInicial: View {
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
                 
-                
                 VStack{
-                    
                     LazyVGrid(columns: columns, alignment: .center, spacing: 60){
                         
                         ForEach(ruidos, id: \.self){ item in
-                            NavigationLink(destination: SegundaTela(ruidos: item)){
+                            NavigationLink(destination: SegundaTela(ruidos: item, isPlaying: $isPlaying, timerOnOff: $timerOnOff, totalSegundos: $totalSegundos )){
                                 ruidosIcon(ruidos: item)
                             }
                         }
                     }
                     .padding(.all)
                     
-                }.toolbar(){
+                }
+                .toolbar(){
                     ToolbarItem(placement: .automatic){
                         Image(systemName: "mic.fill")
                             .foregroundColor(Color.white)
@@ -74,15 +75,21 @@ struct TelaInicial: View {
                                 showSheet.toggle()
                             }
                     }
-                    
                 }
                 .navigationBarTitle("Sons")
-                
+            
                 HalfASheet(isPresented: $showSheet){
                     VStack{
-                        Toggle(isOn: $toggleIsOn, label: {
+                        Toggle(isOn: $sensor, label: {
                             Text("Sensor de Barulho")
                                 .font(.title2)
+                                .onChange(of: sensor, perform: { newValue in
+                                    if sensor == true{
+                                        mic.startMonitoring()
+                                    }else{
+                                        mic.desliga()
+                                    }
+                                })
                         })
                         Spacer()
                             .frame(height: 20)
@@ -93,16 +100,11 @@ struct TelaInicial: View {
                     
                 }.height(.proportional(0.55))
             }
-            
+            .onAppear{
+                print(self.totalSegundos)
+            }
         }
     }
-    
-    struct RuidoBranco_Previews: PreviewProvider {
-        static var previews: some View {
-            TelaInicial()
-        }
-    }
-    
 }
 
 struct RuidoBranco_Previews: PreviewProvider {

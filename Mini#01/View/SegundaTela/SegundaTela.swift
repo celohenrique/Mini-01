@@ -14,7 +14,8 @@ struct SegundaTela: View {
     @State var ruidos: Ruidos
     @Binding var isPlaying: Bool
     @Binding var timerOnOff: Bool
-    
+    @Binding var sensor: Bool
+    @Binding var ativo: Bool
     @Binding var totalSegundos: Int
     
     var body: some View{
@@ -28,7 +29,7 @@ struct SegundaTela: View {
                 .font(.title)
                 Spacer()
                     .frame(height: 70)
-                PickerScreen(ruidos: self.ruidos, timerOnOff: $timerOnOff,totalSegundos: $totalSegundos, isPlaying: $isPlaying)
+                PickerScreen(ruidos: self.ruidos, sensor: $sensor, ativo: $ativo, timerOnOff: $timerOnOff,totalSegundos: $totalSegundos, isPlaying: $isPlaying)
                 
                 Spacer()
                     .frame(height: 70)

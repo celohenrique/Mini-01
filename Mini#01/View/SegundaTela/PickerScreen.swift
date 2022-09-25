@@ -30,6 +30,8 @@ struct CircleButton: ButtonStyle{
 struct PickerScreen: View {
     
     @State var ruidos: Ruidos
+    @Binding var sensor: Bool
+    @Binding var ativo: Bool
     @State var hourSelection = 0
     @State var minuteSelection = 0
     @Binding var timerOnOff : Bool //usei para mudar do picker para o countdown
@@ -37,6 +39,7 @@ struct PickerScreen: View {
     
     @Binding var totalSegundos: Int
     
+    @ObservedObject private var mic = MicrophoneMonitor(ruidos: nil)
     //@State var isPlaying = true
     
     @Binding var isPlaying: Bool
@@ -81,10 +84,12 @@ struct PickerScreen: View {
                         } else {
                             timerOnOff = false
                             isPlaying = true
+                            
                             //Start button action
                         }
-                        
-                        print(self.minuteSelection)
+//                        mic.desliga()
+//                        sensor = true
+                        //print(self.minuteSelection)
                         
                     }){
                         Text("Start")
@@ -98,15 +103,27 @@ struct PickerScreen: View {
                 .buttonStyle(CircleButton())
             }
             .onAppear {
+                //sensor = true
                 self.totalSegundos = 0
              //   self.minuteSelection = 0
               //  self.hourSelection = 0
                 //print("OnAppear PickerScreen: \(self.totalSegundos)")
-                print("isplaying  OnAppear CircleLap: \(isPlaying)")
+                //print("isplaying  OnAppear CircleLap: \(isPlaying)")
+                
+                
+                    //print ("Start monitoring sensor funcionou")
+//                    mic.startMonitoring(sensor: sensor, segundoRestante: totalSegundos)
+                
+                
             }
+            .onDisappear{
+                
+                //sensor = false
+            }
+            
         } else{
             
-            CircleLap(ruidos: self.ruidos, hourSelection: $hourSelection, minuteSelection: $minuteSelection,  timerOnOff: $timerOnOff, isPlaying: $isPlaying, totalSegundos: $totalSegundos, aux: totalSegundos)
+            CircleLap(ruidos: self.ruidos, hourSelection: $hourSelection, minuteSelection: $minuteSelection,  timerOnOff: $timerOnOff, isPlaying: $isPlaying, totalSegundos: $totalSegundos, aux: totalSegundos, sensor: $sensor, ativo: $ativo)
         }
     }
 }

@@ -13,14 +13,13 @@ class MicrophoneMonitor: ObservableObject {
     
     @State var ruidos: Ruidos? = nil
 
-    
-//    an
     private var audioRecorder: AVAudioRecorder
-    private var timer: Timer?
+    private var timer3: Timer?
     
-    init(ruidos: Ruidos? = nil) {
+    init(ruidos: Ruidos? = nil ) {
         
         self.ruidos = ruidos
+        
         
         let audioSession = AVAudioSession.sharedInstance()
         if audioSession.recordPermission != .granted {
@@ -50,16 +49,20 @@ class MicrophoneMonitor: ObservableObject {
         } catch {
             fatalError(error.localizedDescription)
         }
+        
     }
     
 
-    public func startMonitoring() {
-
-        audioRecorder.isMeteringEnabled = true
-        audioRecorder.record()
-
-        if timer == nil{
-            timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+    public func startMonitoring(controle: Bool) {
+        if controle {
+            audioRecorder.isMeteringEnabled = true
+            audioRecorder.record()
+            if timer3 == nil{
+                timer3 = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+            }
+            return
+        } else {
+            desliga()
         }
     }
 
@@ -69,13 +72,15 @@ class MicrophoneMonitor: ObservableObject {
         print(decibel)
         if decibel > (-20) {
             playSound(key: "mar")
+            desliga()
         }
     }
     
     func desliga (){
-        timer?.invalidate()
-        timer = nil
+        timer3?.invalidate()
+        timer3 = nil
         audioRecorder.stop()
         print("stop is calling")
+        return
     }
 }

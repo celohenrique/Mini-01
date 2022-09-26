@@ -12,9 +12,9 @@ import SwiftUI
 class MicrophoneMonitor: ObservableObject {
     
     @State var ruidos: Ruidos? = nil
-
     
-//    an
+    
+    //    an
     private var audioRecorder: AVAudioRecorder
     private var timer: Timer?
     
@@ -26,14 +26,14 @@ class MicrophoneMonitor: ObservableObject {
         if audioSession.recordPermission != .granted {
             audioSession.requestRecordPermission { (isGranted) in
                 if !isGranted {
-                
-                    print("usa ai")
-                  //  fatalError("You must allow audio recording for this demo to work")
+                    
+                    print("Para usar o sensor de barulho é necessário aceitar.")
+                    //  fatalError("You must allow audio recording for this demo to work")
                 }
             }
         }
         
-       
+        
         let url = URL(fileURLWithPath: "/dev/null", isDirectory: true)
         let recorderSettings: [String:Any] = [
             AVFormatIDKey: Int(kAudioFormatAppleLossless),
@@ -42,7 +42,7 @@ class MicrophoneMonitor: ObservableObject {
             AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
         ]
         
-      
+        
         do {
             audioRecorder = try AVAudioRecorder(url: url, settings: recorderSettings)
             try audioSession.setCategory(.playAndRecord, mode: .default, options: [])
@@ -52,23 +52,31 @@ class MicrophoneMonitor: ObservableObject {
         }
     }
     
-
-    public func startMonitoring() {
-
-        audioRecorder.isMeteringEnabled = true
-        audioRecorder.record()
-
-        if timer == nil{
-            timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+    
+    public func startMonitoring(controle: Bool) {
+        if controle {
+            
+            audioRecorder.isMeteringEnabled = true
+            audioRecorder.record()
+            
+            if timer == nil{
+                timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+            }
+            return
+            
+        } else{
+            desliga()
         }
+        
     }
-
+    
     @objc func timerAction(){
         self.audioRecorder.updateMeters()
         let decibel = self.audioRecorder.averagePower(forChannel: 0)
         print(decibel)
         if decibel > (-20) {
             playSound(key: "mar")
+            desliga()
         }
     }
     
@@ -77,5 +85,6 @@ class MicrophoneMonitor: ObservableObject {
         timer = nil
         audioRecorder.stop()
         print("stop is calling")
+        return
     }
 }

@@ -26,14 +26,15 @@ struct ruidosIcon: View{
 }
 
 struct TelaInicial: View {
-    
+
     @State var isPlaying: Bool = false //inicia falsa
     @State var timerOnOff: Bool = true
-    @State var sensor = false
+    @State var sensor: Bool = false
+    @State var ativo: Bool = false
     @State var showSheet: Bool = false
     @State var toggleIsOn: Bool = false
     @State var tempo: Int?
-    @ObservedObject private var mic = MicrophoneMonitor(ruidos: nil)
+    @ObservedObject private var mic = MicrophoneMonitor()
     
     @State var totalSegundos = 0
     
@@ -59,7 +60,7 @@ struct TelaInicial: View {
                     LazyVGrid(columns: columns, alignment: .center, spacing: 60){
                         
                         ForEach(ruidos, id: \.self){ item in
-                            NavigationLink(destination: SegundaTela(ruidos: item, isPlaying: $isPlaying, timerOnOff: $timerOnOff, totalSegundos: $totalSegundos )){
+                            NavigationLink(destination: SegundaTela(ruidos: item, isPlaying: $isPlaying, timerOnOff: $timerOnOff, sensor: $sensor, ativo: $ativo, totalSegundos: $totalSegundos )){
                                 ruidosIcon(ruidos: item)
                             }
                         }
@@ -77,17 +78,19 @@ struct TelaInicial: View {
                     }
                 }
                 .navigationBarTitle("Sons")
-                
+            
                 HalfASheet(isPresented: $showSheet){
                     VStack{
                         Toggle(isOn: $sensor, label: {
                             Text("Sensor de Barulho")
                                 .font(.title2)
                                 .onChange(of: sensor, perform: { newValue in
-                                    if sensor == true{
-                                        mic.startMonitoring()
-                                    }else{
-                                        mic.desliga()
+                                    if sensor && totalSegundos == 0 {
+                                        ativo = true
+                                       // print(ativo)
+                                    } else {
+                                        ativo = false
+
                                     }
                                 })
                         })
@@ -100,14 +103,33 @@ struct TelaInicial: View {
                     
                 }.height(.proportional(0.50))
             }
-            .onAppear{
-                //print("OnAppear Tela inicio: \(self.totalSegundos)")
-                print("isplaying  OnAppear Inicio: \(isPlaying)")
+            
+            
+            
+            //gatilho para controle do sensor
+            .onChange(of: ativo ) {newValue in
+                if ativo {
+                    mic.startMonitoring(controle: ativo)
+                } else {
+                    mic.desliga()
+                }
+                
             }
+            
+            
+            //reconhecer na tela de inicio
+            .onChange(of: totalSegundos) {newValue in
+                if sensor {
+                    if totalSegundos == 0 {
+                                ativo = true
+
+                        }
+                    }
+                }
+    
         }
     }
 }
-
 struct RuidoBranco_Previews: PreviewProvider {
     static var previews: some View {
         TelaInicial()

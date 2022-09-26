@@ -14,6 +14,8 @@ struct SegundaTela: View {
     @State var ruidos: Ruidos
     @Binding var isPlaying: Bool
     @Binding var timerOnOff: Bool
+    @Binding var sensor: Bool
+    @Binding var ativo: Bool
     
     @Binding var totalSegundos: Int
     
@@ -39,7 +41,7 @@ struct SegundaTela: View {
                     .foregroundColor(Color.white)
                 Spacer()
                     .frame(height: 70)
-                PickerScreen(ruidos: self.ruidos, timerOnOff: $timerOnOff,totalSegundos: $totalSegundos, isPlaying: $isPlaying)
+                PickerScreen(ruidos: self.ruidos, sensor: $sensor, ativo: $ativo, timerOnOff: $timerOnOff,totalSegundos: $totalSegundos, isPlaying: $isPlaying)
                 
                 Spacer()
             }

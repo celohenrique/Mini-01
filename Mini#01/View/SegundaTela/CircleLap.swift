@@ -17,10 +17,12 @@ struct CircleLap: View {
     @State var seconds: Int = 0
     @Binding var timerOnOff: Bool
     @Binding var isPlaying: Bool
-    
+    @ObservedObject private var mic = MicrophoneMonitor()
     @Binding var totalSegundos: Int
     @State var aux: Int
-//    @State var estado: String = ""
+    @Binding var sensor: Bool
+    @Binding var ativo: Bool
+
     
     var isPreview: Bool = false
     
@@ -65,30 +67,6 @@ struct CircleLap: View {
                         seconds = self.totalSegundos % 60
                     }
             }
-            .onAppear{
-            
-                
-                totalSegundos = convertSelection(hrs: hourSelection,min: minuteSelection,sec: seconds)
-
-              
-                    playSound(key: "\(ruidos.audio)")
-              
-//                    else {
-//                    playPause()
-//                }
-                
-                
-//                print("total segundos OnAppear CircleLap: \(totalSegundos)")
-                print("isplaying  OnAppear CircleLap: \(isPlaying)")
-                if aux != 0 {
-                    totalSegundos = aux
-                }
-                
-            }
-            .onDisappear {
-                print("isplaying  OnDisapper CircleLap: \(isPlaying)")
-                isPlaying = true
-            }
             
             HStack(spacing:130){
                 
@@ -99,7 +77,7 @@ struct CircleLap: View {
                     self.totalSegundos = 0
                     self.minuteSelection = 0
                     self.hourSelection = 0
-                    print("Total segundos ao cancelar: \(self.totalSegundos)")
+
 //                    self.aux = 0
                 }){
                     Text("Cancel") }
@@ -135,8 +113,33 @@ struct CircleLap: View {
             }.buttonStyle(CircleButton())
             .onChange(of: totalSegundos) {newValue in
                 self.totalSegundos = convertSelection(hrs: hourSelection,min: minuteSelection,sec: seconds)
+                
+                
             }
-            
+
+            .onAppear{
+                totalSegundos = convertSelection(hrs: hourSelection,min: minuteSelection,sec: seconds)
+                    playSound(key: "\(ruidos.audio)")
+                
+                if sensor{
+                    ativo = false
+                }
+
+                if aux != 0 {
+                    totalSegundos = aux
+                }
+            }
+        
+//
+        
+            .onDisappear {
+                //print("isplaying  OnDisapper CircleLap: \(isPlaying)")
+                isPlaying = true
+                
+                if sensor && totalSegundos == 0 {
+                    ativo = true
+                }
+            }
     }
 }
 

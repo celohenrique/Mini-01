@@ -30,12 +30,16 @@ struct CircleButton: ButtonStyle{
 struct PickerScreen: View {
     
     @State var ruidos: Ruidos
+    @Binding var sensor: Bool
+    @Binding var ativo: Bool
     @State var hourSelection = 0
     @State var minuteSelection = 0
     @Binding var timerOnOff : Bool //usei para mudar do picker para o countdown
     @State var aux = true
     
     @Binding var totalSegundos: Int
+    
+    @ObservedObject private var mic = MicrophoneMonitor(ruidos: nil)
     
     //@State var isPlaying = true
     
@@ -100,14 +104,10 @@ struct PickerScreen: View {
             }
             .onAppear {
                 self.totalSegundos = 0
-             //   self.minuteSelection = 0
-              //  self.hourSelection = 0
-                //print("OnAppear PickerScreen: \(self.totalSegundos)")
-                print("isplaying  OnAppear CircleLap: \(isPlaying)")
             }
         } else{
             
-            CircleLap(ruidos: self.ruidos, hourSelection: $hourSelection, minuteSelection: $minuteSelection,  timerOnOff: $timerOnOff, isPlaying: $isPlaying, totalSegundos: $totalSegundos, aux: totalSegundos)
+            CircleLap(ruidos: self.ruidos, hourSelection: $hourSelection, minuteSelection: $minuteSelection,  timerOnOff: $timerOnOff, isPlaying: $isPlaying, totalSegundos: $totalSegundos, aux: totalSegundos, sensor: $sensor, ativo: $ativo)
         }
     }
 }

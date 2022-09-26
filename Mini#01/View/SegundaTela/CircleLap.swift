@@ -48,6 +48,7 @@ struct CircleLap: View {
         
             VStack(spacing: 25){
                 Text(convertSecondsToTime(timeInSeconds: totalSegundos))
+                    .foregroundColor(Color.white)
                     .padding()
                     .font(.system(size: 48))
                     .onReceive(timer) { _ in

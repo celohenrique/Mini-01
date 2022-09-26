@@ -46,14 +46,15 @@ struct PickerScreen: View {
     var minutes = [Int](0..<60)
     
     var body: some View {
+        VStack(spacing: 170){
         
-        if timerOnOff {
+            if timerOnOff {
             VStack(alignment: .center,spacing: 100){
                 HStack(alignment: .center){
                     
                     Picker(selection: self.$hourSelection, label: Text("")){
                         ForEach(0 ..< self.hours.count){ index in
-                            Text("\(self.hours[index]) hours").tag(index)
+                            Text("\(self.hours[index]) hours").foregroundColor(Color.white).tag(index)
                         }
                     }
                     .pickerStyle(WheelPickerStyle())
@@ -63,7 +64,7 @@ struct PickerScreen: View {
                     
                     Picker(selection: self.$minuteSelection, label: Text("")){
                         ForEach(0 ..< self.minutes.count){ index in
-                            Text("\(self.minutes[index]) min").tag(index)
+                            Text("\(self.minutes[index]) min").foregroundColor(Color.white).tag(index)
                         }
                     }
                     .pickerStyle(WheelPickerStyle())
@@ -111,7 +112,7 @@ struct PickerScreen: View {
     }
 }
 
-
+}
 
 //MARK: - Extensions
 extension UIPickerView {

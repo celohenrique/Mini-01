@@ -18,9 +18,9 @@ struct SegundaTela: View {
     @Binding var totalSegundos: Int
     
     var body: some View{
-    
-        ZStack{
         
+        ZStack{
+            
             Image("Fundo")
                 .resizable()
                 .scaledToFill()
@@ -34,15 +34,16 @@ struct SegundaTela: View {
                 Spacer()
                     .frame(height: 160)
                 Text(ruidos.nome)
-                .font(.largeTitle)
-                .foregroundColor(Color.white)
+                    .font(Font.custom("SF Pro Rounded", size: 34, relativeTo: .title))
+//                    .fontWeight(.bold)
+                    .foregroundColor(Color.white)
                 Spacer()
                     .frame(height: 70)
                 PickerScreen(ruidos: self.ruidos, timerOnOff: $timerOnOff,totalSegundos: $totalSegundos, isPlaying: $isPlaying)
                 
                 Spacer()
-            } 
-        } 
+            }
+        }
     }
 }
 

@@ -26,6 +26,8 @@
 		A47A52EA28DB91C000C9934C /* shh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47A52E928DB91C000C9934C /* shh.mp3 */; };
 		A4D2202328CFABE600BAC9EE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D2202228CFABE600BAC9EE /* ViewModel.swift */; };
 		A4D2202628CFACFA00BAC9EE /* SegundaTela.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D2202528CFACFA00BAC9EE /* SegundaTela.swift */; };
+		A4F8BD6928E21AA900DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4F8BD6828E21A8200DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */; };
+		A4F8BD6B28E21E6F00DEDEDE /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4F8BD6A28E21E6F00DEDEDE /* Launch Screen.storyboard */; };
 		B9EED67128D255DF00ED4237 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EED67028D255DF00ED4237 /* Sensor.swift */; };
 		B9EED67328D2597F00ED4237 /* PickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EED67228D2597F00ED4237 /* PickerScreen.swift */; };
 		B9F3B58928BD3A9100EB2170 /* Mini_01App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3B58828BD3A9100EB2170 /* Mini_01App.swift */; };
@@ -54,6 +56,8 @@
 		A47A52E928DB91C000C9934C /* shh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shh.mp3; sourceTree = "<group>"; };
 		A4D2202228CFABE600BAC9EE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		A4D2202528CFACFA00BAC9EE /* SegundaTela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegundaTela.swift; sourceTree = "<group>"; };
+		A4F8BD6828E21A8200DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-SF-Pro-Rounded-Bold.ttf"; sourceTree = "<group>"; };
+		A4F8BD6A28E21E6F00DEDEDE /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		B9EED67028D255DF00ED4237 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		B9EED67228D2597F00ED4237 /* PickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerScreen.swift; sourceTree = "<group>"; };
 		B9F3B58528BD3A9100EB2170 /* Mini#01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini#01.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +176,7 @@
 		B9F3B59928BD3B3400EB2170 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A4F8BD6828E21A8200DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */,
 				A47A52CE28DB8CF500C9934C /* Sons */,
 				B9F3B58C28BD3A9200EB2170 /* Assets.xcassets */,
 			);
@@ -184,6 +189,7 @@
 				B9F3B58A28BD3A9100EB2170 /* ContentView.swift */,
 				B9F3B59A28BD448400EB2170 /* ToolBar.swift */,
 				A448267328C1359B00EE27B5 /* TelaInicial.swift */,
+				A4F8BD6A28E21E6F00DEDEDE /* Launch Screen.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9F3B59028BD3A9200EB2170 /* Preview Assets.xcassets in Resources */,
+				A4F8BD6928E21AA900DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf in Resources */,
 				A47A52DD28DB8D1400C9934C /* coracao.mp3 in Resources */,
 				A47A52DC28DB8D1400C9934C /* aspirador.mp3 in Resources */,
 				A47A52E128DB8D1400C9934C /* vento.mp3 in Resources */,
@@ -261,6 +268,7 @@
 				A47A52E428DB8D1400C9934C /* lareira.mp3 in Resources */,
 				A47A52DB28DB8D1400C9934C /* chuva.mp3 in Resources */,
 				A47A52EA28DB91C000C9934C /* shh.mp3 in Resources */,
+				A4F8BD6B28E21E6F00DEDEDE /* Launch Screen.storyboard in Resources */,
 				A47A52DF28DB8D1400C9934C /* mar.mp3 in Resources */,
 				A47A52E028DB8D1400C9934C /* utero.mp3 in Resources */,
 				A47A52DA28DB8D1400C9934C /* tv.mp3 in Resources */,
@@ -424,8 +432,9 @@
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Necessario uso de mic";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,8 +463,9 @@
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Necessario uso de mic";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

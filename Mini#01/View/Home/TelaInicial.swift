@@ -11,7 +11,7 @@ import HalfASheet
 struct ruidosIcon: View{
     
     @State var ruidos: Ruidos
-
+    
     
     var body: some View{
         VStack{
@@ -19,14 +19,14 @@ struct ruidosIcon: View{
             Spacer()
                 .frame(height: 15)
             Text(ruidos.nome)
-                .fontWeight(.bold)
+                .font(Font.custom("SF Pro Rounded", size: 16))
                 .foregroundColor(Color.white)
         }
     }
 }
 
 struct TelaInicial: View {
-
+    
     @State var isPlaying: Bool = false //inicia falsa
     @State var timerOnOff: Bool = true
     @State var sensor = false
@@ -69,7 +69,7 @@ struct TelaInicial: View {
                 }
                 .toolbar(){
                     ToolbarItem(placement: .automatic){
-                        Image(systemName: "mic.fill")
+                        Image(systemName: "dot.radiowaves.left.and.right")
                             .foregroundColor(Color.white)
                             .onTapGesture {
                                 showSheet.toggle()
@@ -77,7 +77,7 @@ struct TelaInicial: View {
                     }
                 }
                 .navigationBarTitle("Sons")
-            
+                
                 HalfASheet(isPresented: $showSheet){
                     VStack{
                         Toggle(isOn: $sensor, label: {
@@ -93,12 +93,12 @@ struct TelaInicial: View {
                         })
                         Spacer()
                             .frame(height: 20)
-                        Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.")
+                        Text("O sensor capta barulhos altos e reinicia o timer do último som selecionado. O microfone ficará ligado apenas quando o sensor estiver ligado")
                         Spacer()
-                            .frame(height: 90)
+                            .frame(height: 150)
                     }
                     
-                }.height(.proportional(0.55))
+                }.height(.proportional(0.50))
             }
             .onAppear{
                 //print("OnAppear Tela inicio: \(self.totalSegundos)")

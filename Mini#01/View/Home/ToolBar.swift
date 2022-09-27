@@ -11,22 +11,15 @@ struct ToolBar: View {
     var body: some View {
         NavigationView{
             VStack {
-                
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text("Ruidos")
                         .font(.system(size: 32))
-                    
-                    
-                    // .font(.largeTitle.bold())
-                    
                 }
             }
-            
         }
     }
-    
 }
 

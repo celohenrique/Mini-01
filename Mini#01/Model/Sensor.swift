@@ -7,6 +7,7 @@
 
 import Foundation
 import AVFoundation
+import AVKit
 import SwiftUI
 
 class MicrophoneMonitor: ObservableObject {
@@ -14,7 +15,6 @@ class MicrophoneMonitor: ObservableObject {
     @State var ruidos: Ruidos? = nil
     
     
-    //    an
     private var audioRecorder: AVAudioRecorder
     private var timer: Timer?
     
@@ -28,7 +28,6 @@ class MicrophoneMonitor: ObservableObject {
                 if !isGranted {
                     
                     print("Para usar o sensor de barulho é necessário aceitar.")
-                    //  fatalError("You must allow audio recording for this demo to work")
                 }
             }
         }
@@ -60,7 +59,7 @@ class MicrophoneMonitor: ObservableObject {
             audioRecorder.record()
             
             if timer == nil{
-                timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+                timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
             }
             return
             
@@ -74,7 +73,7 @@ class MicrophoneMonitor: ObservableObject {
         self.audioRecorder.updateMeters()
         let decibel = self.audioRecorder.averagePower(forChannel: 0)
         print(decibel)
-        if decibel > (-20) {
+        if decibel > (-25) {
             playSound(key: "mar")
             desliga()
         }

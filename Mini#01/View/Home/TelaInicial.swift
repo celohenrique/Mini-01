@@ -9,10 +9,7 @@ import SwiftUI
 import HalfASheet
 
 struct ruidosIcon: View{
-    
     @State var ruidos: Ruidos
-    
-    
     var body: some View{
         VStack{
             Image("\(ruidos.imagem)")
@@ -24,10 +21,9 @@ struct ruidosIcon: View{
         }
     }
 }
-
 struct TelaInicial: View {
 
-    @State var isPlaying: Bool = false //inicia falsa
+    @State var isPlaying: Bool = false
     @State var timerOnOff: Bool = true
     @State var sensor: Bool = false
     @State var ativo: Bool = false
@@ -43,11 +39,9 @@ struct TelaInicial: View {
         GridItem(spacing: 20),
         GridItem(spacing: 20)
     ]
-    
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
     }
-    
     var body: some View {
         NavigationView{
             ZStack{
@@ -55,7 +49,6 @@ struct TelaInicial: View {
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
-                
                 VStack{
                     LazyVGrid(columns: columns, alignment: .center, spacing: 60){
                         
@@ -78,7 +71,6 @@ struct TelaInicial: View {
                     }
                 }
                 .navigationBarTitle("Sons")
-            
                 HalfASheet(isPresented: $showSheet){
                     VStack{
                         Toggle(isOn: $sensor, label: {
@@ -87,10 +79,8 @@ struct TelaInicial: View {
                                 .onChange(of: sensor, perform: { newValue in
                                     if sensor && totalSegundos == 0 {
                                         ativo = true
-                                       // print(ativo)
                                     } else {
                                         ativo = false
-
                                     }
                                 })
                         })
@@ -100,12 +90,8 @@ struct TelaInicial: View {
                         Spacer()
                             .frame(height: 150)
                     }
-                    
                 }.height(.proportional(0.50))
             }
-            
-            
-            
             //gatilho para controle do sensor
             .onChange(of: ativo ) {newValue in
                 if ativo {
@@ -113,26 +99,21 @@ struct TelaInicial: View {
                 } else {
                     mic.desliga()
                 }
-                
             }
-            
-            
             //reconhecer na tela de inicio
             .onChange(of: totalSegundos) {newValue in
                 if sensor {
                     if totalSegundos == 0 {
                                 ativo = true
-
                         }
                     }
                 }
-    
         }
     }
 }
-struct RuidoBranco_Previews: PreviewProvider {
-    static var previews: some View {
-        TelaInicial()
-    }
-}
+//struct RuidoBranco_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TelaInicial()
+//    }
+//}
 

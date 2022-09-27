@@ -14,7 +14,7 @@ struct CircleButton: ButtonStyle{
             .overlay(
                 Circle()
                     .fill(Color.white)
-                    .opacity(configuration.isPressed ? 0.3 : 0) //use : for otherwise, so opacity will be 0.3 otherwise will be 0
+                    .opacity(configuration.isPressed ? 0.3 : 0)
             )
             .overlay(
                 Circle()
@@ -41,8 +41,6 @@ struct PickerScreen: View {
     
     @ObservedObject private var mic = MicrophoneMonitor(ruidos: nil)
     
-    //@State var isPlaying = true
-    
     @Binding var isPlaying: Bool
     
     
@@ -57,24 +55,20 @@ struct PickerScreen: View {
                 HStack(alignment: .center){
                     
                     Picker(selection: self.$hourSelection, label: Text("")){
-                        ForEach(0 ..< self.hours.count){ index in
+                        ForEach(0 ..< hours.count, id: \.self){ index in
                             Text("\(self.hours[index]) hours").font(.title).fontWeight(.medium).foregroundColor(Color.white).tag(index)
                         }
                     }
                     .pickerStyle(WheelPickerStyle())
                     .frame(width: 150, height: 150, alignment: .center)
-                    // .compositingGroup()
-                    // .clipped()
                     
                     Picker(selection: self.$minuteSelection, label: Text("")){
-                        ForEach(0 ..< self.minutes.count){ index in
+                        ForEach(0 ..< minutes.count, id: \.self){ index in
                             Text("\(self.minutes[index]) min").font(.title).fontWeight(.medium).foregroundColor(Color.white).tag(index)
                         }
                     }
                     .pickerStyle(WheelPickerStyle())
                     .frame(width: 150, height: 150, alignment: .center)
-                    // .compositingGroup()
-                    //.clipped()
                 }
                 
                 // MARK: - Botoes

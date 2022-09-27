@@ -73,6 +73,7 @@ class MicrophoneMonitor {
     
     @objc func timerAction(){
         print("atual som é  \(atualSom)")
+        
         self.audioRecorder.updateMeters()
         let decibel = self.audioRecorder.averagePower(forChannel: 0)
         print(decibel)

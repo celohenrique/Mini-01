@@ -30,9 +30,11 @@ struct TelaInicial: View {
     @State var showSheet: Bool = false
     @State var toggleIsOn: Bool = false
     @State var tempo: Int?
-    @ObservedObject private var mic = MicrophoneMonitor()
     
     @State var totalSegundos = 0
+    @State var atualSom: String = ""
+    
+    @State var mic = MicrophoneMonitor.shared
     
     let columns = [
         GridItem(spacing: 20),
@@ -53,7 +55,7 @@ struct TelaInicial: View {
                     LazyVGrid(columns: columns, alignment: .center, spacing: 60){
                         
                         ForEach(ruidos, id: \.self){ item in
-                            NavigationLink(destination: SegundaTela(ruidos: item, isPlaying: $isPlaying, timerOnOff: $timerOnOff, sensor: $sensor, ativo: $ativo, totalSegundos: $totalSegundos )){
+                            NavigationLink(destination: SegundaTela(ruidos: item, isPlaying: $isPlaying, timerOnOff: $timerOnOff, sensor: $sensor, ativo: $ativo, atualSom: $atualSom, totalSegundos: $totalSegundos, mic: $mic)){
                                 ruidosIcon(ruidos: item)
                             }
                         }
@@ -95,6 +97,7 @@ struct TelaInicial: View {
             //gatilho para controle do sensor
             .onChange(of: ativo ) {newValue in
                 if ativo {
+                    
                     mic.startMonitoring(controle: ativo)
                 } else {
                     mic.desliga()
@@ -108,6 +111,13 @@ struct TelaInicial: View {
                         }
                     }
                 }
+            
+            .onAppear{
+                
+                print("atual som  OnDisapper CircleLap: \(atualSom)")
+                
+            }
+            
         }
     }
 }

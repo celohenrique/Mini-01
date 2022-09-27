@@ -17,12 +17,11 @@ struct CircleLap: View {
     @State var seconds: Int = 0
     @Binding var timerOnOff: Bool
     @Binding var isPlaying: Bool
-    @ObservedObject private var mic = MicrophoneMonitor()
+//    @ObservedObject private var mic = MicrophoneMonitor()
     @Binding var totalSegundos: Int
     @State var aux: Int
     @Binding var sensor: Bool
     @Binding var ativo: Bool
-
     
     var isPreview: Bool = false
     
@@ -119,7 +118,7 @@ struct CircleLap: View {
 
             .onAppear{
                 totalSegundos = convertSelection(hrs: hourSelection,min: minuteSelection,sec: seconds)
-                    playSound(key: "\(ruidos.audio)")
+                playSound(key: "\(ruidos.audio)")
                 
                 if sensor{
                     ativo = false
@@ -133,7 +132,6 @@ struct CircleLap: View {
 //
         
             .onDisappear {
-                //print("isplaying  OnDisapper CircleLap: \(isPlaying)")
                 isPlaying = true
                 
                 if sensor && totalSegundos == 0 {

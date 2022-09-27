@@ -39,7 +39,7 @@ struct PickerScreen: View {
     
     @Binding var totalSegundos: Int
     
-    @ObservedObject private var mic = MicrophoneMonitor(ruidos: nil)
+    //@ObservedObject private var mic = MicrophoneMonitor(ruidos: nil, atualSom: "")
     
     @Binding var isPlaying: Bool
     
@@ -83,7 +83,7 @@ struct PickerScreen: View {
                             //Start button action
                         }
                         
-                        print(self.minuteSelection)
+                        //print(self.minuteSelection)
                         
                     }){
                         Text("Start")

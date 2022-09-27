@@ -13,11 +13,12 @@ import SwiftUI
 class MicrophoneMonitor {
     
     @State var ruidos: Ruidos? = nil
+    lazy var permission: Bool? = nil
     var atualSom = ""
     
     static let shared = MicrophoneMonitor()
     
-    private var audioRecorder: AVAudioRecorder
+    private var audioRecorder: AVAudioRecorder?
     private var timer: Timer?
     
     init(ruidos: Ruidos? = nil) {
@@ -25,14 +26,19 @@ class MicrophoneMonitor {
         self.ruidos = ruidos
         
         let audioSession = AVAudioSession.sharedInstance()
+        
+        
         if audioSession.recordPermission != .granted {
-            audioSession.requestRecordPermission { (isGranted) in
-                if !isGranted {
-                    
-                    print("Para usar o sensor de barulho é necessário habilitar o uso de microfoner no app.")
+                    audioSession.requestRecordPermission {[self] (isGranted)   in
+                        if !isGranted {
+                            permission = false
+                            print("Para usar o sensor de barulho é necessário aceitar.")
+                        }
+                        else{
+                            permission = true
+                        }
+                    }
                 }
-            }
-        }
         
         
         let url = URL(fileURLWithPath: "/dev/null", isDirectory: true)
@@ -57,8 +63,8 @@ class MicrophoneMonitor {
     public func startMonitoring(controle: Bool) {
         if controle {
             
-            audioRecorder.isMeteringEnabled = true
-            audioRecorder.record()
+            audioRecorder?.isMeteringEnabled = true
+            audioRecorder?.record()
             
             if timer == nil{
                 timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
@@ -74,10 +80,10 @@ class MicrophoneMonitor {
     @objc func timerAction(){
         print("atual som é  \(atualSom)")
         
-        self.audioRecorder.updateMeters()
-        let decibel = self.audioRecorder.averagePower(forChannel: 0)
-        print(decibel)
-        if decibel > (-25) {
+        self.audioRecorder?.updateMeters()
+        let decibel = self.audioRecorder?.averagePower(forChannel: 0)
+        //print(decibel)
+        if decibel ?? 0 > (-25) {
             playSound(key: atualSom) 
             desliga()
         }
@@ -86,7 +92,7 @@ class MicrophoneMonitor {
     func desliga (){
         timer?.invalidate()
         timer = nil
-        audioRecorder.stop()
+        audioRecorder?.stop()
         print("stop is calling")
         return
     }

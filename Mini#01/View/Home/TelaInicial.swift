@@ -22,13 +22,14 @@ struct ruidosIcon: View{
     }
 }
 struct TelaInicial: View {
-
+    
     @State var isPlaying: Bool = false
     @State var timerOnOff: Bool = true
     @State var sensor: Bool = false
     @State var ativo: Bool = false
     @State var showSheet: Bool = false
     @State var toggleIsOn: Bool = false
+    @State var permissionalert: Bool = false
     @State var tempo: Int?
     
     @State var totalSegundos = 0
@@ -80,50 +81,68 @@ struct TelaInicial: View {
                                 .font(.title2)
                                 .onChange(of: sensor, perform: { newValue in
                                     if sensor && totalSegundos == 0 {
-                                        ativo = true
+                                        if mic.permission == false{
+                                            sensor = false
+                                            permissionalert = true
+                                            ativo = false
+                                        }
+                                        else{
+                                            ativo = true
+                                        }
                                     } else {
                                         ativo = false
                                     }
-                                })
+                                }).alert(isPresented: self.$permissionalert) {
+                               
+                                    Alert(
+                                        title: Text("PERMISSÃO DE MICROFONE NEGADA"),
+                                        message: Text("Para utilizar essa função do seu aplicativo, ative o microfone nas configurações"),
+                                        primaryButton: .cancel(Text("Cancelar")),
+                                        secondaryButton: .default(Text("Configurações"), action: {
+                                            if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
+                                                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                                            }
+                                        }))
+                                }
                         })
-                        Spacer()
-                            .frame(height: 20)
-                        Text("O sensor capta barulhos altos e reinicia o timer do último som selecionado. O microfone ficará ligado apenas quando o sensor estiver ligado")
-                        Spacer()
-                            .frame(height: 150)
-                    }
-                }.height(.proportional(0.50))
-            }
-            //gatilho para controle do sensor
-            .onChange(of: ativo ) {newValue in
-                if ativo {
-                    
-                    mic.startMonitoring(controle: ativo)
-                } else {
-                    mic.desliga()
-                }
-            }
-            //reconhecer na tela de inicio
-            .onChange(of: totalSegundos) {newValue in
-                if sensor {
-                    if totalSegundos == 0 {
-                                ativo = true
+                            
+                            Spacer()
+                                .frame(height: 20)
+                            Text("O sensor capta barulhos altos e reinicia o timer do último som selecionado. O microfone ficará ligado apenas quando o sensor estiver ligado")
+                            Spacer()
+                                .frame(height: 150)
                         }
-                    }
-                }
-            
-            .onAppear{
-                
-                print("atual som  OnDisapper CircleLap: \(atualSom)")
-                
-            }
-            
-        }
-    }
-}
-//struct RuidoBranco_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TelaInicial()
-//    }
-//}
-
+                               }.height(.proportional(0.50))
+                               }
+                            .onChange(of: ativo ) {newValue in
+                                if ativo {
+                                    
+                                    mic.startMonitoring(controle: ativo)
+                                } else {
+                                    mic.desliga()
+                                }
+                            }
+                               //reconhecer na tela de inicio
+                            .onChange(of: totalSegundos) {newValue in
+                                if sensor {
+                                    if totalSegundos == 0 {
+                                        ativo = true
+                                    }
+                                }
+                            }
+                               
+                               
+                            .onAppear{
+                                
+                                print("atual som  OnDisapper CircleLap: \(atualSom)")
+                                
+                            }
+                        
+                        }
+                        }
+                        }
+                        //struct RuidoBranco_Previews: PreviewProvider {
+                        //    static var previews: some View {
+                        //        TelaInicial()
+                        //    }
+                        //}

@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 struct SegundaTela: View {
     
     @State var ruidos: Ruidos

@@ -11,6 +11,7 @@ struct SegundaTela: View {
     
     @State var ruidos: Ruidos
     @Binding var isPlaying: Bool
+    @Binding var isPause: Bool
     @Binding var timerOnOff: Bool
     @Binding var sensor: Bool
     @Binding var ativo: Bool
@@ -40,19 +41,14 @@ struct SegundaTela: View {
                     .foregroundColor(Color.white)
                 Spacer()
                     .frame(height: 70)
-                PickerScreen(ruidos: self.ruidos, sensor: $sensor, ativo: $ativo, timerOnOff: $timerOnOff,totalSegundos: $totalSegundos, isPlaying: $isPlaying)
+                PickerScreen(ruidos: self.ruidos, sensor: $sensor, ativo: $ativo, timerOnOff: $timerOnOff,totalSegundos: $totalSegundos, isPlaying: $isPlaying, isPause: $isPause)
                 
                 Spacer()
             } .onAppear{
-                //MicrophoneMonitor(atualSom: "Deus")
                 atualSom = ruidos.audio
-                
             }
             .onDisappear {
-                print(atualSom)
                 mic.atualSom = atualSom
-                print("atual som  OnDisapper CircleLap: \(atualSom)")
-                
             }
         }
     }

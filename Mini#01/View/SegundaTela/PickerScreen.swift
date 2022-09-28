@@ -34,14 +34,12 @@ struct PickerScreen: View {
     @Binding var ativo: Bool
     @State var hourSelection = 0
     @State var minuteSelection = 0
-    @Binding var timerOnOff : Bool //usei para mudar do picker para o countdown
+    @Binding var timerOnOff : Bool 
     @State var aux = true
     
-    @Binding var totalSegundos: Int
-    
-    //@ObservedObject private var mic = MicrophoneMonitor(ruidos: nil, atualSom: "")
-    
+    @Binding var totalSegundos: Int    
     @Binding var isPlaying: Bool
+    @Binding var isPause: Bool
     
     
     var hours = [Int](0..<24)
@@ -78,12 +76,11 @@ struct PickerScreen: View {
                         if hourSelection == 0 && minuteSelection == 0 {
                             return
                         } else {
+                            self.totalSegundos = 0
                             timerOnOff = false
                             isPlaying = true
                             //Start button action
                         }
-                        
-                        //print(self.minuteSelection)
                         
                     }){
                         Text("Start")
@@ -101,7 +98,7 @@ struct PickerScreen: View {
             }
         } else{
             
-            CircleLap(ruidos: self.ruidos, hourSelection: $hourSelection, minuteSelection: $minuteSelection,  timerOnOff: $timerOnOff, isPlaying: $isPlaying, totalSegundos: $totalSegundos, aux: totalSegundos, sensor: $sensor, ativo: $ativo)
+            CircleLap(ruidos: self.ruidos, hourSelection: $hourSelection, minuteSelection: $minuteSelection,  timerOnOff: $timerOnOff, isPlaying: $isPlaying, isPause: $isPause, totalSegundos: $totalSegundos, aux: totalSegundos, sensor: $sensor, ativo: $ativo)
         }
     }
 }

@@ -14,5 +14,5 @@ struct Ruidos: Hashable {
     var id: Int
     var audio: String
     var background: String
-    
+
 }

@@ -15,6 +15,7 @@ class MicrophoneMonitor {
     @State var ruidos: Ruidos? = nil
     lazy var permission: Bool? = nil
     var atualSom = ""
+    var ativo = false
     
     static let shared = MicrophoneMonitor()
     
@@ -48,8 +49,7 @@ class MicrophoneMonitor {
             AVNumberOfChannelsKey: 1,
             AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
         ]
-        
-        
+                
         do {
             audioRecorder = try AVAudioRecorder(url: url, settings: recorderSettings)
             try audioSession.setCategory(.playAndRecord, mode: .default, options: [])
@@ -58,7 +58,6 @@ class MicrophoneMonitor {
             fatalError(error.localizedDescription)
         }
     }
-    
     
     public func startMonitoring(controle: Bool) {
         if controle {
@@ -78,15 +77,15 @@ class MicrophoneMonitor {
     }
     
     @objc func timerAction(){
-        print("atual som é  \(atualSom)")
         
         self.audioRecorder?.updateMeters()
         let decibel = self.audioRecorder?.averagePower(forChannel: 0)
         //print(decibel)
-        if decibel ?? 0 > (-25) {
-            playSound(key: atualSom) 
+        if decibel ?? 0 > (-20) {
+            playSensor(key: atualSom , tempo: 4)
             desliga()
         }
+        return
     }
     
     func desliga (){

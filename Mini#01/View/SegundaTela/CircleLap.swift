@@ -9,7 +9,7 @@
 import SwiftUI
 struct CircleLap: View {
     
-    // let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect() should we implent that for logic?
+    
     @State var ruidos: Ruidos
     @State var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @Binding var hourSelection: Int
@@ -17,6 +17,7 @@ struct CircleLap: View {
     @State var seconds: Int = 0
     @Binding var timerOnOff: Bool
     @Binding var isPlaying: Bool
+    @Binding var isPause: Bool
 //    @ObservedObject private var mic = MicrophoneMonitor()
     @Binding var totalSegundos: Int
     @State var aux: Int
@@ -57,6 +58,7 @@ struct CircleLap: View {
                         if self.totalSegundos == 0 {
                             timerOnOff = true
                             isPlaying = false
+                            isPause = false
                             player.stop()
                         }
                         
@@ -72,12 +74,13 @@ struct CircleLap: View {
                 Button(action: {
                     timerOnOff = true
                     isPlaying = false
+                    isPause = false
                     player.stop()
                     self.totalSegundos = 0
                     self.minuteSelection = 0
                     self.hourSelection = 0
 
-//                    self.aux = 0
+
                 }){
                     Text("Cancel") }
                 .frame(width: 100, height: 100)
@@ -87,27 +90,27 @@ struct CircleLap: View {
                 Button(action: {
                     playPause()
                     
-                    if isPlaying {
-                        isPlaying = false
+                    if isPause {
+                        isPause = false
                         self.timer.upstream.connect().cancel()
 //                        self.estado = "Pause"
                         
                     }
                     else {
-                        isPlaying = true
+                        isPause = true
                         self.timer = self.timer.upstream.autoconnect()
 //                        self.estado = "Play"
                     }
                 })
                 {
                     
-                    Text("\(isPlaying ? "Pause": "Play")")
-//                    Text("\(estado)")
+                    Text("\(isPause ? "Pause": "Play")")
+
                     
                         .foregroundColor(Color(red: 28/255, green: 12/255, blue: 48/255))
                 }
                 .frame(width: 100, height: 100)
-                .foregroundColor(isPlaying ? Color(red: 170/255, green: 170/255, blue: 170/255) : Color(red: 255/255, green: 255/255, blue: 255/255) )
+                .foregroundColor(isPause ? Color(red: 170/255, green: 170/255, blue: 170/255) : Color(red: 255/255, green: 255/255, blue: 255/255) )
                 // .frame(width: 75, height: 75)
             }.buttonStyle(CircleButton())
             .onChange(of: totalSegundos) {newValue in
@@ -119,6 +122,7 @@ struct CircleLap: View {
             .onAppear{
                 totalSegundos = convertSelection(hrs: hourSelection,min: minuteSelection,sec: seconds)
                 playSound(key: "\(ruidos.audio)")
+                isPause = true
                 
                 if sensor{
                     ativo = false
@@ -132,7 +136,7 @@ struct CircleLap: View {
 //
         
             .onDisappear {
-                isPlaying = true
+                isPause = true
                 
                 if sensor && totalSegundos == 0 {
                     ativo = true

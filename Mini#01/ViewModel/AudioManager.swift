@@ -13,9 +13,7 @@ var player: AVAudioPlayer!
 
 
 func playSound(key: String, isPreview: Bool = false) {
-    
     let url = Bundle.main.url(forResource: key, withExtension: "mp3")
-    
     guard url != nil else {
         return
     }
@@ -31,7 +29,6 @@ func playSound(key: String, isPreview: Bool = false) {
         } else {
             player?.play()
         }
-        
     } catch {
         print("Url : \(key) nao encontrada")
     }
@@ -47,6 +44,25 @@ func playPause() {
         player.pause()
     } else {
         player.play()
+    }
+}
+
+func playSensor(key: String, tempo: Int) {
+
+    let url = Bundle.main.url(forResource: key, withExtension: "mp3")
+    guard url != nil else {
+        return
+    }
+    do{
+        try AVAudioSession.sharedInstance().overrideOutputAudioPort(.speaker)
+         
+        player = try AVAudioPlayer(contentsOf: url!)
+        player.numberOfLoops = tempo
+        player.play()
+        
+        
+    } catch {
+        print("Url : \(key) nao encontrada")
     }
 }
  

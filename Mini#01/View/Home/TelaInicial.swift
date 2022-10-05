@@ -81,18 +81,20 @@ struct TelaInicial: View {
                             Text("Sensor de Barulho")
                                 .font(.title2)
                                 .onChange(of: sensor, perform: { newValue in
-                                    if sensor && totalSegundos == 0 {
-                                        if mic.permission == false{
-                                            sensor = false
-                                            permissionalert = true
-                                            ativo = false
-                                        }
-                                        else{
-                                            ativo = true
-                                        }
-                                    } else {
+                                    if mic.permission == false {
+                                        sensor = false
+                                        permissionalert = true
                                         ativo = false
                                     }
+                                    else{
+                                        if sensor && totalSegundos == 0 {
+                                                ativo = false
+                                        }
+                                        else {
+                                            ativo = false
+                                        }
+                                    }
+                                   
                                 }).alert(isPresented: self.$permissionalert) {
                                     
                                     Alert(
@@ -127,10 +129,8 @@ struct TelaInicial: View {
             }
             //reconhecer na tela de inicio
             .onChange(of: totalSegundos) {newValue in
-                if sensor {
-                    if totalSegundos == 0 {
+                if sensor && totalSegundos == 0{
                         ativo = true
-                    }
                 }
             }
             

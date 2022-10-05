@@ -88,14 +88,12 @@ struct PickerScreen: View {
                     }
                     .frame(width: 100, height: 100)
                     .foregroundColor(Color(red: 255/255, green: 255/255, blue: 255/255))
-                    
-                    // .frame(width: 75, height: 75)
                 }
                 .buttonStyle(CircleButton())
             }
-            .onAppear {
-                self.totalSegundos = 0
-            }
+//            .onAppear {
+//                self.totalSegundos = 0
+//            }
         } else{
             
             CircleLap(ruidos: self.ruidos, hourSelection: $hourSelection, minuteSelection: $minuteSelection,  timerOnOff: $timerOnOff, isPlaying: $isPlaying, isPause: $isPause, totalSegundos: $totalSegundos, aux: totalSegundos, sensor: $sensor, ativo: $ativo)

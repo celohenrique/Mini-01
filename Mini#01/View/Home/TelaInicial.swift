@@ -96,8 +96,8 @@ struct TelaInicial: View {
                                 }).alert(isPresented: self.$permissionalert) {
                                     
                                     Alert(
-                                        title: Text("Permissão de microfone negada"),
-                                        message: Text("Para utilizar essa função do seu aplicativo ative o microfone nas configurações"),
+                                        title: Text("Microfone"),
+                                        message: Text("Não foi concedido acesso ao microfone para esse aplicativo. Habilite o microfone nas configurações do sistema."),
                                         primaryButton: .cancel(Text("Cancelar")),
                                         secondaryButton: .default(Text("Configurações"), action: {
                                             if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {

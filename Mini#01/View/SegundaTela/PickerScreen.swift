@@ -96,10 +96,7 @@ struct PickerScreen: View {
                         
                         let testeTotal = convertSelection(hrs: hourSelection, min: minuteSelection, sec: segundos)
                         
-                        notifyNum.sendNotification(type: "time",
-                                                   timeInterval: Double(testeTotal),
-                                                   title: "Alerta",
-                                                   body: "Seu timer acabou")
+                        
                       
                         if hourSelection == 0 && minuteSelection == 0 {
                             return
@@ -107,6 +104,10 @@ struct PickerScreen: View {
                             self.totalSegundos = 0
                             timerOnOff = false
                             isPlaying = true
+                            notifyNum.sendNotification(type: "time",
+                                                       timeInterval: Double(testeTotal),
+                                                       title: "Alerta",
+                                                       body: "Seu timer acabou")
                             //Start button action
                         }
                         

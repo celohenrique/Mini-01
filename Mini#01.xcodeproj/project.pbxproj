@@ -28,6 +28,7 @@
 		A4D2202628CFACFA00BAC9EE /* SegundaTela.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D2202528CFACFA00BAC9EE /* SegundaTela.swift */; };
 		A4F8BD6928E21AA900DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4F8BD6828E21A8200DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */; };
 		A4F8BD6B28E21E6F00DEDEDE /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4F8BD6A28E21E6F00DEDEDE /* Launch Screen.storyboard */; };
+		B993992F28EF497F0038608B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B993992E28EF497F0038608B /* NotificationController.swift */; };
 		B9EED67128D255DF00ED4237 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EED67028D255DF00ED4237 /* Sensor.swift */; };
 		B9EED67328D2597F00ED4237 /* PickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EED67228D2597F00ED4237 /* PickerScreen.swift */; };
 		B9F3B58928BD3A9100EB2170 /* Mini_01App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3B58828BD3A9100EB2170 /* Mini_01App.swift */; };
@@ -58,6 +59,7 @@
 		A4D2202528CFACFA00BAC9EE /* SegundaTela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegundaTela.swift; sourceTree = "<group>"; };
 		A4F8BD6828E21A8200DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-SF-Pro-Rounded-Bold.ttf"; sourceTree = "<group>"; };
 		A4F8BD6A28E21E6F00DEDEDE /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		B993992E28EF497F0038608B /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		B9EED67028D255DF00ED4237 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		B9EED67228D2597F00ED4237 /* PickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerScreen.swift; sourceTree = "<group>"; };
 		B9F3B58528BD3A9100EB2170 /* Mini#01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini#01.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +152,7 @@
 			children = (
 				A448267128C1352C00EE27B5 /* ruidosModel.swift */,
 				B9EED67028D255DF00ED4237 /* Sensor.swift */,
+				B993992E28EF497F0038608B /* NotificationController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				B9EED67328D2597F00ED4237 /* PickerScreen.swift in Sources */,
 				A4D2202628CFACFA00BAC9EE /* SegundaTela.swift in Sources */,
 				B9F3B58928BD3A9100EB2170 /* Mini_01App.swift in Sources */,
+				B993992F28EF497F0038608B /* NotificationController.swift in Sources */,
 				A448267228C1352C00EE27B5 /* ruidosModel.swift in Sources */,
 				A4D2202328CFABE600BAC9EE /* ViewModel.swift in Sources */,
 				A448267428C1359B00EE27B5 /* TelaInicial.swift in Sources */,

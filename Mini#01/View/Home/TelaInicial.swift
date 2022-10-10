@@ -7,6 +7,7 @@
 
 import SwiftUI
 import HalfASheet
+import UserNotifications
 
 struct ruidosIcon: View{
     @State var ruidos: Ruidos
@@ -48,7 +49,7 @@ struct TelaInicial: View {
     }
     var body: some View {
         NavigationView{
-            ZStack{
+            ZStack {
                 Image("Fundo")
                     .resizable()
                     .scaledToFill()
@@ -70,6 +71,7 @@ struct TelaInicial: View {
                         Image(systemName: "dot.radiowaves.left.and.right")
                             .foregroundColor(Color.white)
                             .onTapGesture {
+                                mic.askPermissionMic()
                                 showSheet.toggle()
                             }
                     }
@@ -81,7 +83,9 @@ struct TelaInicial: View {
                             Text("Sensor de Barulho")
                                 .font(.title2)
                                 .onChange(of: sensor, perform: { newValue in
+                                    
                                     if mic.permission == false {
+                                        
                                         sensor = false
                                         permissionalert = true
                                         ativo = false
@@ -133,7 +137,6 @@ struct TelaInicial: View {
                         ativo = true
                 }
             }
-            
         }
     }
 }

@@ -22,17 +22,17 @@ class MicrophoneMonitor {
     private var audioRecorder: AVAudioRecorder?
     private var timer: Timer?
     
-    init(ruidos: Ruidos? = nil) {
+    public func askPermissionMic(ruidos: Ruidos? = nil) {
         
         self.ruidos = ruidos
         
         let audioSession = AVAudioSession.sharedInstance()
         
-        
         if audioSession.recordPermission != .granted {
                     audioSession.requestRecordPermission {[self] (isGranted)   in
                         if !isGranted {
                             permission = false
+                            
                             print("Para usar o sensor de barulho é necessário aceitar.")
                         }
                         else{
@@ -82,7 +82,7 @@ class MicrophoneMonitor {
         let decibel = self.audioRecorder?.averagePower(forChannel: 0)
         //print(decibel)
         if decibel ?? 0 > (-20) {
-            playSensor(key: atualSom , tempo: 4)
+            playSensor(key: atualSom , tempo: 9)
             desliga()
         }
         return

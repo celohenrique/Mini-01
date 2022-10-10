@@ -41,6 +41,7 @@ struct PickerScreen: View {
     @Binding var isPlaying: Bool
     @Binding var isPause: Bool
     
+    @State var notifyNum = NotificationController()
     
     var hours = [Int](0..<24)
     var minutes = [Int](0..<60)
@@ -54,7 +55,11 @@ struct PickerScreen: View {
                     
                     Picker(selection: self.$hourSelection, label: Text("")){
                         ForEach(0 ..< hours.count, id: \.self){ index in
-                            Text("\(self.hours[index]) hours").font(.title).fontWeight(.medium).foregroundColor(Color.white).tag(index)
+                            Text("\(self.hours[index]) hours")
+                                .font(.title)
+                                .fontWeight(.medium)
+                                .foregroundColor(Color.white)
+                                .tag(index)
                         }
                     }
                     .pickerStyle(WheelPickerStyle())
@@ -62,7 +67,11 @@ struct PickerScreen: View {
                     
                     Picker(selection: self.$minuteSelection, label: Text("")){
                         ForEach(0 ..< minutes.count, id: \.self){ index in
-                            Text("\(self.minutes[index]) min").font(.title).fontWeight(.medium).foregroundColor(Color.white).tag(index)
+                            Text("\(self.minutes[index]) min")
+                                .font(.title)
+                                .fontWeight(.medium)
+                                .foregroundColor(Color.white)
+                                .tag(index)
                         }
                     }
                     .pickerStyle(WheelPickerStyle())
@@ -73,6 +82,25 @@ struct PickerScreen: View {
                 HStack(alignment: .center){
                     
                     Button(action:{
+                         
+                        var segundos = 0
+                        
+                        func convertSelection(hrs: Int, min: Int, sec: Int) -> Int{
+                            
+                            let hrs = hrs * 3600
+                            let min = min * 60
+                            let sec = sec
+                            let total = hrs + min + sec
+                            return total
+                        }
+                        
+                        let testeTotal = convertSelection(hrs: hourSelection, min: minuteSelection, sec: segundos)
+                        
+                        notifyNum.sendNotification(type: "time",
+                                                   timeInterval: Double(testeTotal),
+                                                   title: "Alerta",
+                                                   body: "Seu timer acabou")
+                      
                         if hourSelection == 0 && minuteSelection == 0 {
                             return
                         } else {
@@ -82,7 +110,11 @@ struct PickerScreen: View {
                             //Start button action
                         }
                         
-                    }){
+                       
+
+                        
+                    })
+                    {
                         Text("Start")
                             .foregroundColor(Color(red: 30/255, green: 14/255, blue: 51/255))
                     }
@@ -107,7 +139,6 @@ struct PickerScreen: View {
 extension UIPickerView {
     open override var intrinsicContentSize: CGSize {
         return CGSize(width: UIView.noIntrinsicMetric, height: super.intrinsicContentSize.height)
-        
     }
 }
 

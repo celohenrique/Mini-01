@@ -1,14 +1,16 @@
 {
-  "pins" : [
-    {
-      "identity" : "halfasheet",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/franklynw/HalfASheet.git",
-      "state" : {
-        "branch" : "develop",
-        "revision" : "5d1ade1157f87c4f922f4aa1af318f53fa1a3764"
+  "object": {
+    "pins": [
+      {
+        "package": "HalfASheet",
+        "repositoryURL": "https://github.com/franklynw/HalfASheet.git",
+        "state": {
+          "branch": "develop",
+          "revision": "5d1ade1157f87c4f922f4aa1af318f53fa1a3764",
+          "version": null
+        }
       }
-    }
-  ],
-  "version" : 2
+    ]
+  },
+  "version": 1
 }

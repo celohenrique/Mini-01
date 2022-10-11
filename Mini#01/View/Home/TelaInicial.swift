@@ -13,9 +13,15 @@ struct ruidosIcon: View{
     @State var ruidos: Ruidos
     var body: some View{
         VStack{
-            Image("\(ruidos.imagem)")
+            GeometryReader{ geo in
+                Image("\(ruidos.imagem)")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: geo.size.width * 0.8)
+                    .frame(width: geo.size.width, height: geo.size.height)
+            }
             Spacer()
-                .frame(height: 15)
+                .frame(height: 50)
             Text(ruidos.nome)
                 .font(Font.custom("SF Pro Rounded", size: 16))
                 .foregroundColor(Color.white)
@@ -46,25 +52,32 @@ struct TelaInicial: View {
     ]
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        
     }
     var body: some View {
         NavigationView{
+            
             ZStack {
                 Image("Fundo")
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
-                VStack{
-                    LazyVGrid(columns: columns, alignment: .center, spacing: 60){
-                        
-                        ForEach(ruidos, id: \.self){ item in
-                            NavigationLink(destination: SegundaTela(ruidos: item, isPlaying: $isPlaying, isPause: $isPause, timerOnOff: $timerOnOff, sensor: $sensor, ativo: $ativo, atualSom: $atualSom, totalSegundos: $totalSegundos, mic: $mic)){
-                                ruidosIcon(ruidos: item)
+                    
+                
+                GeometryReader{ geo in
+                    VStack{
+                        LazyVGrid(columns: columns, alignment: .center, spacing: 60){
+                            
+                            ForEach(ruidos, id: \.self){ item in
+                                NavigationLink(destination: SegundaTela(ruidos: item, isPlaying: $isPlaying, isPause: $isPause, timerOnOff: $timerOnOff, sensor: $sensor, ativo: $ativo, atualSom: $atualSom, totalSegundos: $totalSegundos, mic: $mic)){
+                                    ruidosIcon(ruidos: item)
+                                }
                             }
                         }
-                    }
-                    .padding(.all)
-                    
+                        .padding(.all)
+                        
+                    }.padding(.top, 40.0).frame(width: geo.size.width, height: geo.size.height)
+
                 }
                 .toolbar(){
                     ToolbarItem(placement: .automatic){
@@ -92,13 +105,13 @@ struct TelaInicial: View {
                                     }
                                     else{
                                         if sensor && totalSegundos == 0 {
-                                                ativo = false
+                                            ativo = false
                                         }
                                         else {
                                             ativo = false
                                         }
                                     }
-                                   
+                                    
                                 }).alert(isPresented: self.$permissionalert) {
                                     
                                     Alert(
@@ -129,12 +142,12 @@ struct TelaInicial: View {
                 } else {
                     mic.desliga()
                 }
-
+                
             }
             //reconhecer na tela de inicio
             .onChange(of: totalSegundos) {newValue in
                 if sensor && totalSegundos == 0{
-                        ativo = true
+                    ativo = true
                 }
             }
         }

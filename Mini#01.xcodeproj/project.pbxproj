@@ -12,6 +12,7 @@
 		95B8870A28E3B3A00073C115 /* mar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 95B8870928E3B3A00073C115 /* mar.mp3 */; };
 		95B8870C28E3B3B40073C115 /* chuva.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 95B8870B28E3B3B30073C115 /* chuva.mp3 */; };
 		95B8870E28E435070073C115 /* shh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 95B8870D28E435070073C115 /* shh.mp3 */; };
+		A40E463828F4A15C009FA91C /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40E463728F4A15C009FA91C /* LaunchScreen.swift */; };
 		A417EFD628D3ADB2009A4721 /* CircleLap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A417EFD528D3ADB2009A4721 /* CircleLap.swift */; };
 		A448267228C1352C00EE27B5 /* ruidosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A448267128C1352C00EE27B5 /* ruidosModel.swift */; };
 		A448267428C1359B00EE27B5 /* TelaInicial.swift in Sources */ = {isa = PBXBuildFile; fileRef = A448267328C1359B00EE27B5 /* TelaInicial.swift */; };
@@ -44,6 +45,7 @@
 		95B8870928E3B3A00073C115 /* mar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mar.mp3; sourceTree = "<group>"; };
 		95B8870B28E3B3B30073C115 /* chuva.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chuva.mp3; sourceTree = "<group>"; };
 		95B8870D28E435070073C115 /* shh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shh.mp3; sourceTree = "<group>"; };
+		A40E463728F4A15C009FA91C /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		A417EFD528D3ADB2009A4721 /* CircleLap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLap.swift; sourceTree = "<group>"; };
 		A448267128C1352C00EE27B5 /* ruidosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ruidosModel.swift; sourceTree = "<group>"; };
 		A448267328C1359B00EE27B5 /* TelaInicial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaInicial.swift; sourceTree = "<group>"; };
@@ -160,8 +162,8 @@
 		B9F3B59728BD3AA500EB2170 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A4D2202428CFAC2800BAC9EE /* SegundaTela */,
 				B9F3B59C28BD580900EB2170 /* Home */,
+				A4D2202428CFAC2800BAC9EE /* SegundaTela */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -193,6 +195,7 @@
 				B9F3B59A28BD448400EB2170 /* ToolBar.swift */,
 				A448267328C1359B00EE27B5 /* TelaInicial.swift */,
 				A4F8BD6A28E21E6F00DEDEDE /* Launch Screen.storyboard */,
+				A40E463728F4A15C009FA91C /* LaunchScreen.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A40E463828F4A15C009FA91C /* LaunchScreen.swift in Sources */,
 				B9F3B59B28BD448400EB2170 /* ToolBar.swift in Sources */,
 				B9EED67128D255DF00ED4237 /* Sensor.swift in Sources */,
 				B9F3B58B28BD3A9100EB2170 /* ContentView.swift in Sources */,
@@ -356,7 +360,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -411,7 +415,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -429,7 +433,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mini#01/Preview Content\"";
-				DEVELOPMENT_TEAM = 942Y8B46B9;
+				DEVELOPMENT_TEAM = R7L4XS3BXX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mini-01-Info.plist";
@@ -442,7 +446,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -464,7 +468,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mini#01/Preview Content\"";
-				DEVELOPMENT_TEAM = 942Y8B46B9;
+				DEVELOPMENT_TEAM = R7L4XS3BXX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mini-01-Info.plist";
@@ -477,7 +481,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

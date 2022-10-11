@@ -10,7 +10,7 @@ import UserNotifications
 
 
 class NotificationController {
-    
+     
     func askPermissionNotification(){
         let center = UNUserNotificationCenter.current()
         

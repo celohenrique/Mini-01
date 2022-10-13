@@ -123,7 +123,6 @@ struct TelaInicial: View {
                 } else {
                     mic.desliga()
                 }
-
             }
             //reconhecer na tela de inicio
             .onChange(of: totalSegundos) {newValue in

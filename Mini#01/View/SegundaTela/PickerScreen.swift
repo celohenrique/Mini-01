@@ -36,6 +36,7 @@ struct PickerScreen: View {
     @State var minuteSelection = 0
     @Binding var timerOnOff : Bool 
     @State var aux = true
+    @State var novatela = false
     
     @Binding var totalSegundos: Int    
     @Binding var isPlaying: Bool
@@ -47,62 +48,66 @@ struct PickerScreen: View {
     
     var body: some View {
         VStack(spacing: 170){
-        
-            if timerOnOff {
-            VStack(alignment: .center,spacing: 100){
-                HStack(alignment: .center){
-                    
-                    Picker(selection: self.$hourSelection, label: Text("")){
-                        ForEach(0 ..< hours.count, id: \.self){ index in
-                            Text("\(self.hours[index]) hours").font(.title).fontWeight(.medium).foregroundColor(Color.white).tag(index)
-                        }
-                    }
-                    .pickerStyle(WheelPickerStyle())
-                    .frame(width: 150, height: 150, alignment: .center)
-                    
-                    Picker(selection: self.$minuteSelection, label: Text("")){
-                        ForEach(0 ..< minutes.count, id: \.self){ index in
-                            Text("\(self.minutes[index]) min").font(.title).fontWeight(.medium).foregroundColor(Color.white).tag(index)
-                        }
-                    }
-                    .pickerStyle(WheelPickerStyle())
-                    .frame(width: 150, height: 150, alignment: .center)
-                }
-                
-                // MARK: - Botoes
-                HStack(alignment: .center){
-                    
-                    Button(action:{
-                        if hourSelection == 0 && minuteSelection == 0 {
-                            return
-                        } else {
-                            self.totalSegundos = 0
-                            timerOnOff = false
-                            isPlaying = true
-                            //Start button action
-                        }
-                        
-                    }){
-                        Text("Start")
-                            .foregroundColor(Color(red: 30/255, green: 14/255, blue: 51/255))
-                    }
-                    .frame(width: 100, height: 100)
-                    .foregroundColor(Color(red: 255/255, green: 255/255, blue: 255/255))
-                    
-                    // .frame(width: 75, height: 75)
-                }
-                .buttonStyle(CircleButton())
-            }
-            .onAppear {
-                self.totalSegundos = 0
-            }
-        } else{
             
-            CircleLap(ruidos: self.ruidos, hourSelection: $hourSelection, minuteSelection: $minuteSelection,  timerOnOff: $timerOnOff, isPlaying: $isPlaying, isPause: $isPause, totalSegundos: $totalSegundos, aux: totalSegundos, sensor: $sensor, ativo: $ativo)
+            if timerOnOff {
+                VStack(alignment: .center,spacing: 100){
+                    HStack(alignment: .center){
+                        
+                        Picker(selection: self.$hourSelection, label: Text("")){
+                            ForEach(0 ..< hours.count, id: \.self){ index in
+                                Text("\(self.hours[index]) hours").font(.title).fontWeight(.medium).foregroundColor(Color.white).tag(index)
+                            }
+                        }
+                        .pickerStyle(WheelPickerStyle())
+                        .frame(width: 150, height: 150, alignment: .center)
+                        
+                        Picker(selection: self.$minuteSelection, label: Text("")){
+                            ForEach(0 ..< minutes.count, id: \.self){ index in
+                                Text("\(self.minutes[index]) min").font(.title).fontWeight(.medium).foregroundColor(Color.white).tag(index)
+                            }
+                        }
+                        .pickerStyle(WheelPickerStyle())
+                        .frame(width: 150, height: 150, alignment: .center)
+                    }
+                    
+//                    NavigationLink(destination: backgroundView(), isActive: $novatela, label: {})
+                    // MARK: - Botoes
+                    HStack(alignment: .center){
+                        
+                        Button(action:{
+                            if hourSelection == 0 && minuteSelection == 0 {
+                                return
+                            } else {
+                                self.totalSegundos = 0
+                                timerOnOff = false
+                                isPlaying = true
+                                //novatela = true 
+                                
+                                //Start button action
+                            }
+                            
+                        }){
+                            Text("Start")
+                                .foregroundColor(Color(red: 30/255, green: 14/255, blue: 51/255))
+                        }
+                        .frame(width: 100, height: 100)
+                        .foregroundColor(Color(red: 255/255, green: 255/255, blue: 255/255))
+                        
+                        // .frame(width: 75, height: 75)
+                    }
+                    .buttonStyle(CircleButton())
+                }
+                .onAppear {
+                    self.totalSegundos = 0
+                }
+            } else{
+                
+                CircleLap(ruidos: self.ruidos, hourSelection: $hourSelection, minuteSelection: $minuteSelection,  timerOnOff: $timerOnOff, isPlaying: $isPlaying, isPause: $isPause, totalSegundos: $totalSegundos, aux: totalSegundos, sensor: $sensor, ativo: $ativo)
+                
+            }
         }
     }
-}
-
+    
 }
 
 //MARK: - Extensions

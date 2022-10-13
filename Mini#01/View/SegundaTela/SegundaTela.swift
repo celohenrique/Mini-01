@@ -21,18 +21,36 @@ struct SegundaTela: View {
     
     var body: some View{
         
+        
+        
         ZStack{
             
-            Image("Fundo")
-                .resizable()
-                .scaledToFill()
-                .edgesIgnoringSafeArea(.all)
+            if isPlaying {
+                backgroundView(videoAtual: $ruidos.audio)
+                    .edgesIgnoringSafeArea(.all)
+            } else {
+                            Image("Fundo")
+                                .resizable()
+                                .scaledToFill()
+                                .edgesIgnoringSafeArea(.all)
+                
+                            Image(ruidos.background)
+                                .resizable(resizingMode: .stretch)
+            }
             
-            Image(ruidos.background)
-                .resizable(resizingMode: .stretch)
+                //.edgesIgnoringSafeArea(.all)
             
+//            Image("Fundo")
+//                .resizable()
+//                .scaledToFill()
+//                .edgesIgnoringSafeArea(.all)
+//
+//            Image(ruidos.background)
+//                .resizable(resizingMode: .stretch)
+
             
             VStack(spacing: 20) {
+                
                 Spacer()
                     .frame(height: 160)
                 Text(ruidos.nome)

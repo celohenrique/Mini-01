@@ -18,11 +18,11 @@ struct CircleLap: View {
     @Binding var timerOnOff: Bool
     @Binding var isPlaying: Bool
     @Binding var isPause: Bool
-//    @ObservedObject private var mic = MicrophoneMonitor()
     @Binding var totalSegundos: Int
     @State var aux: Int
     @Binding var sensor: Bool
     @Binding var ativo: Bool
+    
     
     var isPreview: Bool = false
     
@@ -47,8 +47,13 @@ struct CircleLap: View {
     
     var body : some View{
         
-        
-            VStack(spacing: 25){
+
+            //VStack{
+                VStack{
+
+                ZStack{
+
+                
                 Text(convertSecondsToTime(timeInSeconds: totalSegundos))
                     .foregroundColor(Color.white)
                     .padding()
@@ -68,6 +73,8 @@ struct CircleLap: View {
                         seconds = self.totalSegundos % 60
                     }
             }
+            }
+            //.padding(.horizontal).frame(width: 248, height: 248)
             
             HStack(spacing:130){
                 
@@ -112,11 +119,11 @@ struct CircleLap: View {
                 .frame(width: 100, height: 100)
                 .foregroundColor(isPause ? Color(red: 170/255, green: 170/255, blue: 170/255) : Color(red: 255/255, green: 255/255, blue: 255/255) )
                 // .frame(width: 75, height: 75)
-            }.buttonStyle(CircleButton())
+            }
+            .buttonStyle(CircleButton())
+        
             .onChange(of: totalSegundos) {newValue in
                 self.totalSegundos = convertSelection(hrs: hourSelection,min: minuteSelection,sec: seconds)
-                
-                
             }
 
             .onAppear{

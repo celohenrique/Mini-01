@@ -55,7 +55,7 @@ struct PickerScreen: View {
                     
                     Picker(selection: self.$hourSelection, label: Text("")){
                         ForEach(0 ..< hours.count, id: \.self){ index in
-                            Text("\(self.hours[index]) hours")
+                            Text("\(self.hours[index]) horas") // traducao/localized bugado
                                 .font(.title)
                                 .fontWeight(.medium)
                                 .foregroundColor(Color.white)
@@ -96,10 +96,10 @@ struct PickerScreen: View {
                         
                         let testeTotal = convertSelection(hrs: hourSelection, min: minuteSelection, sec: segundos)
                         
-                        notifyNum.sendNotification(type: "time",
+                        notifyNum.sendNotification(type: "time", // localized/traducao bugada
                                                    timeInterval: Double(testeTotal),
-                                                   title: "Alerta",
-                                                   body: "Seu timer acabou")
+                                                   title: "Alerta", // localized/traducao bugada
+                                                   body: "Seu timer acabou") // localized/traducao bugada
                       
                         if hourSelection == 0 && minuteSelection == 0 {
                             return
@@ -115,7 +115,7 @@ struct PickerScreen: View {
                         
                     })
                     {
-                        Text("Start")
+                        Text(iniciarTxt)
                             .foregroundColor(Color(red: 30/255, green: 14/255, blue: 51/255))
                     }
                     .frame(width: 100, height: 100)

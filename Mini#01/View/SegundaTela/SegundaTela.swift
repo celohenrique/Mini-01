@@ -35,7 +35,7 @@ struct SegundaTela: View {
             VStack(spacing: 20) {
                 Spacer()
                     .frame(height: 160)
-                Text(ruidos.nome)
+                Text(LocalizedStringKey(ruidos.nome))
                     .font(Font.custom("SF Pro Rounded", size: 34, relativeTo: .title))
 //                    .fontWeight(.bold)
                     .foregroundColor(Color.white)

@@ -22,7 +22,7 @@ struct ruidosIcon: View{
             }
             Spacer()
                 .frame(height: 50)
-            Text(ruidos.nome)
+            Text(LocalizedStringKey(ruidos.nome))
                 .font(Font.custom("SF Pro Rounded", size: 16))
                 .foregroundColor(Color.white)
         }
@@ -76,7 +76,7 @@ struct TelaInicial: View {
                         }
                         .padding(.all)
                         
-                    }.padding(.top, 40.0).frame(width: geo.size.width, height: geo.size.height)
+                    }.padding(.top, 40.0).frame(width: geo.size.width, height: geo.size.height) // se precisar de espaco tirar esse padding
 
                 }
                 .toolbar(){
@@ -93,7 +93,7 @@ struct TelaInicial: View {
                 HalfASheet(isPresented: $showSheet){
                     VStack{
                         Toggle(isOn: $sensor, label: {
-                            Text("Sensor de Barulho")
+                            Text(sensorTxt)
                                 .font(.title2)
                                 .onChange(of: sensor, perform: { newValue in
                                     
@@ -115,10 +115,10 @@ struct TelaInicial: View {
                                 }).alert(isPresented: self.$permissionalert) {
                                     
                                     Alert(
-                                        title: Text("Microfone"),
-                                        message: Text("Não foi concedido acesso ao microfone para esse aplicativo. Habilite o microfone nas configurações do sistema."),
-                                        primaryButton: .cancel(Text("Cancelar")),
-                                        secondaryButton: .default(Text("Configurações"), action: {
+                                        title: Text(micTxt),
+                                        message: Text(concederMicTxt),
+                                        primaryButton: .cancel(Text(cancelarTxt)),
+                                        secondaryButton: .default(Text(configTxt), action: {
                                             if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
                                                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
                                             }
@@ -128,7 +128,7 @@ struct TelaInicial: View {
                         
                         Spacer()
                             .frame(height: 20)
-                        Text("O sensor capta barulhos altos e reinicia o timer do último som selecionado. O microfone ficará ligado apenas quando o sensor estiver ligado")
+                        Text(reiniciaSensorTxt)
                         Spacer()
                             .frame(height: 150)
                     }

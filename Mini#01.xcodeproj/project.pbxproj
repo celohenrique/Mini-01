@@ -27,6 +27,7 @@
 		A47A52E628DB8E2E00C9934C /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A52E528DB8E2E00C9934C /* AudioManager.swift */; };
 		A4D2202328CFABE600BAC9EE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D2202228CFABE600BAC9EE /* ViewModel.swift */; };
 		A4D2202628CFACFA00BAC9EE /* SegundaTela.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D2202528CFACFA00BAC9EE /* SegundaTela.swift */; };
+		A4E9ABEF28F9D1B800C8B196 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4E9ABF128F9D1B800C8B196 /* Localizable.strings */; };
 		A4F8BD6928E21AA900DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4F8BD6828E21A8200DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */; };
 		A4F8BD6B28E21E6F00DEDEDE /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4F8BD6A28E21E6F00DEDEDE /* Launch Screen.storyboard */; };
 		B993992F28EF497F0038608B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B993992E28EF497F0038608B /* NotificationController.swift */; };
@@ -59,6 +60,8 @@
 		A47A52E528DB8E2E00C9934C /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		A4D2202228CFABE600BAC9EE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		A4D2202528CFACFA00BAC9EE /* SegundaTela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegundaTela.swift; sourceTree = "<group>"; };
+		A4E9ABF028F9D1B800C8B196 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A4E9ABF228F9D1BA00C8B196 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A4F8BD6828E21A8200DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-SF-Pro-Rounded-Bold.ttf"; sourceTree = "<group>"; };
 		A4F8BD6A28E21E6F00DEDEDE /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		B993992E28EF497F0038608B /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
@@ -174,6 +177,7 @@
 				B9F3B58828BD3A9100EB2170 /* Mini_01App.swift */,
 				A4D2202228CFABE600BAC9EE /* ViewModel.swift */,
 				A47A52E528DB8E2E00C9934C /* AudioManager.swift */,
+				A4E9ABF128F9D1B800C8B196 /* Localizable.strings */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -245,6 +249,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = B9F3B57C28BD3A9000EB2170;
 			packageReferences = (
@@ -264,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4E9ABEF28F9D1B800C8B196 /* Localizable.strings in Resources */,
 				B9F3B59028BD3A9200EB2170 /* Preview Assets.xcassets in Resources */,
 				A4F8BD6928E21AA900DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf in Resources */,
 				A47A52DD28DB8D1400C9934C /* coracao.mp3 in Resources */,
@@ -307,6 +313,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A4E9ABF128F9D1B800C8B196 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4E9ABF028F9D1B800C8B196 /* en */,
+				A4E9ABF228F9D1BA00C8B196 /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B9F3B59128BD3A9200EB2170 /* Debug */ = {

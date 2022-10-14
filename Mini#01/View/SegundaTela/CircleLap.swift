@@ -13,20 +13,19 @@ struct CircleLap: View {
     @State var ruidos: Ruidos
     @State var timer = Timer.publish(every: 1,
                                      on: .main,
-                                     in: .common)
-        .autoconnect()
+                                     in: .common).autoconnect()
     @Binding var hourSelection: Int
     @Binding var minuteSelection: Int
     @State var seconds: Int = 0
     @Binding var timerOnOff: Bool
     @Binding var isPlaying: Bool
     @Binding var isPause: Bool
-    //    @ObservedObject private var mic = MicrophoneMonitor()
+
     @Binding var totalSegundos: Int
     @State var aux: Int
     @Binding var sensor: Bool
     @Binding var ativo: Bool
-   // @State var notifyNum = NotificationController()
+
     
     var isPreview: Bool = false
     

@@ -12,7 +12,7 @@ import AVFoundation
 
 
 struct ContentView: View {
-    var toolBarMain = ToolBar()
+   // var toolBarMain = ToolBar()
     private var notify = NotificationController()
     
     init(){

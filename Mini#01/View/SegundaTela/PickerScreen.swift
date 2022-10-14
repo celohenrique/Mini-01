@@ -42,6 +42,17 @@ struct PickerScreen: View {
     @Binding var isPause: Bool
     
     @State var notifyNum = NotificationController()
+   
+    @State var segundos = 0
+    
+    func convertSelection(hrs: Int, min: Int, sec: Int) -> Int{
+        
+        let hrs = hrs * 3600
+        let min = min * 60
+        let sec = sec
+        let total = hrs + min + sec
+        return total
+    }
     
     var hours = [Int](0..<24)
     var minutes = [Int](0..<60)
@@ -83,22 +94,10 @@ struct PickerScreen: View {
                     
                     Button(action:{
                          
-                        var segundos = 0
-                        
-                        func convertSelection(hrs: Int, min: Int, sec: Int) -> Int{
-                            
-                            let hrs = hrs * 3600
-                            let min = min * 60
-                            let sec = sec
-                            let total = hrs + min + sec
-                            return total
-                        }
-                        
                         let testeTotal = convertSelection(hrs: hourSelection, min: minuteSelection, sec: segundos)
-                        
-                        
                       
                         if hourSelection == 0 && minuteSelection == 0 {
+                            
                             return
                         } else {
                             self.totalSegundos = 0
@@ -108,12 +107,7 @@ struct PickerScreen: View {
                                                        timeInterval: Double(testeTotal),
                                                        title: "Alerta",
                                                        body: "Seu timer acabou")
-                            //Start button action
                         }
-                        
-                       
-
-                        
                     })
                     {
                         Text("Start")
@@ -124,9 +118,6 @@ struct PickerScreen: View {
                 }
                 .buttonStyle(CircleButton())
             }
-//            .onAppear {
-//                self.totalSegundos = 0
-//            }
         } else{
             
             CircleLap(ruidos: self.ruidos, hourSelection: $hourSelection, minuteSelection: $minuteSelection,  timerOnOff: $timerOnOff, isPlaying: $isPlaying, isPause: $isPause, totalSegundos: $totalSegundos, aux: totalSegundos, sensor: $sensor, ativo: $ativo)

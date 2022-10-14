@@ -15,7 +15,7 @@ struct ruidosIcon: View{
         VStack{
             Image("\(ruidos.imagem)")
             Spacer()
-                .frame(height: 15)
+              //  .frame(height: 15)
             Text(ruidos.nome)
                 .font(Font.custom("SF Pro Rounded", size: 16))
                 .foregroundColor(Color.white)
@@ -70,13 +70,16 @@ struct TelaInicial: View {
                     ToolbarItem(placement: .automatic){
                         Image(systemName: "dot.radiowaves.left.and.right")
                             .foregroundColor(Color.white)
+                            .navigationTitle("Sons")
                             .onTapGesture {
                                 mic.askPermissionMic()
                                 showSheet.toggle()
                             }
+                            
                     }
+                    
                 }
-                .navigationBarTitle("Sons")
+               
                 HalfASheet(isPresented: $showSheet){
                     VStack{
                         Toggle(isOn: $sensor, label: {

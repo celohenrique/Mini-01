@@ -10,17 +10,21 @@ import HalfASheet
 import UserNotifications
 
 struct ruidosIcon: View{
+    
     @State var ruidos: Ruidos
     var body: some View{
-        VStack{
-            Image("\(ruidos.imagem)")
-            Spacer()
-              //  .frame(height: 15)
-            Text(ruidos.nome)
-                .font(Font.custom("SF Pro Rounded", size: 16))
-                .foregroundColor(Color.white)
-        }
+
+            VStack{
+                Image("\(ruidos.imagem)")
+             //   Spacer()
+                
+                Text(ruidos.nome)
+                    .font(Font.custom("SF Pro Rounded", size: TelaInicial().sizeFont)).foregroundColor(Color.white)
+                    .lineLimit(1)
+//                    .border(Color.green)
+            }
     }
+        
 }
 struct TelaInicial: View {
     
@@ -34,6 +38,10 @@ struct TelaInicial: View {
     @State var permissionalert: Bool = false
     @State var tempo: Int?
     
+    
+    @State var spacer: CGFloat
+    @State var sizeFont: CGFloat
+    
     @State var totalSegundos = 0
     @State var atualSom: String = ""
     
@@ -46,6 +54,20 @@ struct TelaInicial: View {
     ]
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        NotificationController().askPermissionNotification()
+        
+        let screenHeight = UIScreen.main.bounds.size.height
+        
+        if screenHeight < 668 {
+                self.spacer = 40
+                self.sizeFont = 16
+            }
+        else{
+                self.spacer = 60
+                self.sizeFont = 20
+            }
+        
     }
     var body: some View {
         NavigationView{
@@ -54,8 +76,13 @@ struct TelaInicial: View {
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
+               
+                
+                
+                
+                
                 VStack{
-                    LazyVGrid(columns: columns, alignment: .center, spacing: 60){
+                    LazyVGrid(columns: columns, alignment: .center, spacing: spacer){
                         
                         ForEach(ruidos, id: \.self){ item in
                             NavigationLink(destination: SegundaTela(ruidos: item, isPlaying: $isPlaying, isPause: $isPause, timerOnOff: $timerOnOff, sensor: $sensor, ativo: $ativo, atualSom: $atualSom, totalSegundos: $totalSegundos, mic: $mic)){
@@ -63,9 +90,10 @@ struct TelaInicial: View {
                             }
                         }
                     }
-                    .padding(.all)
+                                        .padding(.all)
                     
-                }
+                
+            }
                 .toolbar(){
                     ToolbarItem(placement: .automatic){
                         Image(systemName: "dot.radiowaves.left.and.right")
@@ -75,9 +103,9 @@ struct TelaInicial: View {
                                 mic.askPermissionMic()
                                 showSheet.toggle()
                             }
-                            
+
                     }
-                    
+
                 }
                
                 HalfASheet(isPresented: $showSheet){

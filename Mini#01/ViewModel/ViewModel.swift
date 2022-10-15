@@ -9,7 +9,7 @@ import Foundation
 
 var ruidos = [Ruidos(imagem: "0", nome: "Aspirador", id: 0, audio: "aspirador", background: "aspirador"),
               Ruidos(imagem: "1", nome: "Coração", id: 1, audio: "coracao", background: "coracao"),
-              Ruidos(imagem: "2", nome: "Chuva+Raio", id: 2, audio: "chuva", background: "chuva"),
+              Ruidos(imagem: "2", nome: "Chuva", id: 2, audio: "chuva", background: "chuva"),
               Ruidos(imagem: "3", nome: "Lagoa", id: 3, audio: "lagoa", background: "lagoa"),
               Ruidos(imagem: "4", nome: "Lareira", id: 4, audio: "lareira", background: "lareira"),
               Ruidos(imagem: "5", nome: "Mar", id: 5, audio: "mar", background: "mar"),

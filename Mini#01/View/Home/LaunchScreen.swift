@@ -19,7 +19,13 @@ struct LaunchScreen: View {
         }
         else{
             ZStack{
-                Image("Fundo")
+                LinearGradient(gradient: Gradient(colors: [
+                    Color(red: 28/255, green: 13/255, blue: 47/255),
+                    Color(red: 57/255, green: 36/255, blue: 89/255)
+                    ]),
+                    startPoint: .top,
+                    endPoint: .bottom)
+                    .ignoresSafeArea(.all, edges: .all)
                 VStack{
                     Image("logo")
                         .resizable()

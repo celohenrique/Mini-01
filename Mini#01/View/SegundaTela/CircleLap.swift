@@ -9,7 +9,6 @@
 import SwiftUI
 struct CircleLap: View {
     
-    
     @State var ruidos: Ruidos
     @State var timer = Timer.publish(every: 1,
                                      on: .main,
@@ -36,9 +35,7 @@ struct CircleLap: View {
         let total = hrs + min + sec
         return total
     }
-    
-   
-    
+
     func convertSecondsToTime(timeInSeconds: Int) -> String{
         let hours = timeInSeconds / 3600
         let minutes = (timeInSeconds % 3600) / 60
@@ -46,9 +43,7 @@ struct CircleLap: View {
         return String(format: "%02i:%02i:%02i", hours, minutes, seconds)
     }
     var body : some View{
-        
-                            
-        
+
         VStack(spacing: 25){
             
             Text(convertSecondsToTime(timeInSeconds: totalSegundos))
@@ -71,9 +66,7 @@ struct CircleLap: View {
 
                 }
         }
-        
-        
-        
+
         HStack(spacing:130){
             Button(action: {
                 timerOnOff = true
@@ -107,7 +100,7 @@ struct CircleLap: View {
             }
             .frame(width: 100, height: 100)
             .foregroundColor(isPause ? Color(red: 170/255, green: 170/255, blue: 170/255) : Color(red: 255/255, green: 255/255, blue: 255/255) )
-            // .frame(width: 75, height: 75)
+            // .frame(width: 75, height: 75)z
         }.buttonStyle(CircleButton())
             .onChange(of: totalSegundos) {newValue in
                 self.totalSegundos = convertSelection(hrs: hourSelection,min: minuteSelection,sec: seconds)
@@ -131,10 +124,5 @@ struct CircleLap: View {
             }
     }
 }
-//struct CircleLap_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CircleLap()
-//    }
-//}
 
 

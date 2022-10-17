@@ -89,34 +89,42 @@ struct PickerScreen: View {
                     .frame(width: 150, height: 150, alignment: .center)
                 }
                 
+                
                 // MARK: - Botoes
                 HStack(alignment: .center){
                     
                     Button(action:{
                          
-                        let testeTotal = convertSelection(hrs: hourSelection, min: minuteSelection, sec: segundos)
+                        let total = convertSelection(hrs: hourSelection, min: minuteSelection, sec: segundos)
                       
                         if hourSelection == 0 && minuteSelection == 0 {
                             
+                            
                             return
-                        } else {
-                            self.totalSegundos = 0
-                            timerOnOff = false
-                            isPlaying = true
-                            notifyNum.sendNotification(type: "time",
-                                                       timeInterval: Double(testeTotal),
-                                                       title: "Alerta",
-                                                       body: "Seu timer acabou")
                         }
+                        
+                        else {
+                                self.totalSegundos = 0
+                                timerOnOff = false
+                                isPlaying = true
+                                notifyNum.sendNotification(type: "time",
+                                                           timeInterval: Double(total),
+                                                           title: "Alerta",
+                                                           body: "Seu timer acabou")
+                            }
+                        
                     })
                     {
                         Text("Start")
                             .foregroundColor(Color(red: 30/255, green: 14/255, blue: 51/255))
+                           
                     }
                     .frame(width: 100, height: 100)
                     .foregroundColor(Color(red: 255/255, green: 255/255, blue: 255/255))
+                   
                 }
                 .buttonStyle(CircleButton())
+                // arrumar esse botao para caber em varias telas
             }
         } else{
             
@@ -134,10 +142,5 @@ extension UIPickerView {
     }
 }
 
-//struct PickerScreen_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PickerScreen()
-//    }
-//}
 
 

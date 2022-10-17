@@ -72,15 +72,14 @@ struct TelaInicial: View {
     var body: some View {
         NavigationView{
             ZStack {
-                Image("Fundo")
-                    .resizable()
-                    .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
-               
-                
-                
-                
-                
+                LinearGradient(gradient: Gradient(colors: [
+                    Color(red: 28/255, green: 13/255, blue: 47/255),
+                    Color(red: 57/255, green: 36/255, blue: 89/255)
+                    ]),
+                    startPoint: .top,
+                    endPoint: .bottom)
+                    .ignoresSafeArea(.all, edges: .all)
+
                 VStack{
                     LazyVGrid(columns: columns, alignment: .center, spacing: spacer){
                         

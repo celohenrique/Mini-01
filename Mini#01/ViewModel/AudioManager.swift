@@ -18,8 +18,8 @@ func playSound(key: String, isPreview: Bool = false) {
         return
     }
     do{
-//        try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-        try AVAudioSession.sharedInstance().overrideOutputAudioPort(.speaker)
+        try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+//        try AVAudioSession.sharedInstance().overrideOutputAudioPort(.speaker)
          
         player = try AVAudioPlayer(contentsOf: url!)
         player.numberOfLoops = -1

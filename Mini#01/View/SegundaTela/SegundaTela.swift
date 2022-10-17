@@ -25,9 +25,13 @@ struct SegundaTela: View {
         
         ZStack{
             
-            if isPlaying {
-                backgroundView(videoAtual: $ruidos.audio)
-                    .edgesIgnoringSafeArea(.all)
+            if isPlaying && isPause{
+                
+                    backgroundView(videoAtual: $ruidos.audio)
+                        .edgesIgnoringSafeArea(.all)
+                
+                
+
             } else {
                             Image("Fundo")
                                 .resizable()

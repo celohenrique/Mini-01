@@ -112,7 +112,6 @@ struct PickerScreen: View {
                                                            title: "Alerta",
                                                            body: "Seu timer acabou")
                             }
-                        
                     })
                     {
                         Text("Start")

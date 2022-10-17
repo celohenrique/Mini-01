@@ -16,12 +16,10 @@ struct ruidosIcon: View{
 
             VStack{
                 Image("\(ruidos.imagem)")
-             //   Spacer()
-                
+
                 Text(ruidos.nome)
                     .font(Font.custom("SF Pro Rounded", size: TelaInicial().sizeFont)).foregroundColor(Color.white)
                     .lineLimit(1)
-//                    .border(Color.green)
             }
     }
         

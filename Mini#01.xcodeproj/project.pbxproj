@@ -27,6 +27,7 @@
 		A4D2202328CFABE600BAC9EE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D2202228CFABE600BAC9EE /* ViewModel.swift */; };
 		A4D2202628CFACFA00BAC9EE /* SegundaTela.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D2202528CFACFA00BAC9EE /* SegundaTela.swift */; };
 		A4F8BD6928E21AA900DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4F8BD6828E21A8200DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */; };
+		B94E133E28FDCBA100625B3B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94E133D28FDCBA100625B3B /* Launch Screen.storyboard */; };
 		B993992F28EF497F0038608B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B993992E28EF497F0038608B /* NotificationController.swift */; };
 		B9D8566E28FA4D2A0077A526 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D8566D28FA4D2A0077A526 /* LaunchScreen.swift */; };
 		B9EED67128D255DF00ED4237 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EED67028D255DF00ED4237 /* Sensor.swift */; };
@@ -57,6 +58,7 @@
 		A4D2202228CFABE600BAC9EE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		A4D2202528CFACFA00BAC9EE /* SegundaTela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegundaTela.swift; sourceTree = "<group>"; };
 		A4F8BD6828E21A8200DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-SF-Pro-Rounded-Bold.ttf"; sourceTree = "<group>"; };
+		B94E133D28FDCBA100625B3B /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		B993992E28EF497F0038608B /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		B9D8566D28FA4D2A0077A526 /* LaunchScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		B9EED67028D255DF00ED4237 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
@@ -177,9 +179,9 @@
 		B9F3B59928BD3B3400EB2170 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				B9F3B58C28BD3A9200EB2170 /* Assets.xcassets */,
 				A4F8BD6828E21A8200DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */,
 				A47A52CE28DB8CF500C9934C /* Sons */,
-				B9F3B58C28BD3A9200EB2170 /* Assets.xcassets */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -187,6 +189,7 @@
 		B9F3B59C28BD580900EB2170 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B94E133D28FDCBA100625B3B /* Launch Screen.storyboard */,
 				B9D8566D28FA4D2A0077A526 /* LaunchScreen.swift */,
 				B9F3B58A28BD3A9100EB2170 /* ContentView.swift */,
 				A448267328C1359B00EE27B5 /* TelaInicial.swift */,
@@ -269,6 +272,7 @@
 				95B8870E28E435070073C115 /* shh.mp3 in Resources */,
 				95B8870828E3B36A0073C115 /* secador.mp3 in Resources */,
 				A47A52E028DB8D1400C9934C /* utero.mp3 in Resources */,
+				B94E133E28FDCBA100625B3B /* Launch Screen.storyboard in Resources */,
 				A47A52DE28DB8D1400C9934C /* ronrom.mp3 in Resources */,
 				95B8870A28E3B3A00073C115 /* mar.mp3 in Resources */,
 				95B8870628E3B34B0073C115 /* tv.mp3 in Resources */,
@@ -434,7 +438,8 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Sonnus necessita o uso do microfone para mediar o barulho no local";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
@@ -471,7 +476,8 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Sonnus necessita o uso do microfone para mediar o barulho no local";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;

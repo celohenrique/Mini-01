@@ -28,8 +28,8 @@ struct SegundaTela: View {
             if isPlaying && isPause{
                 
                     backgroundView(videoAtual: $ruidos.audio)
+                    
                         .edgesIgnoringSafeArea(.all)
-                
                 
 
             } else {
@@ -62,7 +62,7 @@ struct SegundaTela: View {
 //                    .fontWeight(.bold)
                     .foregroundColor(Color.white)
                 Spacer()
-                    .frame(height: 70)
+                    .frame(height: 10)
                 PickerScreen(ruidos: self.ruidos, sensor: $sensor, ativo: $ativo, timerOnOff: $timerOnOff,totalSegundos: $totalSegundos, isPlaying: $isPlaying, isPause: $isPause)
                 
                 Spacer()

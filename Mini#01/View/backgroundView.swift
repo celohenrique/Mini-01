@@ -43,7 +43,7 @@ class QueuePlayerUIView: UIView{
         
          func playVideo (key: String) {
             //Load video
-            let fileUrl = Bundle.main.url(forResource: key, withExtension: "mp4")!
+            let fileUrl = Bundle.main.url(forResource: key, withExtension: "MOV")!
             let playerItem = AVPlayerItem(url : fileUrl)
             
             //Setup Player

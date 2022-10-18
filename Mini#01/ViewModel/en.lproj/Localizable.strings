@@ -1,0 +1,57 @@
+/* 
+  Localizable.strings
+  Mini#01
+
+  Created by Marcelo Araujo on 18/10/22.
+  
+*/
+"ruidos" = "Noises";
+
+"sons" = "Sounds";
+
+"sensor de barulho" = "Noise sensor";
+
+"microfone" = "MIC";
+
+"não foi concedido acesso ao microfone para esse aplicativo. Habilite o microfone nas configurações do sistema" = "Microphone access has not been granted for this app. Enable the microphone in the system settings.";
+
+"cancelar" = "Cancel";
+
+"configurações" = "Settings";
+
+"o sensor capta barulhos altos e reinicia o timer do último som selecionado. O microfone ficará ligado apenas quando o sensor estiver ligado" = "The sensor picks up loud noises and resets the timer for the last selected sound. The microphone will be on only when the sensor is on.";
+
+"horas" = "hours";
+
+"alerta" = "Alert";
+
+"seu timer acabou" = "Your timer has run out.";
+
+"iniciar" = "Start";
+
+"pausa" = "Pause";
+
+"aspirador" = "Vacuum";
+
+"coracao" = "Heart";
+
+"tempestade" = "Storm";
+
+"lagoa" = "Lagoon";
+
+"lareira" = "Fireplace";
+
+"mar" = "Sea";
+
+"ronrom" = "Purr";
+
+"secador" = "Dried";
+
+"shh" = "Shushing";
+
+"tv" = "TV";
+
+"utero" = "Uterus";
+
+"vento" = "Wind";
+

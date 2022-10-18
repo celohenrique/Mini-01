@@ -77,7 +77,7 @@ struct CircleLap: View {
                 self.minuteSelection = 0
                 self.hourSelection = 0
             }){
-                Text("Cancel") }
+                Text(cancelarTxt) }
             .frame(width: 100, height: 100)
             .foregroundColor(Color(red: 217/255, green: 217/255, blue: 217/255))
             // .frame(width: 75, height: 75)
@@ -95,7 +95,7 @@ struct CircleLap: View {
                 }
             })
             {
-                Text("\(isPause ? "Pause": "Play")")
+                Text("\(isPause ? "Pause": "Play")") //localized bugado
                     .foregroundColor(Color(red: 28/255, green: 12/255, blue: 48/255))
             }
             .frame(width: 100, height: 100)

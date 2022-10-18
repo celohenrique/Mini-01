@@ -28,6 +28,7 @@
 		A4D2202628CFACFA00BAC9EE /* SegundaTela.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D2202528CFACFA00BAC9EE /* SegundaTela.swift */; };
 		A4F8BD6928E21AA900DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4F8BD6828E21A8200DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */; };
 		B94E133E28FDCBA100625B3B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94E133D28FDCBA100625B3B /* Launch Screen.storyboard */; };
+		B993808B28FF267B00862CA4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B993808D28FF267B00862CA4 /* Localizable.strings */; };
 		B993992F28EF497F0038608B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B993992E28EF497F0038608B /* NotificationController.swift */; };
 		B9D8566E28FA4D2A0077A526 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D8566D28FA4D2A0077A526 /* LaunchScreen.swift */; };
 		B9EED67128D255DF00ED4237 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EED67028D255DF00ED4237 /* Sensor.swift */; };
@@ -59,6 +60,8 @@
 		A4D2202528CFACFA00BAC9EE /* SegundaTela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegundaTela.swift; sourceTree = "<group>"; };
 		A4F8BD6828E21A8200DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-SF-Pro-Rounded-Bold.ttf"; sourceTree = "<group>"; };
 		B94E133D28FDCBA100625B3B /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		B993808C28FF267B00862CA4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B993808E28FF267F00862CA4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B993992E28EF497F0038608B /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		B9D8566D28FA4D2A0077A526 /* LaunchScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		B9EED67028D255DF00ED4237 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
@@ -160,8 +163,8 @@
 		B9F3B59728BD3AA500EB2170 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A4D2202428CFAC2800BAC9EE /* SegundaTela */,
 				B9F3B59C28BD580900EB2170 /* Home */,
+				A4D2202428CFAC2800BAC9EE /* SegundaTela */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			children = (
 				B9F3B58828BD3A9100EB2170 /* Mini_01App.swift */,
 				A4D2202228CFABE600BAC9EE /* ViewModel.swift */,
+				B993808D28FF267B00862CA4 /* Localizable.strings */,
 				A47A52E528DB8E2E00C9934C /* AudioManager.swift */,
 			);
 			path = ViewModel;
@@ -189,9 +193,9 @@
 		B9F3B59C28BD580900EB2170 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B9F3B58A28BD3A9100EB2170 /* ContentView.swift */,
 				B94E133D28FDCBA100625B3B /* Launch Screen.storyboard */,
 				B9D8566D28FA4D2A0077A526 /* LaunchScreen.swift */,
-				B9F3B58A28BD3A9100EB2170 /* ContentView.swift */,
 				A448267328C1359B00EE27B5 /* TelaInicial.swift */,
 			);
 			path = Home;
@@ -262,6 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B993808B28FF267B00862CA4 /* Localizable.strings in Resources */,
 				B9F3B59028BD3A9200EB2170 /* Preview Assets.xcassets in Resources */,
 				A4F8BD6928E21AA900DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf in Resources */,
 				A47A52DD28DB8D1400C9934C /* coracao.mp3 in Resources */,
@@ -304,6 +309,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B993808D28FF267B00862CA4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B993808C28FF267B00862CA4 /* en */,
+				B993808E28FF267F00862CA4 /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B9F3B59128BD3A9200EB2170 /* Debug */ = {

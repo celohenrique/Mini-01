@@ -45,6 +45,7 @@ struct PickerScreen: View {
    
     @State var segundos = 0
     
+    
     func convertSelection(hrs: Int, min: Int, sec: Int) -> Int{
         
         let hrs = hrs * 3600
@@ -57,16 +58,18 @@ struct PickerScreen: View {
     var hours = [Int](0..<24)
     var minutes = [Int](0..<60)
     
+
+    
     var body: some View {
         VStack(spacing: 170){
         
             if timerOnOff {
-            VStack(alignment: .center,spacing: 100){
+            VStack(alignment: .center,spacing: 50){
                 HStack(alignment: .center){
                     
                     Picker(selection: self.$hourSelection, label: Text("")){
                         ForEach(0 ..< hours.count, id: \.self){ index in
-                            Text("\(self.hours[index]) hours")
+                            Text("\(self.hours[index]) hours") //colocar a traducao
                                 .font(.title)
                                 .fontWeight(.medium)
                                 .foregroundColor(Color.white)
@@ -88,6 +91,8 @@ struct PickerScreen: View {
                     .pickerStyle(WheelPickerStyle())
                     .frame(width: 150, height: 150, alignment: .center)
                 }
+                Spacer()
+                    .frame(height: 50)
                 
                 
                 // MARK: - Botoes
@@ -99,14 +104,14 @@ struct PickerScreen: View {
                       
                         if hourSelection == 0 && minuteSelection == 0 {
                             
-                            
-                            return
+                            minuteSelection = 1
                         }
                         
                         else {
                                 self.totalSegundos = 0
                                 timerOnOff = false
                                 isPlaying = true
+                            //colocar traducao na notificacao
                                 notifyNum.sendNotification(type: "time",
                                                            timeInterval: Double(total),
                                                            title: "Alerta",
@@ -114,15 +119,15 @@ struct PickerScreen: View {
                             }
                     })
                     {
-                        Text("Start")
+                        Text(iniciarTxt)
                             .foregroundColor(Color(red: 30/255, green: 14/255, blue: 51/255))
-                           
                     }
                     .frame(width: 100, height: 100)
                     .foregroundColor(Color(red: 255/255, green: 255/255, blue: 255/255))
                    
                 }
                 .buttonStyle(CircleButton())
+                
                 // arrumar esse botao para caber em varias telas
             }
         } else{

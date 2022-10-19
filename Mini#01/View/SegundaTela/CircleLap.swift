@@ -76,6 +76,8 @@ struct CircleLap: View {
                 self.totalSegundos = 0
                 self.minuteSelection = 0
                 self.hourSelection = 0
+                
+                // AAAAAA
             }){
                 Text("Cancel") }
             .frame(width: 100, height: 100)
@@ -91,6 +93,7 @@ struct CircleLap: View {
                 else {
                     isPause = true
                     self.timer = self.timer.upstream.autoconnect()
+                   
                     //                        self.estado = "Play"
                 }
             })
@@ -111,6 +114,7 @@ struct CircleLap: View {
                 isPause = true
                 if sensor{
                     ativo = false
+                    
                 }
                 if aux != 0 {
                     totalSegundos = aux

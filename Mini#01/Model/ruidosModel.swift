@@ -10,9 +10,10 @@ import Foundation
 struct Ruidos: Hashable {
     
     var imagem: String
+    var imagemPreenchida: String
     var nome: String
     var id: Int
     var audio: String
     var background: String
-
+    
 }

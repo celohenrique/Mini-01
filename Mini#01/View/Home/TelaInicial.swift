@@ -84,6 +84,11 @@ struct TelaInicial: View {
                         ForEach(ruidos, id: \.self){ item in
                             NavigationLink(destination: SegundaTela(ruidos: item, isPlaying: $isPlaying, isPause: $isPause, timerOnOff: $timerOnOff, sensor: $sensor, ativo: $ativo, atualSom: $atualSom, totalSegundos: $totalSegundos, mic: $mic)){
                                 ruidosIcon(ruidos: item)
+                                
+                                if isPlaying == true {
+                                    
+        
+                                }
                             }
                         }
                     }
@@ -167,7 +172,7 @@ struct TelaInicial: View {
                         ativo = true
                 }
             }
-        }
+        }.accentColor(.white)
     }
 }
 //struct RuidoBranco_Previews: PreviewProvider {

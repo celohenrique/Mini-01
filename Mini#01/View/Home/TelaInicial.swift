@@ -107,6 +107,8 @@ struct TelaInicial: View {
                
                 HalfASheet(isPresented: $showSheet){
                     VStack{
+                        Spacer()
+                            .frame(height: 40)
                         Toggle(isOn: $sensor, label: {
                             Text("Sensor de Barulho")
                                 .font(.title2)
@@ -145,7 +147,7 @@ struct TelaInicial: View {
                             .frame(height: 20)
                         Text("O sensor capta barulhos altos e reinicia o timer do último som selecionado. O microfone ficará ligado apenas quando o sensor estiver ligado")
                         Spacer()
-                            .frame(height: 150)
+                            .frame(height: 70)
                     }
                 }.height(.proportional(0.50))
             }

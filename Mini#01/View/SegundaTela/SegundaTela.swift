@@ -34,6 +34,7 @@ struct SegundaTela: View {
             
             Image(ruidos.background)
                 .resizable(resizingMode: .stretch)
+                .aspectRatio(contentMode: .fill)
             
             
             VStack(spacing: 20) {

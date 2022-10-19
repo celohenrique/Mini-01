@@ -61,7 +61,8 @@ struct PickerScreen: View {
         VStack(spacing: 170){
         
             if timerOnOff {
-            VStack(alignment: .center,spacing: 100){
+            VStack(alignment: .center,spacing: 50){
+               
                 HStack(alignment: .center){
                     
                     Picker(selection: self.$hourSelection, label: Text("")){
@@ -88,6 +89,8 @@ struct PickerScreen: View {
                     .pickerStyle(WheelPickerStyle())
                     .frame(width: 150, height: 150, alignment: .center)
                 }
+                Spacer()
+                    .frame(height: 50)
                 
                 
                 // MARK: - Botoes

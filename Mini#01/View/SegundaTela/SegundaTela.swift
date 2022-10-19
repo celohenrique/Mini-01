@@ -32,10 +32,27 @@ struct SegundaTela: View {
             
                 .ignoresSafeArea(.all, edges: .all)
             
-            Image(ruidos.background)
-                .resizable(resizingMode: .stretch)
-                .aspectRatio(contentMode: .fill)
+//            Image(ruidos.background)
+//                .resizable(resizingMode: .stretch)
+//                .aspectRatio(contentMode: .fill)
                 
+            if isPlaying && isPause{
+                            
+                                backgroundView(videoAtual: $ruidos.audio)
+                                
+                                    .edgesIgnoringSafeArea(.all)
+                            
+
+                        } else {
+                                        Image("Fundo")
+                                            .resizable()
+                                            .scaledToFill()
+                                            .edgesIgnoringSafeArea(.all)
+                            
+                                        Image(ruidos.background)
+                                            .resizable(resizingMode: .stretch)
+                        }
+            
             VStack(spacing: 20) {
                 Spacer()
                     .frame(height: 100)
@@ -44,7 +61,7 @@ struct SegundaTela: View {
 //                    .fontWeight(.bold)
                     .foregroundColor(Color.white)
                 Spacer()
-                    .frame(height: 70)
+                    .frame(height: 10)
                 PickerScreen(ruidos: self.ruidos, sensor: $sensor, ativo: $ativo, timerOnOff: $timerOnOff,totalSegundos: $totalSegundos, isPlaying: $isPlaying, isPause: $isPause)
                 
                 Spacer()

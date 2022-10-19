@@ -96,7 +96,7 @@ struct TelaInicial: View {
                             .foregroundColor(Color.white)
                             .navigationTitle(LocalizedStringKey("sons"))
                             .onTapGesture {
-                                mic.askPermissionMic()
+                                //mic.askPermissionMic()
                                 showSheet.toggle()
                             }
 

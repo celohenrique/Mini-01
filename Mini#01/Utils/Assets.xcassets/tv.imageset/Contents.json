@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "tv.png",
+      "filename" : "tv@3x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },

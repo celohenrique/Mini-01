@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95A72647290084D200462EE5 /* aspirador.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 95A72646290084D200462EE5 /* aspirador.MOV */; };
+		95A7264A2900859400462EE5 /* backgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A726492900859400462EE5 /* backgroundView.swift */; };
+		95A7264C290086AF00462EE5 /* chuva.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 95A7264B290086AF00462EE5 /* chuva.MOV */; };
+		95A7264E290087A200462EE5 /* coracao.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 95A7264D290087A200462EE5 /* coracao.MOV */; };
+		95A72652290087B100462EE5 /* lareira.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 95A7264F290087B100462EE5 /* lareira.MOV */; };
+		95A72654290087B100462EE5 /* lagoa.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 95A72651290087B100462EE5 /* lagoa.MOV */; };
+		95A7265B290087D700462EE5 /* shh.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 95A72655290087D600462EE5 /* shh.MOV */; };
+		95A7265C290087D700462EE5 /* tv.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 95A72656290087D700462EE5 /* tv.MOV */; };
+		95A7265D290087D700462EE5 /* utero.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 95A72657290087D700462EE5 /* utero.MOV */; };
+		95A7265E290087D700462EE5 /* vento.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 95A72658290087D700462EE5 /* vento.MOV */; };
+		95A7265F290087D700462EE5 /* ronrom.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 95A72659290087D700462EE5 /* ronrom.MOV */; };
+		95A72660290087D700462EE5 /* secador.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 95A7265A290087D700462EE5 /* secador.MOV */; };
+		95A7266229008B0900462EE5 /* mar.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 95A7266129008B0900462EE5 /* mar.MOV */; };
 		95B8870628E3B34B0073C115 /* tv.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 95B8870528E3B34B0073C115 /* tv.mp3 */; };
 		95B8870828E3B36A0073C115 /* secador.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 95B8870728E3B36A0073C115 /* secador.mp3 */; };
 		95B8870A28E3B3A00073C115 /* mar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 95B8870928E3B3A00073C115 /* mar.mp3 */; };
@@ -40,6 +53,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95A72646290084D200462EE5 /* aspirador.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = aspirador.MOV; sourceTree = "<group>"; };
+		95A726492900859400462EE5 /* backgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backgroundView.swift; sourceTree = "<group>"; };
+		95A7264B290086AF00462EE5 /* chuva.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = chuva.MOV; sourceTree = "<group>"; };
+		95A7264D290087A200462EE5 /* coracao.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = coracao.MOV; sourceTree = "<group>"; };
+		95A7264F290087B100462EE5 /* lareira.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = lareira.MOV; sourceTree = "<group>"; };
+		95A72651290087B100462EE5 /* lagoa.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = lagoa.MOV; sourceTree = "<group>"; };
+		95A72655290087D600462EE5 /* shh.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = shh.MOV; sourceTree = "<group>"; };
+		95A72656290087D700462EE5 /* tv.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = tv.MOV; sourceTree = "<group>"; };
+		95A72657290087D700462EE5 /* utero.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = utero.MOV; sourceTree = "<group>"; };
+		95A72658290087D700462EE5 /* vento.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = vento.MOV; sourceTree = "<group>"; };
+		95A72659290087D700462EE5 /* ronrom.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = ronrom.MOV; sourceTree = "<group>"; };
+		95A7265A290087D700462EE5 /* secador.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = secador.MOV; sourceTree = "<group>"; };
+		95A7266129008B0900462EE5 /* mar.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = mar.MOV; sourceTree = "<group>"; };
 		95B8870528E3B34B0073C115 /* tv.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tv.mp3; sourceTree = "<group>"; };
 		95B8870728E3B36A0073C115 /* secador.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = secador.mp3; sourceTree = "<group>"; };
 		95B8870928E3B3A00073C115 /* mar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mar.mp3; sourceTree = "<group>"; };
@@ -85,6 +111,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95A72645290084C000462EE5 /* Animacoes */ = {
+			isa = PBXGroup;
+			children = (
+				95A72646290084D200462EE5 /* aspirador.MOV */,
+				95A7264B290086AF00462EE5 /* chuva.MOV */,
+				95A7264D290087A200462EE5 /* coracao.MOV */,
+				95A72651290087B100462EE5 /* lagoa.MOV */,
+				95A7264F290087B100462EE5 /* lareira.MOV */,
+				95A7266129008B0900462EE5 /* mar.MOV */,
+				95A72659290087D700462EE5 /* ronrom.MOV */,
+				95A7265A290087D700462EE5 /* secador.MOV */,
+				95A72655290087D600462EE5 /* shh.MOV */,
+				95A72656290087D700462EE5 /* tv.MOV */,
+				95A72657290087D700462EE5 /* utero.MOV */,
+				95A72658290087D700462EE5 /* vento.MOV */,
+			);
+			path = Animacoes;
+			sourceTree = "<group>";
+		};
+		95A726482900856200462EE5 /* animacao */ = {
+			isa = PBXGroup;
+			children = (
+				95A726492900859400462EE5 /* backgroundView.swift */,
+			);
+			path = animacao;
+			sourceTree = "<group>";
+		};
 		A47A52CE28DB8CF500C9934C /* Sons */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +216,7 @@
 		B9F3B59728BD3AA500EB2170 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				95A726482900856200462EE5 /* animacao */,
 				B9F3B59C28BD580900EB2170 /* Home */,
 				A4D2202428CFAC2800BAC9EE /* SegundaTela */,
 			);
@@ -183,6 +237,7 @@
 		B9F3B59928BD3B3400EB2170 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				95A72645290084C000462EE5 /* Animacoes */,
 				B9F3B58C28BD3A9200EB2170 /* Assets.xcassets */,
 				A4F8BD6828E21A8200DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */,
 				A47A52CE28DB8CF500C9934C /* Sons */,
@@ -266,20 +321,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95A7266229008B0900462EE5 /* mar.MOV in Resources */,
+				95A7265C290087D700462EE5 /* tv.MOV in Resources */,
 				B993808B28FF267B00862CA4 /* Localizable.strings in Resources */,
 				B9F3B59028BD3A9200EB2170 /* Preview Assets.xcassets in Resources */,
 				A4F8BD6928E21AA900DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf in Resources */,
+				95A7264E290087A200462EE5 /* coracao.MOV in Resources */,
 				A47A52DD28DB8D1400C9934C /* coracao.mp3 in Resources */,
+				95A72652290087B100462EE5 /* lareira.MOV in Resources */,
+				95A72654290087B100462EE5 /* lagoa.MOV in Resources */,
 				A47A52DC28DB8D1400C9934C /* aspirador.mp3 in Resources */,
 				A47A52E128DB8D1400C9934C /* vento.mp3 in Resources */,
 				B9F3B58D28BD3A9200EB2170 /* Assets.xcassets in Resources */,
 				A47A52E428DB8D1400C9934C /* lareira.mp3 in Resources */,
 				95B8870E28E435070073C115 /* shh.mp3 in Resources */,
+				95A7265E290087D700462EE5 /* vento.MOV in Resources */,
+				95A72660290087D700462EE5 /* secador.MOV in Resources */,
 				95B8870828E3B36A0073C115 /* secador.mp3 in Resources */,
+				95A7264C290086AF00462EE5 /* chuva.MOV in Resources */,
 				A47A52E028DB8D1400C9934C /* utero.mp3 in Resources */,
 				B94E133E28FDCBA100625B3B /* Launch Screen.storyboard in Resources */,
 				A47A52DE28DB8D1400C9934C /* ronrom.mp3 in Resources */,
+				95A7265B290087D700462EE5 /* shh.MOV in Resources */,
 				95B8870A28E3B3A00073C115 /* mar.mp3 in Resources */,
+				95A72647290084D200462EE5 /* aspirador.MOV in Resources */,
+				95A7265F290087D700462EE5 /* ronrom.MOV in Resources */,
+				95A7265D290087D700462EE5 /* utero.MOV in Resources */,
 				95B8870628E3B34B0073C115 /* tv.mp3 in Resources */,
 				95B8870C28E3B3B40073C115 /* chuva.mp3 in Resources */,
 				A47A52E328DB8D1400C9934C /* lagoa.mp3 in Resources */,
@@ -301,6 +368,7 @@
 				B9F3B58928BD3A9100EB2170 /* Mini_01App.swift in Sources */,
 				B993992F28EF497F0038608B /* NotificationController.swift in Sources */,
 				A448267228C1352C00EE27B5 /* ruidosModel.swift in Sources */,
+				95A7264A2900859400462EE5 /* backgroundView.swift in Sources */,
 				A4D2202328CFABE600BAC9EE /* ViewModel.swift in Sources */,
 				A448267428C1359B00EE27B5 /* TelaInicial.swift in Sources */,
 				A47A52E628DB8E2E00C9934C /* AudioManager.swift in Sources */,
@@ -447,7 +515,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mini#01/Preview Content\"";
-				DEVELOPMENT_TEAM = 942Y8B46B9;
+				DEVELOPMENT_TEAM = 58J7DK7W56;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mini-01-Info.plist";

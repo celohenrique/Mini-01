@@ -18,6 +18,7 @@ struct SegundaTela: View {
     @Binding var atualSom: String
     @Binding var totalSegundos: Int
     @Binding var mic: MicrophoneMonitor
+   
     
     var body: some View{
         

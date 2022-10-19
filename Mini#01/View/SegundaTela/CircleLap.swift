@@ -23,7 +23,7 @@ struct CircleLap: View {
     @State var aux: Int
     @Binding var sensor: Bool
     @Binding var ativo: Bool
-
+    @State var notify = NotificationController()
     
     var isPreview: Bool = false
     
@@ -75,6 +75,8 @@ struct CircleLap: View {
                 self.totalSegundos = 0
                 self.minuteSelection = 0
                 self.hourSelection = 0
+                //colocar aqui o request cancell
+                notify.cancelNotification()
             }){
                 Text(cancelarTxt) }
             .frame(width: 100, height: 100)

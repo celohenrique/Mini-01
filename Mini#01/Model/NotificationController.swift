@@ -8,7 +8,6 @@
 import Foundation
 import UserNotifications
 
-
 class NotificationController {
     
     func askPermissionNotification(){
@@ -41,9 +40,14 @@ class NotificationController {
         content.body = body
         content.sound = UNNotificationSound.default
         
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: "notification", content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request)
+        
+    }
+    
+    func cancelNotification(){
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         
     }
     

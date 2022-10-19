@@ -38,9 +38,9 @@
 		B987A267290097BE000CDD20 /* utero.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B987A25B290097BC000CDD20 /* utero.MOV */; };
 		B987A268290097BE000CDD20 /* ronrom.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B987A25C290097BD000CDD20 /* ronrom.MOV */; };
 		B987A269290097BE000CDD20 /* mar.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B987A25D290097BD000CDD20 /* mar.MOV */; };
-		B987A26A290097BE000CDD20 /* tv.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B987A25E290097BE000CDD20 /* tv.MOV */; };
 		B987A26B290097BE000CDD20 /* vento.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B987A25F290097BE000CDD20 /* vento.MOV */; };
 		B987A26E2900991C000CDD20 /* backgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B987A26D2900991C000CDD20 /* backgroundView.swift */; };
+		B987A2732900A287000CDD20 /* tv.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B987A2722900A287000CDD20 /* tv.MOV */; };
 		B993808B28FF267B00862CA4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B993808D28FF267B00862CA4 /* Localizable.strings */; };
 		B993992F28EF497F0038608B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B993992E28EF497F0038608B /* NotificationController.swift */; };
 		B9D8566E28FA4D2A0077A526 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D8566D28FA4D2A0077A526 /* LaunchScreen.swift */; };
@@ -83,9 +83,9 @@
 		B987A25B290097BC000CDD20 /* utero.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = utero.MOV; sourceTree = "<group>"; };
 		B987A25C290097BD000CDD20 /* ronrom.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = ronrom.MOV; sourceTree = "<group>"; };
 		B987A25D290097BD000CDD20 /* mar.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = mar.MOV; sourceTree = "<group>"; };
-		B987A25E290097BE000CDD20 /* tv.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = tv.MOV; sourceTree = "<group>"; };
 		B987A25F290097BE000CDD20 /* vento.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = vento.MOV; sourceTree = "<group>"; };
 		B987A26D2900991C000CDD20 /* backgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backgroundView.swift; sourceTree = "<group>"; };
+		B987A2722900A287000CDD20 /* tv.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = tv.MOV; sourceTree = "<group>"; };
 		B993808C28FF267B00862CA4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B993808E28FF267F00862CA4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B993992E28EF497F0038608B /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
@@ -143,6 +143,7 @@
 		B987A2532900976B000CDD20 /* animacoes */ = {
 			isa = PBXGroup;
 			children = (
+				B987A2722900A287000CDD20 /* tv.MOV */,
 				B987A257290097BB000CDD20 /* aspirador.MOV */,
 				B987A258290097BB000CDD20 /* chuva.MOV */,
 				B987A254290097B9000CDD20 /* coracao.MOV */,
@@ -152,7 +153,6 @@
 				B987A25C290097BD000CDD20 /* ronrom.MOV */,
 				B987A259290097BB000CDD20 /* secador.MOV */,
 				B987A25A290097BC000CDD20 /* shh.MOV */,
-				B987A25E290097BE000CDD20 /* tv.MOV */,
 				B987A25B290097BC000CDD20 /* utero.MOV */,
 				B987A25F290097BE000CDD20 /* vento.MOV */,
 			);
@@ -327,6 +327,7 @@
 				A47A52DD28DB8D1400C9934C /* coracao.mp3 in Resources */,
 				B987A267290097BE000CDD20 /* utero.MOV in Resources */,
 				B987A261290097BE000CDD20 /* lagoa.MOV in Resources */,
+				B987A2732900A287000CDD20 /* tv.MOV in Resources */,
 				A47A52DC28DB8D1400C9934C /* aspirador.mp3 in Resources */,
 				A47A52E128DB8D1400C9934C /* vento.mp3 in Resources */,
 				B987A26B290097BE000CDD20 /* vento.MOV in Resources */,
@@ -346,7 +347,6 @@
 				95B8870A28E3B3A00073C115 /* mar.mp3 in Resources */,
 				95B8870628E3B34B0073C115 /* tv.mp3 in Resources */,
 				B987A265290097BE000CDD20 /* secador.MOV in Resources */,
-				B987A26A290097BE000CDD20 /* tv.MOV in Resources */,
 				B987A269290097BE000CDD20 /* mar.MOV in Resources */,
 				95B8870C28E3B3B40073C115 /* chuva.mp3 in Resources */,
 				A47A52E328DB8D1400C9934C /* lagoa.mp3 in Resources */,

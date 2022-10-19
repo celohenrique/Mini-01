@@ -10,11 +10,15 @@ import HalfASheet
 import UserNotifications
 
 struct ruidosIcon: View{
-    
+    @Binding var sizeIcon1: CGFloat
+    @Binding var sizeIcon2: CGFloat
     @State var ruidos: Ruidos
+    
     var body: some View{
         VStack{
             Image("\(ruidos.imagem)")
+                .resizable()
+                    .frame(width: sizeIcon1, height: sizeIcon2)
             
             Text(LocalizedStringKey(ruidos.nome))
                 .font(Font.custom("SF Pro Rounded", size: TelaInicial().sizeFont)).foregroundColor(Color.white)
@@ -35,6 +39,8 @@ struct TelaInicial: View {
     @State var tempo: Int?
     @State var spacer: CGFloat
     @State var sizeFont: CGFloat
+    @State var sizeIcon1: CGFloat
+    @State var sizeIcon2: CGFloat
     @State var totalSegundos = 0
     @State var atualSom: String = ""
     @State var mic = MicrophoneMonitor.shared
@@ -51,10 +57,24 @@ struct TelaInicial: View {
         if screenHeight < 668 {
             self.spacer = 40
             self.sizeFont = 16
+            self.sizeIcon2 = 70
+            self.sizeIcon1 = 70
         }
+        
+        else if screenHeight > 895 {
+            
+            self.spacer = 70
+            self.sizeFont = 22
+            self.sizeIcon2 = 80
+            self.sizeIcon1 = 80
+            
+        }
+        
         else{
             self.spacer = 60
             self.sizeFont = 20
+            self.sizeIcon2 = 70
+            self.sizeIcon1 = 70
         }
     }
     var body: some View {
@@ -72,7 +92,7 @@ struct TelaInicial: View {
                     LazyVGrid(columns: columns, alignment: .center, spacing: spacer){
                         ForEach(ruidos, id: \.self){ item in
                             NavigationLink(destination: SegundaTela(ruidos: item, isPlaying: $isPlaying, isPause: $isPause, timerOnOff: $timerOnOff, sensor: $sensor, ativo: $ativo, atualSom: $atualSom, totalSegundos: $totalSegundos, mic: $mic)){
-                                ruidosIcon(ruidos: item)
+                                ruidosIcon(sizeIcon1: $sizeIcon1, sizeIcon2: $sizeIcon2, ruidos: item )
                             }
                         }
                     }

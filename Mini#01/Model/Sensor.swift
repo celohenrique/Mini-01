@@ -22,7 +22,9 @@ class MicrophoneMonitor {
     private var audioRecorder: AVAudioRecorder?
     private var timer: Timer?
     
-    public func askPermissionMic(ruidos: Ruidos? = nil) {
+//    public func askPermissionMic(ruidos: Ruidos? = nil)
+    
+    init(ruidos: Ruidos? = nil) {
         
         self.ruidos = ruidos
         

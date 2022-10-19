@@ -28,10 +28,29 @@ struct SegundaTela: View {
             ]),
                            startPoint: .top,
                            endPoint: .bottom)
-                .ignoresSafeArea(.all, edges: .all)
-            Image(ruidos.background)
-                .resizable(resizingMode: .stretch)
-                .aspectRatio(contentMode: .fill)
+            .ignoresSafeArea(.all, edges: .all)
+//                        Image(ruidos.background)
+//            
+//                            .resizable(resizingMode: .stretch)
+//                            .aspectRatio(contentMode: .fill)
+            if isPlaying && isPause{
+                
+                backgroundView(videoAtual: $ruidos.audio)
+                
+                    .edgesIgnoringSafeArea(.all)
+                
+                
+            }
+            else {
+                Image("Fundo")
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+                
+                Image(ruidos.background)
+                    .resizable(resizingMode: .stretch)
+            }
+            
             VStack(spacing: 20) {
                 Spacer()
                     .frame(height: 100)

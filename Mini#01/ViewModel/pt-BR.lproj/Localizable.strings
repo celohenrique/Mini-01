@@ -21,9 +21,8 @@
 
 "o sensor capta barulhos altos e reinicia o timer do último som selecionado. O microfone ficará ligado apenas quando o sensor estiver ligado" = "O sensor capta barulhos altos e reinicia o timer do último som selecionado. O microfone ficará ligado apenas quando o sensor estiver ligado";
 
-"horas" = "horas";
 
-"hora" = "hora";
+"hora" = "horas";
 
 "alerta" = "Alerta";
 

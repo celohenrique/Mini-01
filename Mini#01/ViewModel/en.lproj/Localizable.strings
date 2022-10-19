@@ -21,9 +21,7 @@
 
 "o sensor capta barulhos altos e reinicia o timer do último som selecionado. O microfone ficará ligado apenas quando o sensor estiver ligado" = "The sensor picks up loud noises and resets the timer for the last selected sound. The microphone will be on only when the sensor is on.";
 
-"horas" = "hours";
-
-"hora" = "hour";
+"hora" = "hours";
 
 "alerta" = "Alert";
 
@@ -47,7 +45,7 @@
 
 "ronrom" = "Purr";
 
-"secador" = "Dried";
+"secador" = "Hair Dryer";
 
 "shh" = "Shushing";
 

@@ -62,7 +62,6 @@ struct TelaInicial: View {
         }
         
         else if screenHeight > 895 {
-            
             self.spacer = 70
             self.sizeFont = 22
             self.sizeIcon2 = 80
@@ -104,7 +103,7 @@ struct TelaInicial: View {
                             .foregroundColor(Color.white)
                             .navigationTitle(LocalizedStringKey("sons"))
                             .onTapGesture {
-                                mic.askPermissionMic()
+                            //    mic.askPermissionMic()
                                 showSheet.toggle()
                             }
                     }

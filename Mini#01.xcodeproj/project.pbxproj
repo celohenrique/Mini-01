@@ -28,6 +28,19 @@
 		A4D2202628CFACFA00BAC9EE /* SegundaTela.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D2202528CFACFA00BAC9EE /* SegundaTela.swift */; };
 		A4F8BD6928E21AA900DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4F8BD6828E21A8200DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */; };
 		B94E133E28FDCBA100625B3B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94E133D28FDCBA100625B3B /* Launch Screen.storyboard */; };
+		B987A260290097BE000CDD20 /* coracao.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B987A254290097B9000CDD20 /* coracao.MOV */; };
+		B987A261290097BE000CDD20 /* lagoa.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B987A255290097BA000CDD20 /* lagoa.MOV */; };
+		B987A262290097BE000CDD20 /* lareira.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B987A256290097BA000CDD20 /* lareira.MOV */; };
+		B987A263290097BE000CDD20 /* aspirador.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B987A257290097BB000CDD20 /* aspirador.MOV */; };
+		B987A264290097BE000CDD20 /* chuva.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B987A258290097BB000CDD20 /* chuva.MOV */; };
+		B987A265290097BE000CDD20 /* secador.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B987A259290097BB000CDD20 /* secador.MOV */; };
+		B987A266290097BE000CDD20 /* shh.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B987A25A290097BC000CDD20 /* shh.MOV */; };
+		B987A267290097BE000CDD20 /* utero.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B987A25B290097BC000CDD20 /* utero.MOV */; };
+		B987A268290097BE000CDD20 /* ronrom.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B987A25C290097BD000CDD20 /* ronrom.MOV */; };
+		B987A269290097BE000CDD20 /* mar.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B987A25D290097BD000CDD20 /* mar.MOV */; };
+		B987A26A290097BE000CDD20 /* tv.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B987A25E290097BE000CDD20 /* tv.MOV */; };
+		B987A26B290097BE000CDD20 /* vento.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B987A25F290097BE000CDD20 /* vento.MOV */; };
+		B987A26E2900991C000CDD20 /* backgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B987A26D2900991C000CDD20 /* backgroundView.swift */; };
 		B993808B28FF267B00862CA4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B993808D28FF267B00862CA4 /* Localizable.strings */; };
 		B993992F28EF497F0038608B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B993992E28EF497F0038608B /* NotificationController.swift */; };
 		B9D8566E28FA4D2A0077A526 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D8566D28FA4D2A0077A526 /* LaunchScreen.swift */; };
@@ -60,6 +73,19 @@
 		A4D2202528CFACFA00BAC9EE /* SegundaTela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegundaTela.swift; sourceTree = "<group>"; };
 		A4F8BD6828E21A8200DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-SF-Pro-Rounded-Bold.ttf"; sourceTree = "<group>"; };
 		B94E133D28FDCBA100625B3B /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		B987A254290097B9000CDD20 /* coracao.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = coracao.MOV; sourceTree = "<group>"; };
+		B987A255290097BA000CDD20 /* lagoa.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = lagoa.MOV; sourceTree = "<group>"; };
+		B987A256290097BA000CDD20 /* lareira.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = lareira.MOV; sourceTree = "<group>"; };
+		B987A257290097BB000CDD20 /* aspirador.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = aspirador.MOV; sourceTree = "<group>"; };
+		B987A258290097BB000CDD20 /* chuva.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = chuva.MOV; sourceTree = "<group>"; };
+		B987A259290097BB000CDD20 /* secador.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = secador.MOV; sourceTree = "<group>"; };
+		B987A25A290097BC000CDD20 /* shh.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = shh.MOV; sourceTree = "<group>"; };
+		B987A25B290097BC000CDD20 /* utero.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = utero.MOV; sourceTree = "<group>"; };
+		B987A25C290097BD000CDD20 /* ronrom.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = ronrom.MOV; sourceTree = "<group>"; };
+		B987A25D290097BD000CDD20 /* mar.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = mar.MOV; sourceTree = "<group>"; };
+		B987A25E290097BE000CDD20 /* tv.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = tv.MOV; sourceTree = "<group>"; };
+		B987A25F290097BE000CDD20 /* vento.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = vento.MOV; sourceTree = "<group>"; };
+		B987A26D2900991C000CDD20 /* backgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backgroundView.swift; sourceTree = "<group>"; };
 		B993808C28FF267B00862CA4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B993808E28FF267F00862CA4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B993992E28EF497F0038608B /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
@@ -114,6 +140,33 @@
 			path = SegundaTela;
 			sourceTree = "<group>";
 		};
+		B987A2532900976B000CDD20 /* animacoes */ = {
+			isa = PBXGroup;
+			children = (
+				B987A257290097BB000CDD20 /* aspirador.MOV */,
+				B987A258290097BB000CDD20 /* chuva.MOV */,
+				B987A254290097B9000CDD20 /* coracao.MOV */,
+				B987A255290097BA000CDD20 /* lagoa.MOV */,
+				B987A256290097BA000CDD20 /* lareira.MOV */,
+				B987A25D290097BD000CDD20 /* mar.MOV */,
+				B987A25C290097BD000CDD20 /* ronrom.MOV */,
+				B987A259290097BB000CDD20 /* secador.MOV */,
+				B987A25A290097BC000CDD20 /* shh.MOV */,
+				B987A25E290097BE000CDD20 /* tv.MOV */,
+				B987A25B290097BC000CDD20 /* utero.MOV */,
+				B987A25F290097BE000CDD20 /* vento.MOV */,
+			);
+			path = animacoes;
+			sourceTree = "<group>";
+		};
+		B987A26C290098F6000CDD20 /* Animacao */ = {
+			isa = PBXGroup;
+			children = (
+				B987A26D2900991C000CDD20 /* backgroundView.swift */,
+			);
+			path = Animacao;
+			sourceTree = "<group>";
+		};
 		B9F3B57C28BD3A9000EB2170 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +216,7 @@
 		B9F3B59728BD3AA500EB2170 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B987A26C290098F6000CDD20 /* Animacao */,
 				B9F3B59C28BD580900EB2170 /* Home */,
 				A4D2202428CFAC2800BAC9EE /* SegundaTela */,
 			);
@@ -183,6 +237,7 @@
 		B9F3B59928BD3B3400EB2170 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				B987A2532900976B000CDD20 /* animacoes */,
 				B9F3B58C28BD3A9200EB2170 /* Assets.xcassets */,
 				A4F8BD6828E21A8200DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */,
 				A47A52CE28DB8CF500C9934C /* Sons */,
@@ -270,17 +325,29 @@
 				B9F3B59028BD3A9200EB2170 /* Preview Assets.xcassets in Resources */,
 				A4F8BD6928E21AA900DEDEDE /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf in Resources */,
 				A47A52DD28DB8D1400C9934C /* coracao.mp3 in Resources */,
+				B987A267290097BE000CDD20 /* utero.MOV in Resources */,
+				B987A261290097BE000CDD20 /* lagoa.MOV in Resources */,
 				A47A52DC28DB8D1400C9934C /* aspirador.mp3 in Resources */,
 				A47A52E128DB8D1400C9934C /* vento.mp3 in Resources */,
+				B987A26B290097BE000CDD20 /* vento.MOV in Resources */,
 				B9F3B58D28BD3A9200EB2170 /* Assets.xcassets in Resources */,
 				A47A52E428DB8D1400C9934C /* lareira.mp3 in Resources */,
 				95B8870E28E435070073C115 /* shh.mp3 in Resources */,
+				B987A264290097BE000CDD20 /* chuva.MOV in Resources */,
 				95B8870828E3B36A0073C115 /* secador.mp3 in Resources */,
+				B987A268290097BE000CDD20 /* ronrom.MOV in Resources */,
+				B987A262290097BE000CDD20 /* lareira.MOV in Resources */,
 				A47A52E028DB8D1400C9934C /* utero.mp3 in Resources */,
 				B94E133E28FDCBA100625B3B /* Launch Screen.storyboard in Resources */,
+				B987A263290097BE000CDD20 /* aspirador.MOV in Resources */,
 				A47A52DE28DB8D1400C9934C /* ronrom.mp3 in Resources */,
+				B987A260290097BE000CDD20 /* coracao.MOV in Resources */,
+				B987A266290097BE000CDD20 /* shh.MOV in Resources */,
 				95B8870A28E3B3A00073C115 /* mar.mp3 in Resources */,
 				95B8870628E3B34B0073C115 /* tv.mp3 in Resources */,
+				B987A265290097BE000CDD20 /* secador.MOV in Resources */,
+				B987A26A290097BE000CDD20 /* tv.MOV in Resources */,
+				B987A269290097BE000CDD20 /* mar.MOV in Resources */,
 				95B8870C28E3B3B40073C115 /* chuva.mp3 in Resources */,
 				A47A52E328DB8D1400C9934C /* lagoa.mp3 in Resources */,
 			);
@@ -301,6 +368,7 @@
 				B9F3B58928BD3A9100EB2170 /* Mini_01App.swift in Sources */,
 				B993992F28EF497F0038608B /* NotificationController.swift in Sources */,
 				A448267228C1352C00EE27B5 /* ruidosModel.swift in Sources */,
+				B987A26E2900991C000CDD20 /* backgroundView.swift in Sources */,
 				A4D2202328CFABE600BAC9EE /* ViewModel.swift in Sources */,
 				A448267428C1359B00EE27B5 /* TelaInicial.swift in Sources */,
 				A47A52E628DB8E2E00C9934C /* AudioManager.swift in Sources */,
@@ -374,7 +442,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -429,7 +497,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -460,7 +528,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -498,7 +566,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

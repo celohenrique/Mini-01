@@ -21,10 +21,11 @@ let alertaTxt: LocalizedStringKey = "alerta"
 let acabaTimerTxt: LocalizedStringKey = "seu timer acabou"
 let iniciarTxt: LocalizedStringKey = "iniciar"
 let pausaTxt: LocalizedStringKey = "pausa"
+let horaSemS: LocalizedStringKey = "hora"
 
 var ruidos = [Ruidos(imagem: "0", nome: "aspirador", id: 0, audio: "aspirador", background: "aspirador"),
               Ruidos(imagem: "1", nome: "coracao", id: 1, audio: "coracao", background: "coracao"),
-              Ruidos(imagem: "2", nome: "tempestade", id: 2, audio: "chuva", background: "chuva"),
+              Ruidos(imagem: "2", nome: "chuva", id: 2, audio: "chuva", background: "chuva"),
               Ruidos(imagem: "3", nome: "lagoa", id: 3, audio: "lagoa", background: "lagoa"),
               Ruidos(imagem: "4", nome: "lareira", id: 4, audio: "lareira", background: "lareira"),
               Ruidos(imagem: "5", nome: "mar", id: 5, audio: "mar", background: "mar"),

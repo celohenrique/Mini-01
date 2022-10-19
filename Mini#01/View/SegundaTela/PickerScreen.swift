@@ -57,7 +57,7 @@ struct PickerScreen: View {
     
     var hours = [Int](0..<24)
     var minutes = [Int](0..<60)
-    
+//    var hora : [Int] = [0, 1]
 
     
     var body: some View {
@@ -69,7 +69,9 @@ struct PickerScreen: View {
                     
                     Picker(selection: self.$hourSelection, label: Text("")){
                         ForEach(0 ..< hours.count, id: \.self){ index in
-                            Text("\(self.hours[index]) hours") //colocar a traducao
+                            
+                            Text("\(self.hours[index])" + " \((String(format: NSLocalizedString("hora", comment: "hora traduzida"))))")
+                            
                                 .font(.title)
                                 .fontWeight(.medium)
                                 .foregroundColor(Color.white)
@@ -103,7 +105,6 @@ struct PickerScreen: View {
                         let total = convertSelection(hrs: hourSelection, min: minuteSelection, sec: segundos)
                       
                         if hourSelection == 0 && minuteSelection == 0 {
-                            
                             minuteSelection = 1
                         }
                         
@@ -111,11 +112,10 @@ struct PickerScreen: View {
                                 self.totalSegundos = 0
                                 timerOnOff = false
                                 isPlaying = true
-                            //colocar traducao na notificacao
                                 notifyNum.sendNotification(type: "time",
                                                            timeInterval: Double(total),
-                                                           title: "Alerta",
-                                                           body: "Seu timer acabou")
+                                                           title: String(format: NSLocalizedString("alerta", comment: "hora traduzida")),
+                                                           body: String(format: NSLocalizedString("seu timer acabou", comment: "hora traduzida")))
                             }
                     })
                     {
@@ -127,8 +127,6 @@ struct PickerScreen: View {
                    
                 }
                 .buttonStyle(CircleButton())
-                
-                // arrumar esse botao para caber em varias telas
             }
         } else{
             

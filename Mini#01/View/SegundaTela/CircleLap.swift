@@ -5,7 +5,6 @@
 //  Created by Gustavo Assis on 16/09/22.
 //
 
-
 import SwiftUI
 struct CircleLap: View {
     
@@ -80,27 +79,23 @@ struct CircleLap: View {
                 Text(cancelarTxt) }
             .frame(width: 100, height: 100)
             .foregroundColor(Color(red: 217/255, green: 217/255, blue: 217/255))
-            // .frame(width: 75, height: 75)
             Button(action: {
                 playPause()
                 if isPause {
                     isPause = false
                     self.timer.upstream.connect().cancel()
-                    //                        self.estado = "Pause"
                 }
                 else {
                     isPause = true
                     self.timer = self.timer.upstream.autoconnect()
-                    //                        self.estado = "Play"
                 }
             })
             {
-                Text("\(isPause ? "Pause": "Play")") //localized bugado
+                Text(isPause ? pausaTxt : iniciarTxt)
                     .foregroundColor(Color(red: 28/255, green: 12/255, blue: 48/255))
             }
             .frame(width: 100, height: 100)
             .foregroundColor(isPause ? Color(red: 170/255, green: 170/255, blue: 170/255) : Color(red: 255/255, green: 255/255, blue: 255/255) )
-            // .frame(width: 75, height: 75)z
         }.buttonStyle(CircleButton())
             .onChange(of: totalSegundos) {newValue in
                 self.totalSegundos = convertSelection(hrs: hourSelection,min: minuteSelection,sec: seconds)

@@ -13,16 +13,14 @@ struct ruidosIcon: View{
     
     @State var ruidos: Ruidos
     var body: some View{
-
-            VStack{
-                Image("\(ruidos.imagem)")
-
-                Text(LocalizedStringKey(ruidos.nome))
-                    .font(Font.custom("SF Pro Rounded", size: TelaInicial().sizeFont)).foregroundColor(Color.white)
-                    .lineLimit(1)
-            }
+        VStack{
+            Image("\(ruidos.imagem)")
+            
+            Text(LocalizedStringKey(ruidos.nome))
+                .font(Font.custom("SF Pro Rounded", size: TelaInicial().sizeFont)).foregroundColor(Color.white)
+                .lineLimit(1)
+        }
     }
-        
 }
 struct TelaInicial: View {
     
@@ -35,14 +33,10 @@ struct TelaInicial: View {
     @State var toggleIsOn: Bool = false
     @State var permissionalert: Bool = false
     @State var tempo: Int?
-    
-    
     @State var spacer: CGFloat
     @State var sizeFont: CGFloat
-    
     @State var totalSegundos = 0
     @State var atualSom: String = ""
-    
     @State var mic = MicrophoneMonitor.shared
     
     let columns = [
@@ -52,19 +46,16 @@ struct TelaInicial: View {
     ]
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        
         NotificationController().askPermissionNotification()
-        
         let screenHeight = UIScreen.main.bounds.size.height
-        
         if screenHeight < 668 {
-                self.spacer = 40
-                self.sizeFont = 16
-            }
+            self.spacer = 40
+            self.sizeFont = 16
+        }
         else{
-                self.spacer = 60
-                self.sizeFont = 20
-            }
+            self.spacer = 60
+            self.sizeFont = 20
+        }
     }
     var body: some View {
         NavigationView{
@@ -72,24 +63,21 @@ struct TelaInicial: View {
                 LinearGradient(gradient: Gradient(colors: [
                     Color(red: 28/255, green: 13/255, blue: 47/255),
                     Color(red: 57/255, green: 36/255, blue: 89/255)
-                    ]),
-                    startPoint: .top,
-                    endPoint: .bottom)
-                    .ignoresSafeArea(.all, edges: .all)
-
+                ]),
+                               startPoint: .top,
+                               endPoint: .bottom)
+                .ignoresSafeArea(.all, edges: .all)
+                
                 VStack{
                     LazyVGrid(columns: columns, alignment: .center, spacing: spacer){
-                        
                         ForEach(ruidos, id: \.self){ item in
                             NavigationLink(destination: SegundaTela(ruidos: item, isPlaying: $isPlaying, isPause: $isPause, timerOnOff: $timerOnOff, sensor: $sensor, ativo: $ativo, atualSom: $atualSom, totalSegundos: $totalSegundos, mic: $mic)){
                                 ruidosIcon(ruidos: item)
                             }
                         }
                     }
-                                        .padding(.all)
-                    
-                
-            }
+                    .padding(.all)
+                }
                 .toolbar(){
                     ToolbarItem(placement: .automatic){
                         Image(systemName: "dot.radiowaves.left.and.right")
@@ -99,11 +87,8 @@ struct TelaInicial: View {
                                 mic.askPermissionMic()
                                 showSheet.toggle()
                             }
-
                     }
-
                 }
-               
                 HalfASheet(isPresented: $showSheet){
                     VStack{
                         Spacer()
@@ -112,24 +97,20 @@ struct TelaInicial: View {
                             Text(sensorTxt)
                                 .font(.title2)
                                 .onChange(of: sensor, perform: { newValue in
-                                    
                                     if mic.permission == false {
-                                        
                                         sensor = false
                                         permissionalert = true
                                         ativo = false
                                     }
                                     else{
                                         if sensor && totalSegundos == 0 {
-                                                ativo = false
+                                            ativo = false
                                         }
                                         else {
                                             ativo = false
                                         }
                                     }
-                                   
                                 }).alert(isPresented: self.$permissionalert) {
-                                    
                                     Alert(
                                         title: Text(micTxt),
                                         message: Text(concederMicTxt),
@@ -141,7 +122,6 @@ struct TelaInicial: View {
                                         }))
                                 }
                         })
-                        
                         Spacer()
                             .frame(height: 20)
                         Text(reiniciaSensorTxt)
@@ -158,19 +138,13 @@ struct TelaInicial: View {
                 } else {
                     mic.desliga()
                 }
-
             }
             //reconhecer na tela de inicio
             .onChange(of: totalSegundos) {newValue in
                 if sensor && totalSegundos == 0{
-                        ativo = true
+                    ativo = true
                 }
             }
         }
     }
 }
-//struct RuidoBranco_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TelaInicial()
-//    }
-//}

@@ -22,26 +22,21 @@ struct SegundaTela: View {
     var body: some View{
         
         ZStack{
-            
             LinearGradient(gradient: Gradient(colors: [
                 Color(red: 28/255, green: 13/255, blue: 47/255),
                 Color(red: 57/255, green: 36/255, blue: 89/255)
             ]),
                            startPoint: .top,
                            endPoint: .bottom)
-            
                 .ignoresSafeArea(.all, edges: .all)
-            
             Image(ruidos.background)
                 .resizable(resizingMode: .stretch)
                 .aspectRatio(contentMode: .fill)
-                
             VStack(spacing: 20) {
                 Spacer()
                     .frame(height: 100)
                 Text(LocalizedStringKey(ruidos.nome))
                     .font(Font.custom("SF Pro Rounded", size: 34, relativeTo: .title))
-//                    .fontWeight(.bold)
                     .foregroundColor(Color.white)
                 Spacer()
                     .frame(height: 70)

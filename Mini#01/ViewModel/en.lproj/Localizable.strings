@@ -23,6 +23,8 @@
 
 "horas" = "hours";
 
+"hora" = "hour";
+
 "alerta" = "Alert";
 
 "seu timer acabou" = "Your timer has run out.";
@@ -35,7 +37,7 @@
 
 "coracao" = "Heart";
 
-"tempestade" = "Storm";
+"chuva" = "Rain";
 
 "lagoa" = "Lagoon";
 

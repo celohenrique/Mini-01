@@ -12,18 +12,42 @@ import UserNotifications
 struct ruidosIcon: View{
     
     @State var ruidos: Ruidos
+
+    
     var body: some View{
 
             VStack{
                 Image("\(ruidos.imagem)")
-
                 Text(LocalizedStringKey(ruidos.nome))
                     .font(Font.custom("SF Pro Rounded", size: TelaInicial().sizeFont)).foregroundColor(Color.white)
                     .lineLimit(1)
             }
+
     }
         
 }
+
+struct ruidosIconSelect: View{
+    @State var ruidos: Ruidos
+    @Binding var bckp: Bool
+    @Binding var atualSom: String
+    
+
+    var body: some View{
+
+        VStack{
+            if (atualSom == ruidos.nome) {
+
+                Image("\(ruidos.imagem)")
+                Text(LocalizedStringKey(ruidos.nome))
+                    .font(Font.custom("SF Pro Rounded", size: TelaInicial().sizeFont)).foregroundColor(Color.red)
+                    .lineLimit(1)
+            }
+
+        }
+    }
+}
+
 struct TelaInicial: View {
     
     @State var isPlaying: Bool = false
@@ -35,14 +59,10 @@ struct TelaInicial: View {
     @State var toggleIsOn: Bool = false
     @State var permissionalert: Bool = false
     @State var tempo: Int?
-    
-    
     @State var spacer: CGFloat
     @State var sizeFont: CGFloat
-    
     @State var totalSegundos = 0
     @State var atualSom: String = ""
-    
     @State var mic = MicrophoneMonitor.shared
     
     let columns = [
@@ -82,11 +102,21 @@ struct TelaInicial: View {
                         
                         ForEach(ruidos, id: \.self){ item in
                             NavigationLink(destination: SegundaTela(ruidos: item, isPlaying: $isPlaying, isPause: $isPause, timerOnOff: $timerOnOff, sensor: $sensor, ativo: $ativo, atualSom: $atualSom, totalSegundos: $totalSegundos, mic: $mic)){
-                                ruidosIcon(ruidos: item)
+                                ZStack {
+                                    ruidosIcon(ruidos: item)
+                                    if isPlaying {
+                                        ruidosIconSelect(ruidos: item, bckp: $isPlaying, atualSom: $atualSom)
+                                    }
+                                }
+//                                if isPlaying {
+//                                    ruidosIconSelect(ruidos: item, bckp: $isPlaying, atualSom: $atualSom)
+//                                } else {
+//                                    ruidosIcon(ruidos: item)
+//                                }
                             }
                         }
                     }
-                                        .padding(.all)
+                    .padding(.all)
                     
                 
             }

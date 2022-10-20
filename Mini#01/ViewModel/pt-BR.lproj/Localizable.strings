@@ -19,7 +19,7 @@
 
 "configurações" = "Configurações";
 
-"o sensor capta barulhos altos e reinicia o timer do último som selecionado. O microfone ficará ligado apenas quando o sensor estiver ligado" = "O sensor capta barulhos altos e reinicia o timer do último som selecionado. O microfone ficará ligado apenas quando o sensor estiver ligado";
+"O sensor capta barulhos altos e reinicia o último som selecionado por 5 minutos. O microfone ficará ligado apenas quando o sensor estiver ligado" = "O sensor capta barulhos altos e reinicia o último som selecionado por 5 minutos. O microfone ficará ligado apenas quando o sensor estiver ligado";
 
 
 "hora" = "horas";

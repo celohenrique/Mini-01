@@ -23,16 +23,16 @@ let iniciarTxt: LocalizedStringKey = "iniciar"
 let pausaTxt: LocalizedStringKey = "pausa"
 let horaSemS: LocalizedStringKey = "hora"
 
-var ruidos = [Ruidos(imagem: "0", nome: "aspirador", id: 0, audio: "aspirador", background: "aspirador"),
-              Ruidos(imagem: "1", nome: "coracao", id: 1, audio: "coracao", background: "coracao"),
-              Ruidos(imagem: "2", nome: "chuva", id: 2, audio: "chuva", background: "chuva"),
-              Ruidos(imagem: "3", nome: "lagoa", id: 3, audio: "lagoa", background: "lagoa"),
-              Ruidos(imagem: "4", nome: "lareira", id: 4, audio: "lareira", background: "lareira"),
-              Ruidos(imagem: "5", nome: "mar", id: 5, audio: "mar", background: "mar"),
-            
-              Ruidos(imagem: "6", nome: "ronrom", id: 6, audio: "ronrom", background: "ronrom"),
-              Ruidos(imagem: "7", nome: "secador", id: 7, audio: "secador", background: "secador"),
-              Ruidos(imagem: "8", nome: "shh", id: 8, audio: "shh", background: "shh"),
-              Ruidos(imagem: "9", nome: "tv", id: 9, audio: "tv", background: "tv"),
-              Ruidos(imagem: "10", nome: "utero", id: 10, audio: "utero", background: "utero"),
-              Ruidos(imagem: "11", nome: "vento", id: 11, audio: "vento", background: "vento")]
+var ruidos = [Ruidos(imagem: "0", imagemSelecionada: "0P", nome: "aspirador", id: 0, audio: "aspirador", background: "aspirador"),
+              Ruidos(imagem: "1", imagemSelecionada: "1P", nome: "coracao", id: 1, audio: "coracao", background: "coracao"),
+              Ruidos(imagem: "2", imagemSelecionada: "2P", nome: "chuva", id: 2, audio: "chuva", background: "chuva"),
+              Ruidos(imagem: "3", imagemSelecionada: "3P", nome: "lagoa", id: 3, audio: "lagoa", background: "lagoa"),
+              Ruidos(imagem: "4", imagemSelecionada: "4P", nome: "lareira", id: 4, audio: "lareira", background: "lareira"),
+              Ruidos(imagem: "5", imagemSelecionada: "5P", nome: "mar", id: 5, audio: "mar", background: "mar"),
+              Ruidos(imagem: "6", imagemSelecionada: "6P", nome: "ronrom", id: 6, audio: "ronrom", background: "ronrom"),
+              Ruidos(imagem: "7", imagemSelecionada: "7P", nome: "secador", id: 7, audio: "secador", background: "secador"),
+              Ruidos(imagem: "8", imagemSelecionada: "8P", nome: "shh", id: 8, audio: "shh", background: "shh"),
+              Ruidos(imagem: "9", imagemSelecionada: "9P", nome: "tv", id: 9, audio: "tv", background: "tv"),
+              Ruidos(imagem: "10", imagemSelecionada: "10P", nome: "utero", id: 10, audio: "utero", background: "utero"),
+              Ruidos(imagem: "11", imagemSelecionada: "11P", nome: "vento", id: 11, audio: "vento", background: "vento")
+]

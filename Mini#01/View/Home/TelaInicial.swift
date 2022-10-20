@@ -26,6 +26,32 @@ struct ruidosIcon: View{
         }
     }
 }
+
+struct ruidosIconSelect: View{
+    @State var ruidos: Ruidos
+    @Binding var bckp: Bool
+    @Binding var atualSom: String
+    @Binding var sizeIcon1: CGFloat
+    @Binding var sizeIcon2: CGFloat
+
+    var body: some View{
+
+        VStack{
+            if (atualSom == ruidos.nome) {
+
+                Image("\(ruidos.imagemSelecionada)")
+                    .resizable()
+                        .frame(width: sizeIcon1, height: sizeIcon2)
+                Text(LocalizedStringKey(ruidos.nome))
+                    .font(Font.custom("SF Pro Rounded", size: TelaInicial().sizeFont)).foregroundColor(Color.orange)
+                    .lineLimit(1)
+            }
+
+        }
+    }
+}
+
+
 struct TelaInicial: View {
     
     @State var isPlaying: Bool = false
@@ -91,12 +117,21 @@ struct TelaInicial: View {
                     LazyVGrid(columns: columns, alignment: .center, spacing: spacer){
                         ForEach(ruidos, id: \.self){ item in
                             NavigationLink(destination: SegundaTela(ruidos: item, isPlaying: $isPlaying, isPause: $isPause, timerOnOff: $timerOnOff, sensor: $sensor, ativo: $ativo, atualSom: $atualSom, totalSegundos: $totalSegundos, mic: $mic)){
-                                ruidosIcon(sizeIcon1: $sizeIcon1, sizeIcon2: $sizeIcon2, ruidos: item )
+                                
+                                ZStack{
+                                    ruidosIcon(sizeIcon1: $sizeIcon1, sizeIcon2: $sizeIcon2, ruidos: item)
+                                    if isPlaying{
+                                        ruidosIconSelect(ruidos: item, bckp: $isPlaying, atualSom: $atualSom, sizeIcon1: $sizeIcon1, sizeIcon2: $sizeIcon2)
+                                    }
+                                }
+                                
+                               
                             }
                         }
                     }
                     .padding(.all)
                 }
+                //.navigationViewStyle(.stack)
                 .toolbar(){
                     ToolbarItem(placement: .automatic){
                         Image(systemName: "dot.radiowaves.left.and.right")

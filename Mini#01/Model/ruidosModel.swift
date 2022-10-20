@@ -10,6 +10,7 @@ import Foundation
 struct Ruidos: Hashable {
     
     var imagem: String
+    var imagemSelecionada: String
     var nome: String
     var id: Int
     var audio: String

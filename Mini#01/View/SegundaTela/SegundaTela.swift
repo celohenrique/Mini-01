@@ -30,10 +30,7 @@ struct SegundaTela: View {
                            startPoint: .top,
                            endPoint: .bottom)
             .ignoresSafeArea(.all, edges: .all)
-//                        Image(ruidos.background)
-//            
-//                            .resizable(resizingMode: .stretch)
-//                            .aspectRatio(contentMode: .fill)
+
             if isPlaying && isPause{
                 
                 backgroundView(videoAtual: $ruidos.audio)
@@ -43,13 +40,17 @@ struct SegundaTela: View {
                 
             }
             else {
-                Image("Fundo")
-                    .resizable()
-                    .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
+                LinearGradient(gradient: Gradient(colors: [
+                    Color(red: 28/255, green: 13/255, blue: 47/255),
+                    Color(red: 57/255, green: 36/255, blue: 89/255)
+                ]),
+                               startPoint: .top,
+                               endPoint: .bottom)
+                .ignoresSafeArea(.all, edges: .all)
                 
                 Image(ruidos.background)
                     .resizable(resizingMode: .stretch)
+                    .ignoresSafeArea(.all, edges: .all)
             }
             
             VStack(spacing: 20) {

@@ -33,4 +33,5 @@ var ruidos = [Ruidos(imagem: "0", nome: "aspirador", id: 0, audio: "aspirador", 
               Ruidos(imagem: "8", nome: "shh", id: 8, audio: "shh", background: "shh"),
               Ruidos(imagem: "9", nome: "tv", id: 9, audio: "tv", background: "tv"),
               Ruidos(imagem: "10", nome: "utero", id: 10, audio: "utero", background: "utero"),
-              Ruidos(imagem: "11", nome: "vento", id: 11, audio: "vento", background: "vento")]
+              Ruidos(imagem: "11", nome: "vento", id: 11, audio: "vento", background: "vento")
+]

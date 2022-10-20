@@ -75,7 +75,6 @@ struct CircleLap: View {
                 self.totalSegundos = 0
                 self.minuteSelection = 0
                 self.hourSelection = 0
-                //colocar aqui o request cancell
                 notify.cancelNotification()
             }){
                 Text(cancelarTxt) }

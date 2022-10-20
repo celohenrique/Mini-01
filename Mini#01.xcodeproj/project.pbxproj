@@ -228,8 +228,8 @@
 			children = (
 				B9F3B58828BD3A9100EB2170 /* Mini_01App.swift */,
 				A4D2202228CFABE600BAC9EE /* ViewModel.swift */,
-				B993808D28FF267B00862CA4 /* Localizable.strings */,
 				A47A52E528DB8E2E00C9934C /* AudioManager.swift */,
+				B993808D28FF267B00862CA4 /* Localizable.strings */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";

@@ -96,7 +96,8 @@ struct CircleLap: View {
                     .foregroundColor(Color(red: 28/255, green: 12/255, blue: 48/255))
             }
             .frame(width: 100, height: 100)
-            .foregroundColor(isPause ? Color(red: 170/255, green: 170/255, blue: 170/255) : Color(red: 255/255, green: 255/255, blue: 255/255) )
+            .foregroundColor(Color(red: 255/255, green: 255/255, blue: 255/255))
+//            .foregroundColor(isPause ? Color(red: 170/255, green: 170/255, blue: 170/255) : Color(red: 255/255, green: 255/255, blue: 255/255))
         }.buttonStyle(CircleButton())
             .onChange(of: totalSegundos) {newValue in
                 self.totalSegundos = convertSelection(hrs: hourSelection,min: minuteSelection,sec: seconds)

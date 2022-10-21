@@ -199,6 +199,6 @@ struct TelaInicial: View {
                     ativo = true
                 }
             }
-        }
+        }.accentColor(Color(white: 2))
     }
 }

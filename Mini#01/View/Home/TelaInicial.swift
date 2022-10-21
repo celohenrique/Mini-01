@@ -24,34 +24,12 @@ struct ruidosIcon: View{
                 .font(Font.custom("SF Pro Rounded", size: TelaInicial().sizeFont)).foregroundColor(Color.white)
                 .lineLimit(1)
         }
-    }
-}
-
-struct ruidosIconSelect: View{
-    @State var ruidos: Ruidos
-    @Binding var bckp: Bool
-    @Binding var atualSom: String
-    @Binding var sizeIcon1: CGFloat
-    @Binding var sizeIcon2: CGFloat
-
-    var body: some View{
-        VStack{
-            if (atualSom == ruidos.nome) {
-
-                Image("\(ruidos.imagemSelecionada)")
-                    .resizable()
-                        .frame(width: sizeIcon1, height: sizeIcon2)
-                Text(LocalizedStringKey(ruidos.nome))
-                    .font(Font.custom("SF Pro Rounded", size: TelaInicial().sizeFont)).foregroundColor(Color.orange)
-                    .lineLimit(1)
-            }
-
-        }
+           
+        
     }
 }
 
 struct TelaInicial: View {
-    
     @State var isPlaying: Bool = false
     @State var isPause: Bool = false
     @State var timerOnOff: Bool = true
@@ -75,6 +53,7 @@ struct TelaInicial: View {
         GridItem(spacing: 20)
     ]
     init() {
+        
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         NotificationController().askPermissionNotification()
         let screenHeight = UIScreen.main.bounds.size.height
@@ -100,6 +79,7 @@ struct TelaInicial: View {
             self.sizeIcon1 = 70
         }
     }
+    
     var body: some View {
         NavigationView{
             ZStack {
@@ -115,32 +95,33 @@ struct TelaInicial: View {
                     LazyVGrid(columns: columns, alignment: .center, spacing: spacer){
                         ForEach(ruidos, id: \.self){ item in
                             NavigationLink(destination: SegundaTela(ruidos: item, isPlaying: $isPlaying, isPause: $isPause, timerOnOff: $timerOnOff, sensor: $sensor, ativo: $ativo, atualSom: $atualSom, totalSegundos: $totalSegundos, mic: $mic)){
-                                
-                                ZStack{
-                                    ruidosIcon(sizeIcon1: $sizeIcon1, sizeIcon2: $sizeIcon2, ruidos: item)
-                                    if isPlaying{
-                                        ruidosIconSelect(ruidos: item, bckp: $isPlaying, atualSom: $atualSom, sizeIcon1: $sizeIcon1, sizeIcon2: $sizeIcon2)
-                                    }
-                                }
-                                
-                               
+                                ruidosIcon(sizeIcon1: $sizeIcon1, sizeIcon2: $sizeIcon2, ruidos: item )
                             }
                         }
                     }
                     .padding(.all)
+                    
+                    if isPlaying{
+                        MiniPlayer(isPlaying: $isPlaying, isPause: $isPause)
+                        //conseguir acertar os parametros da viewmodel
+                        
+                    }
                 }
-                //.navigationViewStyle(.stack)
+                
                 .toolbar(){
                     ToolbarItem(placement: .automatic){
                         Image(systemName: "dot.radiowaves.left.and.right")
                             .foregroundColor(Color.white)
-                            .navigationTitle(LocalizedStringKey("sons"))
+                         //   .navigationTitle(LocalizedStringKey("sons"))
                             .onTapGesture {
                             //    mic.askPermissionMic()
                                 showSheet.toggle()
                             }
+                        
                     }
+                    
                 }
+                
                 HalfASheet(isPresented: $showSheet){
                     VStack{
                         Spacer()
@@ -197,6 +178,6 @@ struct TelaInicial: View {
                     ativo = true
                 }
             }
-        }.accentColor(Color(white: 2))
+        }
     }
 }

@@ -25,6 +25,15 @@ struct CircleLap: View {
     @Binding var ativo: Bool
     @State var notify = NotificationController()
     
+    func cancelTimer(){
+        self.timer.upstream.connect().cancel()
+        
+    }
+    
+    func ligarTimer(){
+        self.timer = self.timer.upstream.autoconnect()
+    }
+    
     var isPreview: Bool = false
     
     func convertSelection(hrs: Int, min: Int, sec: Int) -> Int{
@@ -76,6 +85,7 @@ struct CircleLap: View {
                 self.minuteSelection = 0
                 self.hourSelection = 0
                 notify.cancelNotification()
+                print(type(of: timer))
             }){
                 Text(cancelarTxt) }
             //aqui
@@ -84,12 +94,14 @@ struct CircleLap: View {
             Button(action: {
                 playPause()
                 if isPause {
+                    print(type(of: timer))
                     isPause = false
-                    self.timer.upstream.connect().cancel()
+                    cancelTimer()
                 }
                 else {
+                    print(type(of: timer))
                     isPause = true
-                    self.timer = self.timer.upstream.autoconnect()
+                    ligarTimer()
                 }
             })
             {

@@ -43,6 +43,7 @@
 		B987A2732900A287000CDD20 /* tv.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B987A2722900A287000CDD20 /* tv.MOV */; };
 		B993808B28FF267B00862CA4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B993808D28FF267B00862CA4 /* Localizable.strings */; };
 		B993992F28EF497F0038608B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B993992E28EF497F0038608B /* NotificationController.swift */; };
+		B9C126962902586300B7AFBF /* MiniPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C126952902586300B7AFBF /* MiniPlayer.swift */; };
 		B9D8566E28FA4D2A0077A526 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D8566D28FA4D2A0077A526 /* LaunchScreen.swift */; };
 		B9EED67128D255DF00ED4237 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EED67028D255DF00ED4237 /* Sensor.swift */; };
 		B9EED67328D2597F00ED4237 /* PickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EED67228D2597F00ED4237 /* PickerScreen.swift */; };
@@ -50,6 +51,7 @@
 		B9F3B58B28BD3A9100EB2170 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3B58A28BD3A9100EB2170 /* ContentView.swift */; };
 		B9F3B58D28BD3A9200EB2170 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9F3B58C28BD3A9200EB2170 /* Assets.xcassets */; };
 		B9F3B59028BD3A9200EB2170 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9F3B58F28BD3A9200EB2170 /* Preview Assets.xcassets */; };
+		B9FB5F5A2902594A00BA39D7 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FB5F592902594A00BA39D7 /* BlurView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +91,7 @@
 		B993808C28FF267B00862CA4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B993808E28FF267F00862CA4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B993992E28EF497F0038608B /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		B9C126952902586300B7AFBF /* MiniPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayer.swift; sourceTree = "<group>"; };
 		B9D8566D28FA4D2A0077A526 /* LaunchScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		B9EED67028D255DF00ED4237 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		B9EED67228D2597F00ED4237 /* PickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerScreen.swift; sourceTree = "<group>"; };
@@ -97,6 +100,7 @@
 		B9F3B58A28BD3A9100EB2170 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B9F3B58C28BD3A9200EB2170 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9F3B58F28BD3A9200EB2170 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B9FB5F592902594A00BA39D7 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,15 @@
 			path = Animacao;
 			sourceTree = "<group>";
 		};
+		B9C126942902581D00B7AFBF /* FakeTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				B9C126952902586300B7AFBF /* MiniPlayer.swift */,
+				B9FB5F592902594A00BA39D7 /* BlurView.swift */,
+			);
+			path = FakeTabBar;
+			sourceTree = "<group>";
+		};
 		B9F3B57C28BD3A9000EB2170 = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +229,7 @@
 		B9F3B59728BD3AA500EB2170 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B9C126942902581D00B7AFBF /* FakeTabBar */,
 				B987A26C290098F6000CDD20 /* Animacao */,
 				B9F3B59C28BD580900EB2170 /* Home */,
 				A4D2202428CFAC2800BAC9EE /* SegundaTela */,
@@ -362,6 +376,7 @@
 			files = (
 				B9D8566E28FA4D2A0077A526 /* LaunchScreen.swift in Sources */,
 				B9EED67128D255DF00ED4237 /* Sensor.swift in Sources */,
+				B9FB5F5A2902594A00BA39D7 /* BlurView.swift in Sources */,
 				B9F3B58B28BD3A9100EB2170 /* ContentView.swift in Sources */,
 				B9EED67328D2597F00ED4237 /* PickerScreen.swift in Sources */,
 				A4D2202628CFACFA00BAC9EE /* SegundaTela.swift in Sources */,
@@ -371,6 +386,7 @@
 				B987A26E2900991C000CDD20 /* backgroundView.swift in Sources */,
 				A4D2202328CFABE600BAC9EE /* ViewModel.swift in Sources */,
 				A448267428C1359B00EE27B5 /* TelaInicial.swift in Sources */,
+				B9C126962902586300B7AFBF /* MiniPlayer.swift in Sources */,
 				A47A52E628DB8E2E00C9934C /* AudioManager.swift in Sources */,
 				A417EFD628D3ADB2009A4721 /* CircleLap.swift in Sources */,
 			);

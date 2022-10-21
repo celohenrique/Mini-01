@@ -65,6 +65,7 @@ struct SegundaTela: View {
                 PickerScreen(ruidos: self.ruidos, sensor: $sensor, ativo: $ativo, timerOnOff: $timerOnOff,totalSegundos: $totalSegundos, isPlaying: $isPlaying, isPause: $isPause)
                 
                 Spacer()
+        
             } .onAppear{
                 atualSom = ruidos.audio
             }

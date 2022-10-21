@@ -34,7 +34,7 @@ struct SegundaTela: View {
             if isPlaying && isPause{
                 
                 backgroundView(videoAtual: $ruidos.audio)
-                
+                //aqui
                     .edgesIgnoringSafeArea(.all)
                 
                 
@@ -49,6 +49,7 @@ struct SegundaTela: View {
                 .ignoresSafeArea(.all, edges: .all)
                 
                 Image(ruidos.background)
+                //aqui
                     .resizable(resizingMode: .stretch)
                     .ignoresSafeArea(.all, edges: .all)
             }

@@ -122,6 +122,7 @@ struct PickerScreen: View {
                         Text(iniciarTxt)
                             .foregroundColor(Color(red: 30/255, green: 14/255, blue: 51/255))
                     }
+                    //aqui
                     .frame(width: 100, height: 100)
                     .foregroundColor(Color(red: 255/255, green: 255/255, blue: 255/255))
                    

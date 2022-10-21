@@ -78,6 +78,7 @@ struct CircleLap: View {
                 notify.cancelNotification()
             }){
                 Text(cancelarTxt) }
+            //aqui
             .frame(width: 100, height: 100)
             .foregroundColor(Color(red: 217/255, green: 217/255, blue: 217/255))
             Button(action: {
@@ -95,6 +96,7 @@ struct CircleLap: View {
                 Text(isPause ? pausaTxt : iniciarTxt)
                     .foregroundColor(Color(red: 28/255, green: 12/255, blue: 48/255))
             }
+            //aqui
             .frame(width: 100, height: 100)
             .foregroundColor(Color(red: 255/255, green: 255/255, blue: 255/255))
 //            .foregroundColor(isPause ? Color(red: 170/255, green: 170/255, blue: 170/255) : Color(red: 255/255, green: 255/255, blue: 255/255))

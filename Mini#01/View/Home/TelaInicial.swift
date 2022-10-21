@@ -35,7 +35,6 @@ struct ruidosIconSelect: View{
     @Binding var sizeIcon2: CGFloat
 
     var body: some View{
-
         VStack{
             if (atualSom == ruidos.nome) {
 
@@ -50,7 +49,6 @@ struct ruidosIconSelect: View{
         }
     }
 }
-
 
 struct TelaInicial: View {
     

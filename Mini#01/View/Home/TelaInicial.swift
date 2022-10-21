@@ -10,14 +10,12 @@ import HalfASheet
 import UserNotifications
 
 struct ruidosIcon: View{
-    
     @State var ruidos: Ruidos
-
-    
     var body: some View{
 
             VStack{
                 Image("\(ruidos.imagem)")
+                    //.resizable().frame(width: 70, height: 70)
                 Text(LocalizedStringKey(ruidos.nome))
                     .font(Font.custom("SF Pro Rounded", size: TelaInicial().sizeFont)).foregroundColor(Color.white)
                     .lineLimit(1)
@@ -39,8 +37,9 @@ struct ruidosIconSelect: View{
             if (atualSom == ruidos.nome) {
 
                 Image("\(ruidos.imagem)")
+                    //.resizable().frame(width: 70, height: 70)
                 Text(LocalizedStringKey(ruidos.nome))
-                    .font(Font.custom("SF Pro Rounded", size: TelaInicial().sizeFont)).foregroundColor(Color.red)
+                    .font(Font.custom("SF Pro Rounded", size: TelaInicial().sizeFont)).foregroundColor(Color.orange)
                     .lineLimit(1)
             }
 

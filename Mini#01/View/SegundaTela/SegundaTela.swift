@@ -54,9 +54,9 @@ struct SegundaTela: View {
                     .ignoresSafeArea(.all, edges: .all)
             }
             
-            VStack(spacing: 20) {
+            VStack{
                 Spacer()
-                    .frame(height: 100)
+                    .frame(height: 70)
                 Text(LocalizedStringKey(ruidos.nome))
                     .font(Font.custom("SF Pro Rounded", size: 34, relativeTo: .title))
                     .foregroundColor(Color.white)

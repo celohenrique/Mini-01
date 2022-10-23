@@ -34,7 +34,6 @@ struct CircleLap: View {
         let total = hrs + min + sec
         return total
     }
-
     func convertSecondsToTime(timeInSeconds: Int) -> String{
         let hours = timeInSeconds / 3600
         let minutes = (timeInSeconds % 3600) / 60
@@ -42,9 +41,7 @@ struct CircleLap: View {
         return String(format: "%02i:%02i:%02i", hours, minutes, seconds)
     }
     var body : some View{
-
         VStack(spacing: 25){
-            
             Text(convertSecondsToTime(timeInSeconds: totalSegundos))
                 .foregroundColor(Color.white)
                 .padding()
@@ -55,7 +52,6 @@ struct CircleLap: View {
                         isPlaying = false
                         isPause = false
                         player.stop()
-                        
                     }
                     self.totalSegundos -= 1
                     

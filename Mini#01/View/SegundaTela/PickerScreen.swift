@@ -45,7 +45,6 @@ struct PickerScreen: View {
    
     @State var segundos = 0
     
-    
     func convertSelection(hrs: Int, min: Int, sec: Int) -> Int{
         
         let hrs = hrs * 3600
@@ -58,13 +57,11 @@ struct PickerScreen: View {
     var hours = [Int](0..<24)
     var minutes = [Int](0..<60)
 //    var hora : [Int] = [0, 1]
-
-    
     var body: some View {
         VStack(spacing: 170){
         
             if timerOnOff {
-            VStack(alignment: .center,spacing: 50){
+            VStack(alignment: .center,spacing: 10){
                 HStack(alignment: .center){
                     
                     Picker(selection: self.$hourSelection, label: Text("")){

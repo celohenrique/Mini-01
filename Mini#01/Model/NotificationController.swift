@@ -48,10 +48,5 @@ class NotificationController {
     
     func cancelNotification(){
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        
     }
-    
-    
-    
-
 }
